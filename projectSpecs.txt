@@ -1,0 +1,43 @@
+Idea: Short-term/Vacation property rental sales and bidding platform.
+
+Name: PropUp
+
+Users: 
+    Property owner
+    Property bidder
+UI: 
+    Property Up
+        CRUD properties
+        View up to date bids
+        Rate their tenants
+        View calendar
+        Create minimum bid
+        Offer amenities
+        Live chat with renter
+    Propose Up
+        View rental properties
+        Get directions
+        View local events
+        View local weather
+        Make proposal
+        View calendar
+        Live chat with prop owner
+        Review owner/property/amenities
+
+
+Link reviews with properties and renters.
+
+Tech: 
+    Materialize
+    Calendar
+    Animate css
+    Typed JS
+    Firebase
+        Chat function
+        Both Props
+        Bids
+        Users/Login
+        Reviews	
+Possible 3 APIs
+
+React
