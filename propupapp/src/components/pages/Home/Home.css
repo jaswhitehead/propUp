@@ -1,0 +1,17 @@
+.column img {
+    height: 400px;
+    width: 600px;
+}
+
+.search {
+    margin-top: 70px;
+}
+
+.content-blocks {
+    margin-bottom: 70px;
+}
+
+.typed {
+    font-size: 36px;
+    font-family: 'Anton', sans-serif;
+}

@@ -1,0 +1,24 @@
+.footer {
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #B2D350; 
+    padding: 0px 0px 20px 0px;   
+}
+
+.upper-footer {
+    background: white;
+}
+
+.content p {
+    margin-top: 50px;
+}
+
+a {
+    color: #067c9c;
+}
+
+
+
+
