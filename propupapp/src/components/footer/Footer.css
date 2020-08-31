@@ -3,12 +3,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #B2D350;    
+    background: #B2D350; 
+    padding: 0px 0px 20px 0px;   
 }
 
-.content.has-text-centered {
-    padding: 0px 0px 0px 0px;;
+.upper-footer {
+    background: #19B4DE;
 }
+
+.content p {
+    margin-top: 50px;
+}
+
 
 
 

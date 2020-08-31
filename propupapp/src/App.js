@@ -17,7 +17,7 @@ class App extends Component {
             <Router />
           </BrowserRouter>  
         </div>
-          <Footer className="page-footer"/>    
+          <Footer />    
       </div>
    );
   }
