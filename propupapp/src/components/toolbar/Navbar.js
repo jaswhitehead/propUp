@@ -12,10 +12,10 @@ const navbar = props => (
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true">
-            <a className="navbar-item" href="/Renter">Start Your Vacation</a>
+            <a className="navbar-item" href="/Renter"></a><i class="fas fa-map-marked-alt"></i>
           </span>
           <span aria-hidden="true">
-            <a className="navbar-item" href="/Owner">List a Property </a>
+            <a className="navbar-item" href="/Owner"><i class="fas fa-home"></i></a>
           </span>          
           <span aria-hidden="true"></span>
         </a>
@@ -24,10 +24,10 @@ const navbar = props => (
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-start">
       <a className="navbar-item" href="/Renter">
-        Start Your Vacation
+        Start Your Vacation&nbsp;&nbsp;<i class="fas fa-map-marked-alt"></i>
       </a>
       <a className="navbar-item" href="/Owner">
-        List a Property
+        List a Property&nbsp;&nbsp;<i class="fas fa-home"></i>
       </a>
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link" href="">
