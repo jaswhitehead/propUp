@@ -22,7 +22,6 @@ const Signup = () => {
             <i class="fas fa-check"></i>
           </span>
         </div>
-        <p class="help is-success">This username is available</p>
       </div>
 
       <div class="field">
@@ -49,16 +48,16 @@ const Signup = () => {
             <i class="fas fa-exclamation-triangle"></i>
           </span>
         </div>
-        <p class="help is-danger">This email is invalid</p>
       </div>
-
+  
       <div class="field">
-        <label class="label">Subject</label>
+        <label class="label">Account Type:</label>
         <div class="control">
           <div class="select">
             <select>
               <option>Select dropdown</option>
-              <option>With options</option>
+              <option>I am a Renter</option>
+              <option>I am an Owner</option>
             </select>
           </div>
         </div>
@@ -82,6 +81,7 @@ const Signup = () => {
 
       <div class="field">
         <div class="control">
+          <label class="label">Please E-Mail Me Updates</label>
           <label class="radio">
             <input type="radio" name="question" />
             Yes

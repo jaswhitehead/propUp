@@ -4,12 +4,11 @@ import './Login.css';
 const Login = () => {
   return(
     <>
-    <div ClassName="container">
-      <h1>This is my Login page.</h1>
-      <h1>This is my Login page.</h1>
-      <h1>This is my Login page.</h1>
-      <h1>This is my Login page.</h1>
+    <div className="login-container">
+      <h3>Welcome Back! Please Sign in Below</h3>
     </div>
+
+    <div className="form">
     <div className="field">
     <p class="control has-icons-left has-icons-right">
       <input className="input" type="email" placeholder="Email" />
@@ -31,10 +30,11 @@ const Login = () => {
   </div>
   <div className="field">
     <p className="control">
-      <button className="button is-success">
+      <button className="button">
         Login
       </button>
     </p>
+  </div>
   </div>
   </>
   )
