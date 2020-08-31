@@ -1,0 +1,14 @@
+.footer {
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #B2D350;    
+}
+
+.content.has-text-centered {
+    padding: 0px 0px 0px 0px;;
+}
+
+
+
