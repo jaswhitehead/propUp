@@ -1,4 +1,5 @@
 import React from "react";
+import './Renter.css';
 
 const Renter = () => {
   return ( <>
