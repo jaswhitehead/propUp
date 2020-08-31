@@ -8,11 +8,15 @@
 }
 
 .upper-footer {
-    background: #19B4DE;
+    background: white;
 }
 
 .content p {
     margin-top: 50px;
+}
+
+a {
+    color: #067c9c;
 }
 
 

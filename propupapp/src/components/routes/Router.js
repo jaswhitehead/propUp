@@ -7,6 +7,7 @@ import Owner from "../pages/Owner/Owner";
 import Renter from "../pages/Renter/Renter";
 import Book from "../pages/Book/Book";
 import Events from "../pages/Events/Events";
+import Who from "../pages/Who/Who";
 
 class Router extends Component {
   render() {
@@ -19,6 +20,7 @@ class Router extends Component {
         <Route component={Renter} exact path="/Renter" />
         <Route component={Book} exact path="/Book" />
         <Route component={Events} exact path="/Events" />
+        <Route component={Who} exact path="/Who" />
       </Switch>
     );
   }

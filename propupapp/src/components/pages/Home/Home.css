@@ -3,6 +3,15 @@
     width: 600px;
 }
 
-.App h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.search {
+    margin-top: 70px;
+}
+
+.content-blocks {
+    margin-bottom: 70px;
+}
+
+.typed {
+    font-size: 36px;
+    font-family: 'Anton', sans-serif;
 }
