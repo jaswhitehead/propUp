@@ -26,7 +26,7 @@ const Home = () => {
                 <div className="field">
                   <label className="label">Add Guests:</label>
                   <div className="control">
-                    <div className="select">
+                    <div className="section">
                       <select className="box">
                         <option>Select #</option>
                         <option>1 Guest</option>
