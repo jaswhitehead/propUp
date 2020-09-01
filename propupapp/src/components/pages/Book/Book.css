@@ -1,4 +1,7 @@
-.Picker {
-    margin-top: 80px;
-    margin-bottom: 20px;
+.DateRangePickerInput.DateRangePickerInput_1 {
+    border-radius: 25px;
+    width: 310px;
+    height: 70px;
+    border: 2px solid black;
+    padding: 10px;
 }

@@ -13,6 +13,7 @@
     "react-bulma-components": "^3.4.0",
     "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
+    "react-google-location": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",

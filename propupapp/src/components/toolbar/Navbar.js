@@ -12,7 +12,7 @@ const navbar = props => (
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true">
-            <a className="navbar-item" href="/Renter"></a><i class="fas fa-map-marked-alt"></i>
+            <a className="navbar-item" href="/Renter"><i class="fas fa-map-marked-alt"></i></a>
           </span>
           <span aria-hidden="true">
             <a className="navbar-item" href="/Owner"><i class="fas fa-home"></i></a>

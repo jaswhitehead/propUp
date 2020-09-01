@@ -22,7 +22,7 @@ const Who = () => {
                     <div className="media-content">
                         <div className="content">
                             <p>
-                                <strong>Chip Johnson</strong> <small>@johnsmith</small>
+                                <strong>Jason Whitehead</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @JasonWhitehead2</small>
                                 <br />
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Aenean efficitur sit amet massa fringilla egestas. Nullam 
@@ -65,7 +65,7 @@ const Who = () => {
                     <div className="media-content">
                         <div className="content">
                             <p>
-                                <strong>Chip Johnson</strong> <small>@johnsmith</small>
+                                <strong>Chip Johnson</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @chipjohsnon</small>
                                 <br />
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Aenean efficitur sit amet massa fringilla egestas. Nullam 
@@ -112,7 +112,7 @@ const Who = () => {
                     <div className="media-content">
                         <div className="content">
                             <p>
-                                <strong>Micah Lea</strong> <small>@MicahLea</small>
+                                <strong>Micah Lea</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @MicahLea</small>
                                 <br />
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Aenean efficitur sit amet massa fringilla egestas. Nullam 
@@ -155,7 +155,7 @@ const Who = () => {
                     <div className="media-content">
                         <div className="content">
                             <p>
-                                <strong>Mason Shadrick</strong> <small>@masonshadrick</small>
+                                <strong>Mason Shadrick</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @masonshadrick</small>
                                 <br />
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                 Aenean efficitur sit amet massa fringilla egestas. Nullam 
