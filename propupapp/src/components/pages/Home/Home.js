@@ -13,7 +13,7 @@ const Home = () => {
         <p className="typed"><strong>PropUp Allows Me To:&nbsp;</strong> 
           <Typical
           loop={Infinity}
-          wrapper="i"
+          wrapper="b"
           steps={[
             'Find the perfect vacation spot 🏄‍♂️',
             500,

@@ -7,7 +7,7 @@ return(
 <footer className="footer">
 <div className="upper-footer">  
 <div className="columns is-mobile">
-  
+    <hr />
         <div className="column"><h5 class="white-text"><u><strong>Team Bio</strong></u></h5>
           <p className="grey-text text-lighten-4">We are a team of students from Vanderbilt Bootcamp working on
             this project like it's our full time job. We love to code and are always looking for better and 
@@ -15,10 +15,10 @@ return(
         </div>
         <div className="column"> <h5 class="white-text"><u><strong>Quick Links</strong></u></h5>
           <ul>
-            <li><a className="white-text" href="/Signup.js"><i class="fas fa-user-plus"></i>&nbsp;Login / Sign Up</a></li>
-            <li><a className="white-text" href="/Owner.js"><i class="fas fa-home"></i>&nbsp;Property Owner</a></li>
-            <li><a className="white-text" href="/Renter.js"><i class="fas fa-door-open"></i>&nbsp;Renter</a></li>
-            <li><a className="white-text" href="/Who.js"><i class="fas fa-users"></i>&nbsp;Who we are</a></li>               
+            <li><a className="white-text" href="/Signup"><i class="fas fa-user-plus"></i>&nbsp;Login / Sign Up</a></li>
+            <li><a className="white-text" href="/Owner"><i class="fas fa-home"></i>&nbsp;Property Owner</a></li>
+            <li><a className="white-text" href="/Renter"><i class="fas fa-door-open"></i>&nbsp;Renter</a></li>
+            <li><a className="white-text" href="/Who"><i class="fas fa-users"></i>&nbsp;Who we are</a></li>               
           </ul>
         </div>
         <div className="column"> 
