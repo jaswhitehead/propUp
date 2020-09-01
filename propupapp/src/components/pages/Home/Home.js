@@ -25,21 +25,19 @@ const Home = () => {
             <div className="column is-mobile">
                 <div className="field">
                   <label className="label">Add Guests:</label>
-                  <div className="control">
-                    <div className="section">
-                      <select className="box">
-                        <option>Select #</option>
-                        <option>1 Guest</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9+ Guests</option>
-                      </select>
-                    </div>
+                  <div className="control">                    
+                    <select className="box">
+                      <option>Select #</option>
+                      <option>1 Guest</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9+ Guests</option>
+                    </select>                    
                   </div>
                 </div>
               
