@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { GoogleComponent } from 'react-google-location';
 import '../location/Location.css';
+import weather_API_KEY from "../../auth/auth"
 
-const API_KEY = 'AIzaSyBnLQEvOtyIbQBMv2O-UooBpasIjZB-820'
 
 class Location extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Location extends Component {
       <div className="container">
         <GoogleComponent
         
-        apiKey={API_KEY}
+        apiKey={weather_API_KEY}
         language={'en'}
         country={'country:us'}
         coordinates={true}
