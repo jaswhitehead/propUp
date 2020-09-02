@@ -8,3 +8,17 @@
     width: 450px;
     margin-left: 20px;
 }
+
+.level-center {
+    margin-left: 33%;
+    border-radius: 25px;
+} 
+
+.login-container h1 {
+    font-family: 'Patua One', cursive;
+    font-size: 24px;
+}
+
+.icon {
+    margin-left: 20px;
+}

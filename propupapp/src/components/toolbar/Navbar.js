@@ -1,22 +1,20 @@
 import React from "react";
 import "./Navbar.css";
 import logo from '../toolbar/favicon.png';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+
 
 const navbar = props => (
 
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          <img src={ logo } alt="" />
+          <img src={ logo } width="35" height="28" alt="" />
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true">
-            <a className="navbar-item" href="/Renter"><i class="fas fa-map-marked-alt"></i></a>
-          </span>
-          <span aria-hidden="true">
-            <a className="navbar-item" href="/Owner"><i class="fas fa-home"></i></a>
-          </span>          
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>          
           <span aria-hidden="true"></span>
         </a>
     </div>
@@ -50,7 +48,6 @@ const navbar = props => (
         </div>
       </div>
     </div>
-
     <div className="navbar-end">
       <div className="navbar-item">
         <div className="buttons">

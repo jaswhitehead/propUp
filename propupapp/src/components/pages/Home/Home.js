@@ -12,20 +12,20 @@ const Home = () => {
     <>
     <div className="hero is-mobile">     
       <div className="container is-fluid is-mobile">
-        <div className="notification is-mobile">
+        <div className="notification is-fluid is-mobile">
           <div className="columns is-mobile">
             <div className="column is-mobile">
-            <label className="label">Choose a Location:</label>
+            <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Choose a Location:</label>
               <Location />
             </div>
             <div className="column is-mobile">
-            <label className="label">Pick your Departure and Arrival Dates:</label>
+            <label className="label">Departure and Arrival Dates:</label>
               <Book />
             </div>
             <div className="column is-mobile">
                 <div className="field">
-                  <label className="label">Add Guests:</label>
-                  <div className="control">                    
+                  <div className="control">
+                  <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Add Guests:</label>                    
                     <select className="box">
                       <option>Select #</option>
                       <option>1 Guest</option>
