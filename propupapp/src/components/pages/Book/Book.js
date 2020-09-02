@@ -29,6 +29,7 @@ render() {
                 onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
             />
         </div>
+
         );
     }  
 }

@@ -1,67 +1,58 @@
 import React from "react";
 import './Signup.css';
+import Logo3 from '../Home/property.jpg';
 
 const Signup = () => {
   return(
     <div className="signup-container">    
-      <div class="field">
+      <div class="field">          
+        <div class="control">
           <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Your Name" />
-          </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Username" />
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
+          <input class="input" type="text" placeholder="Your Name" />
         </div>
       </div>
 
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control has-icons-left has-icons-right">
+    <div class="field"> 
+      <label class="label">Username</label>       
+      <div class="control has-icons-left has-icons-right">        
+        <input class="input" type="text" placeholder="Username" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control has-icons-left has-icons-right">
           <input class="input" type="text" placeholder="Password" />
           <span class="icon is-small is-left">
             <i class="fas fa-key"></i>
           </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </div>
       </div>
+    </div>
 
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
           <input class="input" type="email" placeholder="Email Address" />
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
-          </span>
-        </div>
       </div>
+    </div>
   
-      <div class="field">
-        <label class="label">Account Type:</label>
-        <div class="control">
-          <div class="select">
+    <div class="field">
+      <div class="control">
+        <div class="select">
             <select>
               <option>Select dropdown</option>
               <option>I am a Renter</option>
               <option>I am an Owner</option>
             </select>
           </div>
-        </div>
       </div>
+    </div>
 
       <div class="field">
         <label class="label">Message</label>
