@@ -1,6 +1,6 @@
 import React from "react";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import './Who.css';
+import './styles.css';
 import Chip from '../Who/Chip.jpg';
 import Jason from '../Who/Jason.jpg';
 import Mason from '../Who/Mason.jpg';

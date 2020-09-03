@@ -1,5 +1,5 @@
 import React from "react";
-import './Owner.css';
+import './styles.css';
 
 const Owner = () => {
   return (

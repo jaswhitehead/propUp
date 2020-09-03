@@ -1,6 +1,5 @@
 import React from "react";
-import './Signup.css';
-import Logo3 from '../Home/property.jpg';
+import './styles.css';
 
 const Signup = () => {
   return(

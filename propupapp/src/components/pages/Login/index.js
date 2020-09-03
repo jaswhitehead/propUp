@@ -1,5 +1,5 @@
 import React from "react";
-import './Login.css';
+import './styles.css';
 
 const Login = () => {
   return(

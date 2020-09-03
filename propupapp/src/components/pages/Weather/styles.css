@@ -1,0 +1,65 @@
+.columns {
+    margin-top: 80px;
+    position: fixed;
+    padding-bottom: 40px;
+}
+
+.container{
+    width:50%;
+    margin:auto;
+}
+
+.App{
+    height:100vh;
+    width:100%;
+}
+
+.title{
+    padding:20px 0 40px 0;
+    color:black;
+}
+
+.weather-temp{
+    padding-bottom:40px;
+    padding-left:60px;
+}
+
+.weather-temp h1 , .weather-temp h4 , .weather-temp p{
+    padding-bottom: 10px;
+}
+
+.weather-info p , .weather-info h2{
+    text-align:center;
+}
+
+.user-weather{
+    margin-top: 90px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    color: black;
+    border-radius: 25px;
+    border:3px solid #36A2D6;
+}
+
+.mainImg{
+    padding-top: 0px;
+}
+
+.region{
+    margin-top:30px;
+}
+
+.regioninput{
+    background:none;
+    border:none;
+    border-bottom:1px solid rgb(68, 197, 214);
+    padding:0 50px 0 0px;
+    outline:none;
+}
+
+.regioninput::placeholder{
+    font-family:Nunito;
+    font-weight:600;
+    font-size:1rem;
+    padding-left:0;
+}
