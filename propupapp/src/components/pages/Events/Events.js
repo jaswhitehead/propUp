@@ -1,6 +1,6 @@
 import React from "react";
 import './Events.css';
-import Book from "../Book/Book";
+import Book from "../Book";
 
 const Events = () => {
   return(

@@ -1,10 +1,10 @@
 import React from "react";
-import "../Home/Home.css";
+import "../Home/styles.css";
 import pic1 from '../Home/pool.jpg';
 import pic2 from '../Home/events2.jpg';
 import pic3 from '../Home/property.jpg';
 import Typical from 'react-typical';
-import Book from '../Book/Book';
+import Book from '../Book';
 import Location from '../../location/Location'
 
 const Home = () => {

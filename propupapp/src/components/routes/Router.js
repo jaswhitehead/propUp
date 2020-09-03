@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import Signup from "../pages/Signup/Signup";
-import Login from "../pages/Login/Login";
-import Owner from "../pages/Owner/Owner";
-import Renter from "../pages/Renter/Renter";
-import Book from "../pages/Book/Book";
+import Home from "../pages/Home";
+import Signup from "../pages/Signup";
+import Login from "../pages/Login";
+import Owner from "../pages/Owner";
+import Renter from "../pages/Renter";
+import Book from "../pages/Book";
 import Events from "../pages/Events/Events";
-import Who from "../pages/Who/Who";
+import Who from "../pages/Who";
+import Weather from "../pages/Weather";
 
 class Router extends Component {
   render() {
@@ -21,6 +22,7 @@ class Router extends Component {
         <Route component={Book} exact path="/Book" />
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
+        <Route component={Weather} exact path="/Weather" />
       </Switch>
     );
   }

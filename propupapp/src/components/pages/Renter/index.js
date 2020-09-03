@@ -1,8 +1,9 @@
-
-import './Renter.css';
+import React, { Component } from "react";
+import './styles.css';
 import config from "../../../auth/auth"
 import firebase from "firebase"
-import React, { Component } from "react";
+
+
 // import bidCheck from "../../bidding/bidding"
 
 // import {newBid} from "../../bidding/bidding"
