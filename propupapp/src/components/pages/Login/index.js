@@ -5,7 +5,7 @@ const Login = () => {
   return(
     <>
     <div className='hero'>
-      <div className="level-center">>
+      <div className="level-center">
         <div className="login-container">
           <h1><strong>Welcome Back! <br></br>Please Sign in Below:</strong></h1>
         </div>
