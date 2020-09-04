@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import ReactLoading from "react-loading";
 import "react-toastify/dist/ReactToastify.css";
-import firebase from "../../../../auth";
+import firebase from "../../../../auth/";
 import images from "../../../../projectImages/ProjectImages";
 import moment from "react-moment";
 import "./ChatBox.css";

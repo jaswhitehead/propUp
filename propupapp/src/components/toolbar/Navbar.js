@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import logo from "../toolbar/favicon.png";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import firebase from "../../auth";
+import firebase from "../../auth/";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 

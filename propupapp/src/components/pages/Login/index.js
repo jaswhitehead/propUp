@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import LoginString from "./LoginStrings";
-import firebase from "../../../auth";
+import firebase from "../../../auth/";
 
 class Login extends Component {
   constructor(props) {
