@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoginString from "../../Login/LoginStrings";
-import firebase from "../../../../auth";
+import firebase from "../../../../auth/";
 import "./Chat.css";
 import ReactLoading from "react-loading";
 import ChatBox from "../chatBox/ChatBox";

@@ -9,7 +9,7 @@ export default function DisplayWeather(props) {
         <div className="user-weather">
             <div className="row">
                 <div className="col-md-3 weather-temp">
-                    <h1>{temperature}<sup>o</sup>C , {description}</h1>
+                    <h1>{temperature}<sup>o</sup>F , {description}</h1>
                     <h4>{location}</h4>
                     <p>{region} , {country}</p>
                 </div>
@@ -21,22 +21,22 @@ export default function DisplayWeather(props) {
 
             <div className="row">
                 <div className="col-md-3 weather-info">
-                    <p><b>Wind Speed</b>(km/hr)</p>
+                    <p><b>Wind Speed</b> (mph)</p>
                     <h2>{wind_speed}</h2>
                 </div>
 
                 <div className="col-md-3 weather-info">
-                    <p><b>Preassure</b>(millibar)</p>
+                    <p><b>Preassure</b> (millibars)</p>
                     <h2>{pressure}</h2>
                 </div>
 
                 <div className="col-md-3 weather-info">
-                    <p><b>Precipitation</b>(mm)</p>
+                    <p><b>Precipitation</b> (in)</p>
                     <h2>{precip}</h2>
                 </div>
 
                 <div className="col-md-3 weather-info">
-                    <p><b>Humidity</b>(%)</p>
+                    <p><b>Humidity</b> (%)</p>
                     <h2>{humidity}</h2>
                 </div>
 

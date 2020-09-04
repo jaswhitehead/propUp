@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./styles.css";
 import LoginString from "../Login/LoginStrings";
 import { Link } from "react-router-dom";
-import firebase from "../../../auth";
+import firebase from "../../../auth/";
 
 class Signup extends Component {
   constructor(props) {
