@@ -44,15 +44,20 @@ class Signup extends Component {
               password,
               username,
               selector,
+              URL: "",
+              description: "",
+              messages: [{ notificationId: "", number: 0 }],
             })
             .then((docRef) => {
               localStorage.setItem(LoginString.ID, result.user.uid);
               localStorage.setItem(LoginString.Name, name);
               localStorage.setItem(LoginString.Email, email);
               localStorage.setItem(LoginString.Password, password);
+              localStorage.setItem(LoginString.PhotoURL);
               localStorage.setItem(LoginString.Username, username);
               localStorage.setItem(LoginString.UPLOAD_CHANGED, "state_changed");
               localStorage.setItem(LoginString.Selector, selector);
+              localStorage.setItem(LoginString.Description, "");
               localStorage.setItem(LoginString.FirebaseDocumentId, docRef.id);
 
               if (this.state.selector === "renter") {
@@ -69,6 +74,7 @@ class Signup extends Component {
                 error: null,
                 username: "",
                 selector: "",
+                URL: "",
               });
             })
             .catch((error) => {
