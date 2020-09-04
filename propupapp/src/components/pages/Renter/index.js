@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import firebase from "../../../auth/";
+import LoginString from "../Login/LoginStrings";
 // import firebase from "firebase";
 
 // import bidCheck from "../../bidding/bidding"
@@ -25,6 +26,12 @@ class Renter extends Component {
 
     this.updateInputValue = this.updateInputValue.bind(this);
     this.bidCheck = this.bidCheck.bind(this);
+  }
+
+  componentDidMount() {
+    if (!localStorage.getItem(LoginString.ID)) {
+      this.props.history.push("/");
+    }
   }
 
   updateInputValue(evt) {
