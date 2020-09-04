@@ -49,23 +49,27 @@ class Chat extends Component {
   };
 
   componentDidMount() {
-    firebase
-      .firestore()
-      .collection("users")
-      .doc(this.currentUserDocumentId)
-      .get()
-      .then((doc) => {
-        doc.data().messages.map((item) => {
-          this.currentUserMessages.push({
-            notificationId: item.notificationId,
-            number: item.number,
+    if (!localStorage.getItem(LoginString.ID)) {
+      this.props.history.push("/");
+    } else {
+      firebase
+        .firestore()
+        .collection("users")
+        .doc(this.currentUserDocumentId)
+        .get()
+        .then((doc) => {
+          doc.data().messages.map((item) => {
+            this.currentUserMessages.push({
+              notificationId: item.notificationId,
+              number: item.number,
+            });
+          });
+          this.setState({
+            displayedContactSwitchNotification: this.currentUserMessages,
           });
         });
-        this.setState({
-          displayedContactSwitchNotification: this.currentUserMessages,
-        });
-      });
-    this.getListUser();
+      this.getListUser();
+    }
   }
 
   getListUser = async () => {
