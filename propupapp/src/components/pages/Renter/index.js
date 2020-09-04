@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import './styles.css';
-import config from "../../../auth/auth"
-import firebase from "firebase"
-
+import "./styles.css";
+import firebase from "../../../auth/";
+// import firebase from "firebase";
 
 // import bidCheck from "../../bidding/bidding"
 
 // import {newBid} from "../../bidding/bidding"
 // const bid = useState("")
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
 const db = firebase.firestore();
 class Renter extends Component {
