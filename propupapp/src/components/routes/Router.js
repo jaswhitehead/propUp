@@ -9,6 +9,7 @@ import Book from "../pages/Book";
 import Events from "../pages/Events/Events";
 import Who from "../pages/Who";
 import Weather from "../pages/Weather";
+import Chat from "../pages/ChatPages/chat/Chat";
 
 class Router extends Component {
   render() {
@@ -23,6 +24,7 @@ class Router extends Component {
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
         <Route component={Weather} exact path="/Weather" />
+        <Route component={Chat} exact path="/Chat" />
       </Switch>
     );
   }
