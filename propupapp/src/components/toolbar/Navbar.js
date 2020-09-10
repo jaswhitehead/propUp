@@ -45,7 +45,7 @@ class navbar extends Component {
             <img src={logo} width="35" height="28" alt="" />
           </a>
 
-          <a
+          <a href="/"
             role="button"
             class="navbar-burger burger"
             aria-label="menu"
@@ -68,21 +68,21 @@ class navbar extends Component {
               List a Property&nbsp;&nbsp;<i class="fas fa-home"></i>
             </a>
             <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link" href="">
+              <a className="navbar-link" href="/">
                 More
               </a>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="/Book">
-                  Events
-                </a>
-                <a className="navbar-item" href="/Signup">
                   Get Started
+                </a>
+                <a className="navbar-item" href="/Events">
+                  Find Events
                 </a>
                 <a className="navbar-item" href="/Chat">
                   Chat
                 </a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item">Report an issue</a>
+                <a className="navbar-item" href="/Feedback">Send Feedback</a>
               </div>
             </div>
           </div>

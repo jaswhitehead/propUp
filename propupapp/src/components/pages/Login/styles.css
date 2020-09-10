@@ -7,6 +7,8 @@
 .form {
     width: 450px;
     margin-left: 20px;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 .level-center {

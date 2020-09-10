@@ -88,44 +88,39 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="signup-container">
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className="field">
-            <label className="label">Name</label>
+    <div className="hero">
+      <form onSubmit={this.handleSubmit.bind(this)}>
+        <div className="notification signup">        
+          <div className="field2">
+            <label className="label"><i className="fas fa-user"></i> Name:</label>
             <div className="control">
               <input
                 className="input"
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Joe Somebody"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
             </div>
           </div>
 
-          <div className="field">
-            <label className="label">Username</label>
-            <div className="control has-icons-left has-icons-right">
+          <div className="field2">
+            <label className="label"><i className="fas fa-envelope"></i> Email:</label>
+            <div className="control ">
               <input
                 className="input"
-                type="text"
-                placeholder="Username"
-                name="username"
+                type="email"
+                placeholder="Email Address"
+                name="email"
                 onChange={this.handleChange}
-                value={this.state.username}
+                value={this.state.email}
               />
-              <span className="icon is-small is-left">
-                <i className="fas fa-user"></i>
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-check"></i>
-              </span>
             </div>
           </div>
 
-          <div className="field">
-            <label className="label">Password</label>
+          <div className="field2">
+            <label className="label"><i className="fas fa-key"></i> Password:</label>
             <div className="control has-icons-left has-icons-right">
               <input
                 className="input"
@@ -135,36 +130,10 @@ class Signup extends Component {
                 onChange={this.handleChange}
                 value={this.state.password}
               />
-              <span className="icon is-small is-left">
-                <i className="fas fa-key"></i>
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-check"></i>
-              </span>
             </div>
-          </div>
+          </div>          
 
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input"
-                type="email"
-                placeholder="Email Address"
-                name="email"
-                onChange={this.handleChange}
-                value={this.state.email}
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-exclamation-triangle"></i>
-              </span>
-            </div>
-          </div>
-
-          <div className="field">
+          <div className="field2">
             <div className="control">
               <div className="select">
                 <select
@@ -194,16 +163,17 @@ class Signup extends Component {
           </div>
         </div> */}
 
-          <div className="field">
+          <div className="field2">
             <div className="control">
               <label className="checkbox">
                 <input type="checkbox" />I agree to the{" "}
+                
                 <a href="/">terms and conditions</a>
               </label>
             </div>
           </div>
 
-          <div className="field">
+          <div className="field2">
             <div className="control">
               <label className="label">Please E-Mail Me Updates</label>
               <label className="radio">
@@ -217,7 +187,7 @@ class Signup extends Component {
             </div>
           </div>
 
-          <div className="field is-grouped">
+          <div className="field2 is-grouped">
             <div className="control">
               <button className="button is-link" type="submit">
                 Submit
@@ -229,8 +199,9 @@ class Signup extends Component {
               </Link>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
     );
   }
 }

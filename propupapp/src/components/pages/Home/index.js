@@ -40,7 +40,9 @@ const Home = () => {
                     </select>                    
                   </div>
                 </div>
-              
+                <div className="column is-mobile">
+                  <input className="submitbutton" type="submit" value="Get Results" />
+                </div>
             </div>
           </div>
         </div>
@@ -50,16 +52,16 @@ const Home = () => {
     <div className="content-blocks is-mobile">
       <div className="columns is-mobile">
         <div className="column"><a href="/Renter">
-          <h2 className="center"><u>Find Your Dream Vacation</u></h2>
+          <h2 className="left"><u>Find Your Dream Vacation</u></h2>
           <img src={ pic1 } alt="Rent Me" /></a>
         </div>
   
         <div className="column is-mobile"><a href="/Events">
-          <h2 className="white-text"><u>Discover Things To Do</u></h2>
+          <h2 className="center"><u>Discover Things To Do</u></h2>
           <img src={ pic2 } alt="Find Events" /></a>
         </div>
         <div className="column is-mobile"><a href="/Owner">
-          <h2 className="white-text"><u>List Your Property</u></h2>
+          <h2 className="right"><u>List Your Property</u></h2>
           <img src={ pic3 } alt="List a property" /></a>
         </div>
       </div>
