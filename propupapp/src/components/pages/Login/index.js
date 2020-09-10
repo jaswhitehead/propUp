@@ -110,17 +110,14 @@ class Login extends Component {
                   <input
                     className="input"
                     type="email"
-                    placeholder="Email"
+                    placeholder="   Email"
                     name="email"
                     autoComplete="email"
                     onChange={this.handleChange}
                     value={this.state.email}
                   />
-                  <span className="icon is-small is-left">
+                  <span className="icon is-small has-text-black-bis is-left">
                     <i className="fas fa-envelope"></i>
-                  </span>
-                  <span className="icon is-small is-right">
-                    <i className="fas fa-check"></i>
                   </span>
                 </p>
               </div>
@@ -129,13 +126,13 @@ class Login extends Component {
                   <input
                     className="input"
                     type="password"
-                    placeholder="Password"
+                    placeholder="   Password"
                     name="password"
                     autoComplete="password"
                     onChange={this.handleChange}
                     value={this.state.password}
                   />
-                  <span className="icon is-small is-left">
+                  <span className="icon is-small has-text-black-bis is-left">
                     <i className="fas fa-lock"></i>
                   </span>
                 </p>

@@ -5,11 +5,11 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import Owner from "../pages/Owner";
 import Renter from "../pages/Renter";
-import Book from "../pages/Book";
 import Events from "../pages/Events/Events";
 import Who from "../pages/Who";
 import Weather from "../pages/Weather";
 import Chat from "../pages/ChatPages/chat/Chat";
+import Feedback from "../pages/Feedback";
 
 class Router extends Component {
   render() {
@@ -20,11 +20,11 @@ class Router extends Component {
         <Route component={Login} exact path="/Login" />
         <Route component={Owner} exact path="/Owner" />
         <Route component={Renter} exact path="/Renter" />
-        <Route component={Book} exact path="/Book" />
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
         <Route component={Weather} exact path="/Weather" />
         <Route component={Chat} exact path="/Chat" />
+        <Route component={Feedback} exact path="/Feedback" />
       </Switch>
     );
   }
