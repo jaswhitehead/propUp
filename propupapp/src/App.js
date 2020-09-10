@@ -3,6 +3,7 @@ import Router from "./components/routes/Router";
 import Navbar from "./components/toolbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter } from "react-router-dom";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import '../src/index.css';
 
 class App extends Component {

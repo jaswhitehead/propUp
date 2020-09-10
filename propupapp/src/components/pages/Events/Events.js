@@ -1,5 +1,6 @@
 import React from "react";
 import './Events.css';
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import Book from "../Book";
 
 const Events = () => {

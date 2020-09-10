@@ -62,10 +62,10 @@ class navbar extends Component {
           <div className="navbar-start">
             <a className="navbar-item" href="/Renter">
               Start Your Vacation&nbsp;&nbsp;
-              <i class="fas fa-map-marked-alt"></i>
+              <i className="fas fa-map-marked-alt"></i>
             </a>
             <a className="navbar-item" href="/Owner">
-              List a Property&nbsp;&nbsp;<i class="fas fa-home"></i>
+              List a Property&nbsp;&nbsp;<i className="fas fa-home"></i>
             </a>
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link" href="/">

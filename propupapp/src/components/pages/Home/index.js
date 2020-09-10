@@ -1,5 +1,6 @@
 import React from "react";
 import "../Home/styles.css";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import pic1 from '../Home/pool.jpg';
 import pic2 from '../Home/events2.jpg';
 import pic3 from '../Home/property.jpg';

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GoogleComponent } from 'react-google-location';
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import '../location/Location.css';
 
 const API_KEY = 'AIzaSyBnLQEvOtyIbQBMv2O-UooBpasIjZB-820'
