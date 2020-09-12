@@ -8,7 +8,7 @@ import Typed from 'react-typed';
 const Feedback = () => {
     return (
         <div className="hero">
-            <div className="notification feedback">
+            <div className="notification-feedback">
                 <div className="field">
                     <label class="label"><i class="fas fa-user"></i> Your Name:</label>
                     <div className="control">

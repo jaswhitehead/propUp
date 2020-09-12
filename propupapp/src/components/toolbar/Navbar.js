@@ -72,7 +72,7 @@ class navbar extends Component {
                 More
               </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item" href="/Book">
+                <a className="navbar-item" href="/Welcome">
                   Get Started
                 </a>
                 <a className="navbar-item" href="/Events">
