@@ -1,6 +1,7 @@
 import React from "react";
 import './styles.css';
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import Weather from '../Weather/index';
 import Demo1 from '../Results/Demo1.jpg';
 import Demo2 from '../Results/Demo2.jpg';
 import Demo3 from '../Results/Demo3.jpg';
@@ -130,7 +131,9 @@ const Results = () => {
                     </div>
                 </div>
             </div><br></br>
-            
+        
+        <Weather />
+
         <div class="columns is-mobile">
             <div class="column is-6 is-offset-3">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
