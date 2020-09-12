@@ -36,10 +36,10 @@ this.state = {
     name: "Harriet Johnson",
     address: "222 5th Avenue",
     province: "Los Angeles",
-    zipC: "",
-    minBid: "",
+    zipC: "90402",
+    minBid: "300",
     pic: null,
-    description: ""
+    description: "Two Bedroom Home Three Blocks from the Beach"
   };
 
   this.state = {
@@ -58,10 +58,10 @@ this.state = {
     name: "Max Scherzer",
     address: "641 7th Avenue",
     province: "Washington D.C.",
-    zipC: "",
-    minBid: "",
+    zipC: "20007",
+    minBid: "200",
     pic: null,
-    description: ""
+    description: "Two Bedroom Townhome in Georgetown"
   };
 
   this.state = {
@@ -69,10 +69,10 @@ this.state = {
     name: "Ashley Akin",
     address: "483 8th Avenue",
     province: "Memphis",
-    zipC: "",
-    minBid: "",
+    zipC: "38103",
+    minBid: "75",
     pic: null,
-    description: ""
+    description: "One Bedroom Apartment Downtown"
   };
 
   this.state = {
@@ -91,10 +91,10 @@ this.state = {
     name: "Tom Chong",
     address: "420 9th Avenue",
     province: "Denver",
-    zipC: "",
-    minBid: "",
+    zipC: "80216",
+    minBid: "200",
     pic: null,
-    description: ""
+    description: "Three Bedroom Home close to RiNo and Downtown"
   };
 
   this.state = {
@@ -102,8 +102,8 @@ this.state = {
     name: "Ted Williams",
     address: "406 10th Avenue",
     province: "Boston",
-    zipC: "",
-    minBid: "",
+    zipC: "02215",
+    minBid: "100",
     pic: null,
-    description: ""
+    description: "One Bedroom Apartment near Fenway Park"
   };

@@ -3,7 +3,6 @@ import Typical from 'react-typical';
 
 const Typed = () => {
     return (  
-        
         <div className="container5">        
             <p className="typed2"><strong>Hello, my name is Joe Somebody:<br></br><br></br></strong>
                 <Typical

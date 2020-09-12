@@ -10,7 +10,8 @@ return(
 <div className="upper-footer">
   <div className="column1">
     <a href="/"><img src={ Logo } alt="PropUp" /></a>
-  </div>  
+  </div>
+  <hr></hr>  
   <div className="columns is-mobile">
       <div className="column"><h5 className="white-text"><u><strong>Team Bio</strong></u></h5>
         <p className="grey-text text-lighten-4">We are a team of students from Vanderbilt Bootcamp working on

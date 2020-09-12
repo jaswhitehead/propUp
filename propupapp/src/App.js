@@ -12,14 +12,14 @@ class App extends Component {
       <div className="page-container">
         <div className="content-wrap">
           <Navbar />
-          
+
           <BrowserRouter>
             <Router />
-          </BrowserRouter>  
+          </BrowserRouter>
         </div>
-          <Footer />    
+        <Footer /> 
       </div>
-   );
+    );
   }
 }
 
