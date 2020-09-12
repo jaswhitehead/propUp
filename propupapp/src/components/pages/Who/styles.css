@@ -5,11 +5,10 @@
     
 }
 
-.box {
-    margin-right: 20px;
-    margin-left: 20px;
+.image {
+    width: 370px;   
 }
 
-.image {
-    width: 370px;    
+.icon {
+    background: blue;
 }

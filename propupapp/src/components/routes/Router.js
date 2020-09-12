@@ -10,6 +10,7 @@ import Who from "../pages/Who";
 import Weather from "../pages/Weather";
 import Chat from "../pages/ChatPages/chat/Chat";
 import Feedback from "../pages/Feedback";
+import Results from "../pages/Results";
 
 class Router extends Component {
   render() {
@@ -25,6 +26,8 @@ class Router extends Component {
         <Route component={Weather} exact path="/Weather" />
         <Route component={Chat} exact path="/Chat" />
         <Route component={Feedback} exact path="/Feedback" />
+        <Route component={Results} exact path="/Results" />
+
       </Switch>
     );
   }

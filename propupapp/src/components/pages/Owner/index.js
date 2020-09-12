@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import LoginString from "../Login/LoginStrings";
 import firebase from "../../../auth"
 
@@ -100,9 +101,8 @@ class Owner extends Component {
 
   render() {
     return (
-
-      <form onSubmit={this.handleSubmit}>
       <div className="hero">
+        <form onSubmit={this.handleSubmit}>
         <div className="columns is-mobile">
           <div className="column">
             <div className="field">
@@ -155,9 +155,11 @@ class Owner extends Component {
             <div className="field">
               <div className="control">
                 <label className="label">Zip Code</label>
-                <input className="input"  placeholder="37129" name="zipC"
-                    value={this.state.zipC}
-                    onChange={this.handleChange}
+                <input 
+                  className="input"  
+                  placeholder="37129" name="zipC"
+                  value={this.state.zipC}
+                  onChange={this.handleChange}
                 />
               </div>
             </div>
@@ -171,10 +173,14 @@ class Owner extends Component {
                 <label className="label">
                   Desired Starting Bid (per night)
                 </label>
-                <input className="input" type="text" placeholder="$300" name="minBid"
-                    value={this.state.minBid}
-                    onChange={this.handleChange}
-                />
+                <input 
+                  className="input" 
+                  type="text" 
+                  placeholder="$300" 
+                  name="minBid"
+                  value={this.state.minBid}
+                  onChange={this.handleChange}
+              />
               </div>
             </div>
           </div>
@@ -183,24 +189,24 @@ class Owner extends Component {
             <div className="field">
               <div className="control">
                 <label className="label">Picture Upload Will Go Here</label>
+                <button>Upload Image</button>
                 <img src={this.state.pic}></img> 
                 <div
-            className="icOpenGallery"
-            alt="input_file"
-            onClick={() => {
-              this.refInput.click();
-            }}>
-            Upload Image
-          </div>
-          <input
-            ref={(el) => {
-              this.refInput = el;
-            }}
-            className="viewInputGallery"
-            accept="image/*"
-            type="file"
-            onChange={this.onChoosePhoto}
-          />
+                  className="icOpenGallery"
+                  alt="input_file"
+                  onClick={() => {
+                    this.refInput.click();
+                  }}>            
+                </div>
+              <input
+                ref={(el) => {
+                  this.refInput = el;
+                }}
+                className="viewInputGallery"
+                accept="image/*"
+                type="file"
+                onChange={this.onChoosePhoto}
+              />
               </div>
             </div>
           </div>
@@ -217,12 +223,12 @@ class Owner extends Component {
                   onChange={this.handleChange}
                 ></textarea>
               </div>
+              <button type="submit">Submit</button>
             </div>
           </div>
         </div>
-      </div>
-      <button type="submit">Submit</button>
       </form>
+    </div>
     );
   }
 }

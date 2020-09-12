@@ -37,7 +37,7 @@
 }
 
 .typed {
-    margin-left: 230px;
+    margin-left: 150px;
     font-size: 36px;
     font-family: 'Anton', sans-serif;
 }
@@ -55,17 +55,20 @@ h2.left {
     font-size: 24px;
     padding-bottom: 10px;
     margin-left: 30%;
+    margin-top: 10px;
 }
 
 h2.center {
     font-size: 24px;
     padding-bottom: 10px;
     margin-left: 30%;
+    margin-top: 10px;
 }
 
 h2.right {
     font-size: 24px;
     padding-bottom: 10px;
     margin-left: 30%;
+    margin-top: 10px;
 }
 

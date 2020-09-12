@@ -1,5 +1,6 @@
 import React from "react";
 import "../Home/styles.css";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 import pic1 from '../Home/pool.jpg';
 import pic2 from '../Home/events2.jpg';
 import pic3 from '../Home/property.jpg';
@@ -51,16 +52,16 @@ const Home = () => {
     
     <div className="content-blocks is-mobile">
       <div className="columns is-mobile">
-        <div className="column"><a href="/Renter">
+        <div className="column is-one-third"><a href="/Renter">
           <h2 className="left"><u>Find Your Dream Vacation</u></h2>
           <img src={ pic1 } alt="Rent Me" /></a>
         </div>
   
-        <div className="column is-mobile"><a href="/Events">
+        <div className="column is-one-third"><a href="/Events">
           <h2 className="center"><u>Discover Things To Do</u></h2>
           <img src={ pic2 } alt="Find Events" /></a>
         </div>
-        <div className="column is-mobile"><a href="/Owner">
+        <div className="column is-one-third"><a href="/Signup">
           <h2 className="right"><u>List Your Property</u></h2>
           <img src={ pic3 } alt="List a property" /></a>
         </div>
