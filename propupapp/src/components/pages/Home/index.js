@@ -22,7 +22,7 @@ class Home extends Component {
     super(props);
     this.state = {
         location: ""
-
+      
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
