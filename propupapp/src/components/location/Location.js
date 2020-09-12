@@ -3,7 +3,7 @@ import { GoogleComponent } from 'react-google-location';
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import '../location/Location.css';
 
-const API_KEY = 'AIzaSyBnLQEvOtyIbQBMv2O-UooBpasIjZB-820'
+
 
 class Location extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Location extends Component {
       <div className="container">
         <GoogleComponent
         
-        apiKey={API_KEY}
+        apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
         language={'en'}
         country={'country:us'}
         coordinates={true}
