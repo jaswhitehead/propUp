@@ -26,6 +26,7 @@ class Owner extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onChoosePhoto = this.onChoosePhoto.bind(this);
     this.currentPhotoFile = [];
   }
 
@@ -49,18 +50,28 @@ class Owner extends Component {
         province: this.state.province,
         zipC: this.state.zipC,
         minBid: this.state.minBid,
-        pic: URL.createObjectURL(this.currentPhotoFile),
+        pic: this.fileArray,
         description: this.state.description,
       })
       .then(() => {
         console.log("prop submitted");
         console.log(this.state.ownerID);
+        // this.setState({
+        //   name: "",
+        //   address: "",
+        //   province: "",
+        //   zipC: "",
+        //   minBid: "",
+        //   pic: [null],
+        //   description: "",
+        // });
+        window.location.reload(false);
       });
   }
 
   onChoosePhoto = (event) => {
     if (event.target.files && event.target.files[0]) {
-      this.currentPhotoFile.push(event.target.files);
+      this.currentPhotoFile.unshift(event.target.files);
       const prefixFileType = event.target.files[0].type.toString();
       for (let i = 0; i < this.currentPhotoFile[0].length; i++) {
         if (prefixFileType.indexOf("image/") === 0) {
@@ -74,14 +85,14 @@ class Owner extends Component {
     }
   };
 
-  uploadPhoto = () => {
-    if (this.currentPhotoFile) {
+  uploadPhoto = (e) => {
+    if (this.fileArray.length) {
       const timestamp = Date.now().toString();
       const uploadTask = firebase
         .storage()
         .ref()
         .child(timestamp)
-        .put(this.currentPhotoFile);
+        .put(this.fileArray);
       uploadTask.on(
         LoginString.UPLOAD_CHANGED,
         null,
@@ -91,7 +102,9 @@ class Owner extends Component {
         },
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            this.setState({ isLoading: false });
+            this.setState({
+              isLoading: false,
+            });
           });
         }
       );
@@ -99,12 +112,13 @@ class Owner extends Component {
       this.setState({ isLoading: false });
       this.props.showToast(0, "File is null");
     }
+    document.getElementById("form").reset();
   };
 
   render() {
     return (
       <div className="hero">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} id="form">
           <div className="columns is-mobile">
             <div className="column">
               <div className="field">
@@ -195,7 +209,7 @@ class Owner extends Component {
                   {/* <button type="button">Upload Image</button> */}
                   {/* <img src={this.state.pic}></img> */}
                   {(this.fileArray || []).map((url) => (
-                    <img src={url} alt="Property Image" />
+                    <img className="image" src={url} alt="Property Image" />
                   ))}
                   <button
                     type="button"
