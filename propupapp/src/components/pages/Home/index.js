@@ -54,49 +54,47 @@ render(){
   return(
     <>
     <div className="hero is-mobile">     
-      <div className="container is-fluid is-mobile">
-        <div className="notification is-fluid is-mobile">
-          <div className="columns is-mobile">
-            <form onSubmit={this.handleSubmit}>
-            <div className="column is-mobile">
+      <form className="searchbar" onSubmit={this.handleSubmit}>
+        <div className="columns is-desktop">            
+          <div className="column">
             <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Choose a Location:</label>
               <Location name="location" onChange={this.handleChange} />
-            </div>
-            <div className="column is-mobile">
+          </div>
+
+          <div className="column">
             <label className="label">Departure and Arrival Dates:</label>
               <Book />
-            </div>
-            <div className="column is-mobile">
-                <div className="field">
-                  <div className="control">
-                  <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Add Guests:</label>                    
-                    <select className="box" name="guestNum">
-                      <option>Select #</option>
-                      <option value="1">1 Guest</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9+ Guests</option>
-                    </select>                    
-                  </div>
-                </div>
-                <div className="column is-mobile">
-                  <button className="submitbutton" type="submit">Get Results</button>
-                </div>
-                
-            </div>
-            </form>
           </div>
+            
+          <div className="column">
+            <div className="field">
+              <div className="control">
+              <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Add Guests:</label>                    
+                <select className="box" name="guestNum">
+                  <option>Select #</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9+ Guests</option>
+                </select>                    
+              </div>
+            </div>
+          </div>
+
+          <div className="column">
+            <button className="submitbutton" type="submit">Get Results</button>
+          </div>        
         </div>
-      </div>
+      </form>
     </div> 
     
     <div className="content-blocks is-mobile">
-      <div className="columns is-mobile">
+      <div className="columns is-desktop">
         <div className="column is-one-third"><a href="/Renter">
           <h2 className="left"><u>Find Your Dream Vacation</u></h2>
           <img src={ pic1 } alt="Rent Me" /></a>

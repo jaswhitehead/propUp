@@ -10,7 +10,7 @@ import Micah from '../Who/Micah.jpg';
 const Who = () => {
     return (
         <div className="who-container">
-            <div className="columns">
+            <div className="columns is-desktop">
                 <div className="column">
                     <article className="media">
                         <div className="media-left">
@@ -31,10 +31,10 @@ const Who = () => {
                                     condimentum luctus turpis.
                                 </p>
                             </div>
-                            <nav className="level is-mobile">
+                            <nav className="level is-desktop">
                                 <div className="level-left">
                                     <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
-                                        <span className="icon is-primary">
+                                        <span className="icon">
                                             <i className="fas fa-envelope" aria-hidden="true"></i>
                                         </span>
                                     </a>

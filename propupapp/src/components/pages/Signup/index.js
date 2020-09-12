@@ -91,7 +91,7 @@ class Signup extends Component {
     return (
     <div className="hero">
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <div className="notification signup">        
+        <div className="notification signup is-desktop">        
           <div className="field2">
             <label className="label"><i className="fas fa-user"></i> Name:</label>
             <div className="control">
@@ -149,6 +149,9 @@ class Signup extends Component {
                   <option name="owner" value="owner">
                     I am an Owner
                   </option>
+                  <option name="both" value="both">
+                    I am Both
+                  </option>
                 </select>
               </div>
             </div>
@@ -173,6 +176,25 @@ class Signup extends Component {
               </label>
             </div>
           </div>
+          <p>
+          <button class="button is-small modal-button is-active" data-target="modal" aria-haspopup="true">Launch example modal</button>
+          </p>
+            <div class="modal">
+              <div class="modal-background is-active"></div>
+              <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Modal title</p>
+                  <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+               
+                </section>
+                <footer class="modal-card-foot">
+                  <button class="button is-success">Save changes</button>
+                  <button class="button">Cancel</button>
+                </footer>
+              </div>
+            </div>
 
           <div className="field2">
             <div className="control">
@@ -187,17 +209,22 @@ class Signup extends Component {
               </label>
             </div>
           </div>
-
-          <div className="field2 is-grouped">
-            <div className="control">
-              <button className="button is-link" type="submit">
-                Submit
-              </button>
+          <div className="columns is-desktop">
+            <div className="column is-one-fifth">
+              <div className="field">
+                <div className="control">
+                  <button className="button is-link" type="submit">
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="control">
-              <Link to="/" className="button is-link is-light">
-                Cancel
-              </Link>
+            <div className="column">
+                <div className="control">
+                  <Link to="/" className="button is-link is-light">
+                    Cancel
+                  </Link>
+                </div>
             </div>
           </div>
         </div>
