@@ -2,7 +2,7 @@
 import * as firebase from "firebase";
 // import "firebase/firestore";
 const config = {
-  apiKey: "AIzaSyC266swYC22zzdZ62jvUcHOJUu6dYMXvYQ",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "prop-up.firebaseapp.com",
   databaseURL: "https://prop-up.firebaseio.com",
   projectId: "prop-up",
