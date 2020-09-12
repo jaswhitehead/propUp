@@ -10,7 +10,7 @@
 }
 
 .box {
-    position: absolute;
+    position: fixed;
     position: top;
     height: 70px;
     border: 2px solid black;
