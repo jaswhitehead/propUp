@@ -331,7 +331,7 @@ class ChatBox extends Component {
                   )}
                   <div className="viewItemLeft2">
                     <img
-                      src={this.content}
+                      src={item.content}
                       alt="content message"
                       className="imgItemLeft"
                     />
