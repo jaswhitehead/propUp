@@ -85,11 +85,7 @@ class Renter extends Component {
       <div>
         <div>
           <h1>Property info:</h1>
-          <div>
-            <div>
-              <p>Picture</p>
-            </div>
-          </div>
+          <p>Picture</p>         
         </div>
         <form autoComplete="off" onSubmit={this.bidCheck.bind(this)}>
           <div>

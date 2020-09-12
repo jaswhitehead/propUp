@@ -1,0 +1,21 @@
+.propresult {
+    Margin-top: 100px;
+}
+
+.prev {
+    color:yellow;
+}
+
+.next {
+    color: yellow;
+    
+}
+
+.carousel-item {
+    width: 600px;
+    height: 400px;
+}
+
+.carousel.slide  {
+    width: 600px;
+}
