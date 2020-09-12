@@ -81,6 +81,9 @@ class navbar extends Component {
                 <a className="navbar-item" href="/Chat">
                   Chat
                 </a>
+                <a className="navbar-item" href="/Who">
+                  About Us
+                </a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item" href="/Feedback">Send Feedback</a>
               </div>

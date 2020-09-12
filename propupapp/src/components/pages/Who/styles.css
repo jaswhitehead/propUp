@@ -2,13 +2,21 @@
 .who-container {
     margin-top: 100px;
     margin-bottom: 50px;
-    
+    margin-left: 20px;
 }
 
 .image {
-    width: 370px;   
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 350px;
+    height: 350px;   
 }
 
 .icon {
     background: blue;
+}
+
+.media {
+    border: solid;
+    border-radius: 15px;
 }
