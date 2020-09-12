@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "../Home/styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import pic1 from '../Home/pool.jpg';
@@ -7,17 +7,60 @@ import pic3 from '../Home/property.jpg';
 import Typical from 'react-typical';
 import Book from '../Book';
 import Location from '../../location/Location'
+import LoginString from "../Login/LoginStrings";
+import firebase from "../../../auth"
 
-const Home = () => {
+
+
+class Home extends Component {
+  componentDidMount() {
+    if (!localStorage.getItem(LoginString.ID)) {
+      this.props.history.push("/");
+    }
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+        location: ""
+      
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+    console.log(event.target.value);
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+
+    const db = firebase.firestore()
+
+   let snapshot = db.collection("properties").where("location", "==", this.state.location).get();
+    if(snapshot.empty) {
+      console.log("No results found")
+    } else {
+      console.log("search good")
+    }
+
+
+  }
+
+render(){
   return(
     <>
     <div className="hero is-mobile">     
       <div className="container is-fluid is-mobile">
         <div className="notification is-fluid is-mobile">
           <div className="columns is-mobile">
+            <form onSubmit={this.handleSubmit}>
             <div className="column is-mobile">
             <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Choose a Location:</label>
-              <Location />
+              <Location name="location" onChange={this.handleChange} />
             </div>
             <div className="column is-mobile">
             <label className="label">Departure and Arrival Dates:</label>
@@ -27,24 +70,26 @@ const Home = () => {
                 <div className="field">
                   <div className="control">
                   <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Add Guests:</label>                    
-                    <select className="box">
+                    <select className="box" name="guestNum">
                       <option>Select #</option>
-                      <option>1 Guest</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9+ Guests</option>
+                      <option value="1">1 Guest</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9+ Guests</option>
                     </select>                    
                   </div>
                 </div>
                 <div className="column is-mobile">
-                  <input className="submitbutton" type="submit" value="Get Results" />
+                  <button className="submitbutton" type="submit">Get Results</button>
                 </div>
+                
             </div>
+            </form>
           </div>
         </div>
       </div>
@@ -90,7 +135,7 @@ const Home = () => {
   </>
   )
 };
-
+}
 
 
 export default Home;
