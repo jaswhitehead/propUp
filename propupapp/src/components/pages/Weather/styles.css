@@ -14,23 +14,23 @@
 }
 
 .user-weather{
-    margin-top: 90px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     color: black;
     border-radius: 25px;
     border:3px solid #36A2D6;
 }
 
 .region{
-    margin-top:30px;
+    margin-top:10px;
 }
 
 .regioninput{
     background:none;
     border:none;
     border-bottom:1px solid rgb(68, 197, 214);
-    padding:0 50px 0 0px;
     outline:none;
 }
 

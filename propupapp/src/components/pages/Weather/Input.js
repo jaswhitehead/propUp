@@ -9,7 +9,7 @@ export default function Input(props) {
 
             <div className="columns">
                 <div className="column">
-                    <label>Get the weather anywhere:</label>
+                    <label>Search by city or zip code:</label>
                     <form className="region" onSubmit={(e) => { props.changeLocation(e) }}>
                         <input type="text" className="regioninput" placeholder="Enter any city" onChange={(e) => { props.changeRegion(e.target.value) }} />
                     </form>
