@@ -67,14 +67,14 @@ class navbar extends Component {
             <a className="navbar-item" href="/Owner">
               List a Property&nbsp;&nbsp;<i className="fas fa-home"></i>
             </a>
+            <a className="navbar-item" href="/Welcome">
+              How it Works&nbsp;&nbsp;<i className="fas fa-question-circle"></i>
+            </a>
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link" href="/">
                 More
               </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item" href="/Welcome">
-                  Get Started
-                </a>
                 <a className="navbar-item" href="/Events">
                   Find Events
                 </a>

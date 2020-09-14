@@ -38,12 +38,12 @@ const Who = () => {
                                             <i className="fas fa-envelope" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="retweet" href="https://www.linkedin.com/in/jasonwhitehead1/" target="blank">
+                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/jasonwhitehead1/" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-linkedin" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="like" href="https://github.com/jaswhitehead">
+                                    <a className="level-item" aria-label="github" href="https://github.com/jaswhitehead" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-github" aria-hidden="true"></i>
                                         </span>
@@ -76,17 +76,17 @@ const Who = () => {
                             </div>
                             <nav className="level is-mobile">
                                 <div className="level-left">
-                                    <a className="level-item" aria-label="reply">
+                                    <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com" target="blank">
                                         <span className="icon">
                                             <i className="fas fa-envelope" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="retweet">
+                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/chip-johnson-17077839/" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-linkedin" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="like">
+                                    <a className="level-item" aria-label="github" href="https://github.com/cjohnson1580" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-github" aria-hidden="true"></i>
                                         </span>
@@ -121,7 +121,7 @@ const Who = () => {
                             </div>
                             <nav className="level is-mobile">
                                 <div className="level-left">
-                                    <a className="level-item" aria-label="reply">
+                                    <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
                                         <span className="icon">
                                             <i className="fas fa-envelope" aria-hidden="true"></i>
                                         </span>
@@ -131,7 +131,7 @@ const Who = () => {
                                             <i className="fab fa-linkedin" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="like">
+                                    <a className="level-item" aria-label="like" href="https://github.com/micahslea" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-github" aria-hidden="true"></i>
                                         </span>
@@ -163,17 +163,17 @@ const Who = () => {
                             </div>
                             <nav className="level is-mobile">
                                 <div className="level-left">
-                                    <a className="level-item" aria-label="reply">
+                                    <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
                                         <span className="icon">
                                             <i className="fas fa-envelope" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="retweet">
+                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/masondshadrick/" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-linkedin" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="like">
+                                    <a className="level-item" aria-label="github" href="https://github.com/Mason-Shadrick" target="blank">
                                         <span className="icon">
                                             <i className="fab fa-github" aria-hidden="true"></i>
                                         </span>
