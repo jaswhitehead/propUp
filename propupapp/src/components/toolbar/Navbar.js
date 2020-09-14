@@ -5,6 +5,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import firebase from "../../auth/";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
+import LoginString from "../pages/Login/LoginStrings";
 
 // const links = firebase.auth().onAuthStateChanged(function (user) {
 //   return user ? <SignedInLinks /> : <SignedOutLinks />;
@@ -17,6 +18,7 @@ class navbar extends Component {
       loggedIn: false,
       loggedOut: false,
     };
+    this.currentUserPhoto = localStorage.getItem(LoginString.PhotoURL);
   }
 
   componentDidMount = () => {
@@ -45,7 +47,8 @@ class navbar extends Component {
             <img src={logo} width="35" height="28" alt="" />
           </a>
 
-          <a href="/"
+          <a
+            href="/"
             role="button"
             class="navbar-burger burger"
             aria-label="menu"
@@ -85,7 +88,9 @@ class navbar extends Component {
                   About Us
                 </a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/Feedback">Send Feedback</a>
+                <a className="navbar-item" href="/Feedback">
+                  Send Feedback
+                </a>
               </div>
             </div>
           </div>
