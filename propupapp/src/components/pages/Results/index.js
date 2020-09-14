@@ -2,9 +2,6 @@ import React from "react";
 import './styles.css';
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import Weather from '../Weather/index';
-import Demo1 from '../Results/Demo1.jpg';
-import Demo2 from '../Results/Demo2.jpg';
-import Demo3 from '../Results/Demo3.jpg';
 import Demo4 from '../Results/Demo4.jpg';
 import Demo5 from '../Results/Demo5.jpg';
 import Demo6 from '../Results/Demo6.jpg';
@@ -15,33 +12,34 @@ const Results = () => {
     return (
         <div className="propresult">
             <div className="column">
-                <h1>Here are the Top 4 matches to your search:</h1>
+                <h1>Top Matches for your Search:</h1>
             </div>
             <div className="columns is-desktop">
                 <div className="column">
                     <div className="card">
                         <div className="card-image">
                             <figure className="image is-4by3">
-                            <img src={Demo4} alt="Demo4" alt="Placeholder image" />
+                            <img src={Demo4} alt="House1" alt="Placeholder image" />
                             </figure>
                         </div>
                         <div className="card-content">
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
                                     </figure>
                                 </div>
                                 <div className="media-content">
-                                    <p className="title is-4">John Smith</p>
-                                    <p className="subtitle is-6">@johnsmith</p>
+                                    <p className="title is-4">Secluded Getaway</p>
+                                    <p className="subtitle is-6">Listed By: <i>John Smith</i></p>
                                 </div>
                             </div>
 
                             <div className="content">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            Phasellus nec iaculis mauris.
+                            <a href="#">#PropUp</a><br></br>
+                            <button className="bid">Make a Bid</button>
                             </div>
                         </div>
                     </div>
@@ -57,19 +55,20 @@ const Results = () => {
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdGEc2Yiel_ggVI9POMM7fFyBRTTHEAwN6mg&usqp=CAU" alt="Placeholder image" />
                                     </figure>
                                 </div>
                                 <div className="media-content">
-                                    <p className="title is-4">John Smith</p>
-                                    <p className="subtitle is-6">@johnsmith</p>
+                                    <p className="title is-4">Private Oasis</p>
+                                    <p className="subtitle is-6">Listed By: <i>David Johnson</i></p>
                                 </div>
                             </div>
 
                             <div className="content">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            Phasellus nec iaculis mauris.
+                            <a href="#">#PropUp</a><br></br>
+                            <button className="bid">Make a Bid</button>
                             </div>
                         </div>
                     </div>
@@ -85,19 +84,20 @@ const Results = () => {
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
                                     </figure>
                                 </div>
                                 <div className="media-content">
-                                    <p className="title is-4">John Smith</p>
-                                    <p className="subtitle is-6">@johnsmith</p>
+                                    <p className="title is-4">Martin's Nest</p>
+                                    <p className="subtitle is-6">Listed By: <i>Todd Martin</i></p>
                                 </div>
                             </div>
 
                             <div className="content">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            Phasellus nec iaculis mauris. 
+                            <a href="/">#PropUp</a><br></br>
+                            <button className="bid">Make a Bid</button>
                             </div>
                         </div>
                     </div>
@@ -113,56 +113,26 @@ const Results = () => {
                             <div className="media">
                                 <div className="media-left">
                                     <figure className="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                                    <img src="https://www.eguardtech.com/wp-content/uploads/2018/08/Network-Profile.png" alt="Placeholder image" />
                                     </figure>
                                 </div>
                                 <div className="media-content">
-                                    <p className="title is-4">John Smith</p>
-                                    <p className="subtitle is-6">@johnsmith</p>
+                                    <p className="title is-4">Winter Wonderland</p>
+                                    <p className="subtitle is-6">Listed By: <i>Michelle Davis</i></p>
                                 </div>
                             </div>
 
                             <div className="content">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            Phasellus nec iaculis mauris. 
+                            <a href="#">#PropUp</a><br></br>
+                            <button className="bid">Make a Bid</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div><br></br>
-        
+            </div><br></br>        
         <Weather />
-
-        <div className="columns is-desktop">
-            <div className="column is-12 is-offset-4">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={Demo1} alt="Demo1" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={Demo2} alt="Demo2" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={Demo3} alt="Demo3" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={Demo4} alt="Demo4" />
-                        </div>
-                    </div>
-                    <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span className="carousel-control-prev-icon"></span>
-                        <span className="prev">Previous</span>
-                    </a>
-                    <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span className="next">Next</span>
-                        <span className="carousel-control-next-icon"></span>
-                        
-                    </a>
-                </div>    
-            </div>
-        </div>
     </div>
     )
 };

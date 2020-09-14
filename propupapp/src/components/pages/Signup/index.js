@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import Modal from 'react-modal';
 import LoginString from "../Login/LoginStrings";
 import { Link } from "react-router-dom";
 import firebase from "../../../auth/";
+
+{/*
+Modal.setAppElement('#Signup')
+const [modalIsOpen, setModalIsOpen] = React.useState(false)*/}
+
 
 class Signup extends Component {
   constructor(props) {
@@ -132,7 +138,7 @@ class Signup extends Component {
                 value={this.state.password}
               />
             </div>
-          </div>          
+          </div><br></br>          
 
           <div className="field2">
             <div className="control">
@@ -155,7 +161,7 @@ class Signup extends Component {
                 </select>
               </div>
             </div>
-          </div>
+          </div><br></br>
 
           {/* <div className="field">
           <label className="label">Message</label>
@@ -176,25 +182,29 @@ class Signup extends Component {
               </label>
             </div>
           </div>
-          <p>
-          <button class="button is-small modal-button is-active" data-target="modal" aria-haspopup="true">Launch example modal</button>
-          </p>
-            <div class="modal">
-              <div class="modal-background is-active"></div>
-              <div class="modal-card">
-                <header class="modal-card-head">
-                  <p class="modal-card-title">Modal title</p>
-                  <button class="delete" aria-label="close"></button>
-                </header>
-                <section class="modal-card-body">
-               
-                </section>
-                <footer class="modal-card-foot">
-                  <button class="button is-success">Save changes</button>
-                  <button class="button">Cancel</button>
-                </footer>
-              </div>
-            </div>
+          
+      {/*  Modal Code Block
+
+          <div className="columns">
+            <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
+              <Modal
+                isOpen={modalIsOpen}
+                CloseOnOverlayClick={false}
+                onRequestClose={() => setModalIsOpen(false)}
+              >
+      
+                <h2>Hello</h2>
+                <button onClick={() => setModalIsOpen(false)}>Close</button>
+                <div>I am a modal</div>
+                <form>
+                  <input />
+                  <button>tab navigation</button>
+                  <button>stays</button>
+                  <button>inside</button>
+                  <button>the modal</button>
+                </form>
+              </Modal>
+      </div> */}
 
           <div className="field2">
             <div className="control">

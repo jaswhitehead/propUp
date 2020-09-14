@@ -8,7 +8,7 @@ import Typed from 'react-typed';
 const Feedback = () => {
     return (
         <div className="hero">
-            <div className="notification-feedback">
+            <div className="notification-feedback is-desktop">
                 <div className="field">
                     <label class="label"><i class="fas fa-user"></i> Your Name:</label>
                     <div className="control">
@@ -51,7 +51,7 @@ const Feedback = () => {
                     <div className="control">
                         <Typed
                             strings={[
-                                "Hello, \n\nThis is a really great looking website. Thanks for making purchasing vacation property fairly priced and easy again. I am so excited to start finding properties the way it should be done and not the old fashioned way of set prices. \n\n- Joe Somebody",
+                                "Hello, \n\nThis is a really great looking website. Thanks for making vacation property fairly priced and easy again. I am so excited to start finding properties the way it should be done and not the old fashioned way of set prices. \n\n- Joe Somebody",
                                 "To Whom it May Concern: \n\nAre you currently looking to hire for any coding positions? I love how dynamic the content of this app is and I would love to become part of the team.\n\n-James Zimmerman",
                             ]}
                             typeSpeed={30}

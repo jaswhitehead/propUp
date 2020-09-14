@@ -2,20 +2,14 @@
     Margin-top: 100px;
 }
 
-.prev {
-    color:yellow;
+.bid {
+    background-color: #B2D350;
+    color: white;
+    margin-top: 15px;
+    margin-left: 150px;
+    border-radius: 10px;
 }
 
-.next {
-    color: yellow;
-    
-}
-
-.carousel-item {
-    width: 900px;
-    height: 400px;
-}
-
-.carousel.slide  {
-    width: 600px;
+.card-image {
+    margin-left: 35px;
 }
