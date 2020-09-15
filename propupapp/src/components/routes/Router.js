@@ -12,6 +12,8 @@ import Chat from "../pages/ChatPages/chat/Chat";
 import Feedback from "../pages/Feedback";
 import Results from "../pages/Results";
 import Welcome from "../pages/Welcome";
+import Property from "../pages/Property";
+
 
 class Router extends Component {
   render() {
@@ -29,6 +31,7 @@ class Router extends Component {
         <Route component={Feedback} exact path="/Feedback" />
         <Route component={Results} exact path="/Results" />
         <Route component={Welcome} exact path="/Welcome" />
+        <Route component={Property} path= "/property/:id"/>
 
       </Switch>
     );
