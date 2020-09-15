@@ -28,7 +28,9 @@ class Results extends Component {
     
      db.collection('properties').get().then((snapshot) => (
         snapshot.forEach((doc) => (
-            db.collection('users').doc(doc.data().ownerID).get().then((snap) => (
+            db.collection('users').doc(doc.data().ownerID).get().then((snap) => {
+                console.log("doc.id = " + doc.id)
+                console.log("doc.data().id = " + doc.data().id)
             this.setState((prevState) => ({
                propArray:[ ...prevState.propArray, 
                 {
@@ -39,13 +41,15 @@ class Results extends Component {
                 province: doc.data().province,
                 pic: doc.data().pic,
                 zipC: doc.data().zipC,
-                owner: snap.data().name
+                owner: snap.data().name,
+                docID: doc.id
                }
             ]
             }))
+            })
         ))
         ))
-        ))
+
     }
     componentDidMount(){
         this.getAll()
@@ -78,7 +82,7 @@ class Results extends Component {
 
                         <div className="content">
                         <p>{p.description}</p>
-                        <a href="#">#PropUp</a><br></br>
+                        <a href={`/property/${p.docID}`}>More Info</a><br></br>
                         <button className="bid">Make a Bid</button>
                         </div>
                     </div>
