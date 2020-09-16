@@ -60,34 +60,34 @@ class Results extends Component {
 
         render(){
             let displayPosts = this.state.propArray.map((p) => (
-                <div className="column">
-                <div className="card">
-                    <div className="card-image">
-                        <figure className="image is-4by3">
-                        <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
-                        </figure>
-                    </div>
-                    <div className="card-content">
-                        <div className="media">
-                            <div className="media-left">
-                                <figure className="image is-48x48">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
-                                </figure>
-                            </div>
-                            <div className="media-content">
-                                <p className="title is-4" > {p.name} </p>
-                                <p className="subtitle is-6">Listed By: <i>{p.owner}</i></p>
-                            </div>
+                <div className="column is-desktop">
+                    <div className="card animate__animated animate__fadeInUp">
+                        <div className="card-image">
+                            <figure className="image is-2by2">
+                            <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
+                            </figure>
                         </div>
+                        <div className="card-content">
+                            <div className="media">
+                                <div className="media-left">
+                                    <figure className="image is-48x48">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div className="media-content">
+                                    <p className="title is-4" > {p.name} </p>
+                                    <p className="subtitle is-6">Listed By: <i>{p.owner}</i></p>
+                                </div>
+                            </div>
 
-                        <div className="content">
-                        <p>{p.description}</p>
-                        <a href={`/property/${p.docID}`}>More Info</a><br></br>
-                        <button className="bid">Make a Bid</button>
+                            <div className="content">
+                            <p>{p.description}</p>
+                            <a href={`/property/${p.docID}`}>More Info</a><br></br>
+                            <a href="/renter" className="button" id="bid">Make a Bid</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             ))
     return (
         <div className="propresult">
@@ -213,7 +213,18 @@ class Results extends Component {
                         </div>
                     </div>
                 </div> */} 
-            </div><br></br>        
+            </div>
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                <a class="pagination-previous">Previous</a>
+                <a class="pagination-next">Next page</a>
+                <ul class="pagination-list">
+                    <li><a class="pagination-link is-current" aria-label="Goto page 1" href='/results'>1</a></li>
+                    <li><a class="pagination-link" aria-label="Goto page 2" href='/results'>2</a></li>
+                    <li><a class="pagination-link" aria-label="Page 3" aria-current="page" href='/results'>3</a></li>
+                    <li><a class="pagination-link" aria-label="Goto page 4" href='/results'>4</a></li>
+                </ul>
+            </nav>
+            <br></br>        
         <Weather />
     </div>
     )

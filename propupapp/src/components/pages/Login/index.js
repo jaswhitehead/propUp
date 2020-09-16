@@ -107,7 +107,7 @@ class Login extends Component {
 
             <form className="form" onSubmit={this.handleSubmit.bind(this)}>
               <div className="field">
-                <p class="control has-icons-left has-icons-right">
+                <p class="control has-icons-left">
                   <input
                     className="input"
                     type="email"
@@ -117,8 +117,8 @@ class Login extends Component {
                     onChange={this.handleChange}
                     value={this.state.email}
                   />
-                  <span className="icon is-small has-text-black-bis is-left">
-                    <i className="fas fa-envelope"></i>
+                  <span className="icon is-small has-text-black is-left">
+                    <i className="fas fa-envelope" />
                   </span>
                 </p>
               </div>
@@ -133,9 +133,9 @@ class Login extends Component {
                     onChange={this.handleChange}
                     value={this.state.password}
                   />
-                  <span className="icon is-small has-text-black-bis is-left">
-                    <i className="fas fa-lock"></i>
-                  </span>
+                  <div className="icon is-small has-text-black is-left">
+                    <i className="fas fa-lock" />
+                  </div>
                 </p>
               </div>
               <div className="field">

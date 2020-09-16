@@ -54,7 +54,7 @@ render(){
   return(
     <>
     <div className="hero is-mobile">     
-      <form className="searchbar" onSubmit={this.handleSubmit}>
+      <form className="searchbar animate__animated animate__pulse" onSubmit={this.handleSubmit}>
         <div className="columns is-desktop">            
           <div className="column">
             <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Choose a Location:</label>
