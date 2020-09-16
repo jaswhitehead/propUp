@@ -2,14 +2,30 @@
     Margin-top: 100px;
 }
 
-.bid {
+#bid {
     background-color: #B2D350;
     color: white;
     margin-top: 15px;
-    margin-left: 150px;
-    border-radius: 10px;
+    margin-left: 115px;
+    border-radius: 30px;
 }
 
 .card-image {
-    margin-left: 35px;
+    margin-left: 15px;
+}
+
+.card {
+    width: 400px;
+}
+
+.pagination-previous {
+    margin-left: 500px;
+    color: white;
+    background-color: #B2D350;
+}
+
+.pagination-next {
+    margin-right: 500px;
+    color: white;
+    background-color: #B2D350;
 }

@@ -11,7 +11,7 @@ const Who = () => {
     return (
         <div className="who-container">
             <div className="columns is-desktop">
-                <div className="column">
+                <div className="column animate__animated animate__fadeInDownBig">
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
@@ -54,7 +54,7 @@ const Who = () => {
                     </article>
                 </div>
 
-                <div className="column">
+                <div className="column animate__animated animate__fadeInRightBig">
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
@@ -99,7 +99,7 @@ const Who = () => {
             </div>
 
             <div className="columns">
-                <div className="column">
+                <div className="column animate__animated animate__fadeInLeftBig">
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
@@ -141,7 +141,7 @@ const Who = () => {
                         </div>
                     </article>
                 </div>
-                <div className="column">
+                <div className="column animate__animated animate__fadeInUpBig">
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
