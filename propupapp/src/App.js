@@ -4,9 +4,9 @@ import Navbar from "./components/toolbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter } from "react-router-dom";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import '../src/index.css';
+import "../src/index.css";
 
-console.log(process.env.REACT_APP_FIREBASE_API_KEY)
+// console.log(process.env.REACT_APP_FIREBASE_API_KEY)
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
             <Router />
           </BrowserRouter>
         </div>
-        <Footer /> 
+        <Footer />
       </div>
     );
   }
