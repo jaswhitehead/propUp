@@ -3,10 +3,43 @@
     margin-right: 20px;
 }
 
-.control button {
-    background: #19B4DE;
+.notification.property {
+    background: rgb(228, 225, 225);
+    border-radius: 35px;
+    margin-left: 130px;
+    width: 1600px; 
+    top: 50px;
 }
 
-.columns {
-    padding-right: 20px;
+@media only screen and (max-width: 600px) {
+    .notification.property {
+      margin-left: 0px;
+      width:340px;
+    }
+  }
+
+#upload {
+    width: 140px;
+    background-color: #55d0f1;
+    border-radius: 35px;   
+}
+
+#submit {
+    width: 140px;
+    background-color: #B2D350;  
+    color: white;
+    border-radius: 35px; 
+    margin-left: 620px;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    #submit {
+      margin-left: 50px;
+      width:140px;
+    }
+  }
+
+#form {
+    margin-top: 50px;
 }
