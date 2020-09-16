@@ -1,0 +1,17 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #19B4DE;
+}
+
+.toolbar_navigation {
+    display: flex;
+   
+}
+
+.button {
+    color: white;
+    background-color: #B2D350;
+}
