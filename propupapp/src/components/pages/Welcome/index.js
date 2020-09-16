@@ -12,7 +12,7 @@ import Enjoy from '../Welcome/Superman.gif';
 const Welcome = () => {
     return (
         <div className="wrapper">            
-            <div className="columns is-desktop">
+            <div className="columns is-desktop  animate__animated animate__backInDown">
                 <div className="column is-12 is-offset-4">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="14000">
                         <div className="carousel-inner">
@@ -50,7 +50,7 @@ const Welcome = () => {
             </div>
 
             <div className="columns is-desktop is-centered">
-                <div className="column is-two-fifths">
+                <div className="column is-two-fifths animate__animated animate__backInUp">
                     <article className="message">
                         <div className="message-header">
                             <p className="start">How does the bidding system work?</p>
@@ -65,7 +65,7 @@ const Welcome = () => {
                         </div>
                     </article>
                 </div>
-                <div className="column is-two-fifths">
+                <div className="column is-two-fifths animate__animated animate__backInUp">
                     <article className="message">
                         <div className="message-header">
                             <p className="start">How do I put my property to work for me?</p>
