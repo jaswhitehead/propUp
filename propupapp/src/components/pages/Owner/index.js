@@ -72,14 +72,21 @@ class Owner extends Component {
   onChoosePhoto = (event) => {
     if (event.target.files && event.target.files[0]) {
       this.currentPhotoFile.unshift(event.target.files);
-      const prefixFileType = event.target.files[0].type.toString();
+      this.prefixFileType = event.target.files[0].type.toString();
+      const file = event.target.files;
+      for (let i = 0; i < file.length; i++) {
+        this.files = file[i];
+        console.log(`onChoose-files = ${this.files}`);
+      }
+
       for (let i = 0; i < this.currentPhotoFile[0].length; i++) {
-        if (prefixFileType.indexOf("image/") === 0) {
+        if (this.prefixFileType.indexOf("image/") === 0) {
           this.fileArray.push(URL.createObjectURL(this.currentPhotoFile[0][i]));
         }
         this.setState({
           pic: this.fileArray,
         });
+
         this.uploadPhoto();
       }
     }
@@ -88,11 +95,13 @@ class Owner extends Component {
   uploadPhoto = (e) => {
     if (this.fileArray.length) {
       const timestamp = Date.now().toString();
+
       const uploadTask = firebase
         .storage()
-        .ref()
-        .child(timestamp)
-        .put(this.fileArray);
+        .ref(this.state.name + "/")
+        .child(this.files.name)
+        .put(this.files);
+
       uploadTask.on(
         LoginString.UPLOAD_CHANGED,
         null,
@@ -118,7 +127,7 @@ class Owner extends Component {
   render() {
     return (
       <div className="hero">
-        <div className="notification property is-desktop"> 
+        <div className="notification property is-desktop">
           <form onSubmit={this.handleSubmit} id="form">
             <div className="columns is-desktop">
               <div className="column">
@@ -157,64 +166,66 @@ class Owner extends Component {
                 <div className="field">
                   <div className="control">
                     <label className="label">Choose Your State:</label>
-                      <div className="select"
-                        name="province"
-                        value={this.state.province}
-                        onChange={this.handleChange}>
-                          <select>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                          </select>
-                      </div> 
+                    <div
+                      className="select"
+                      name="province"
+                      value={this.state.province}
+                      onChange={this.handleChange}
+                    >
+                      <select>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -261,7 +272,12 @@ class Owner extends Component {
                     {/* <button type="button">Upload Image</button> */}
                     {/* <img src={this.state.pic}></img> */}
                     {(this.fileArray || []).map((url) => (
-                      <img className="image" src={url} alt="Property Image" />
+                      <img
+                        className="image"
+                        src={url}
+                        alt="Property Image"
+                        key={url}
+                      />
                     ))}
                     <button
                       type="button upload"
@@ -269,7 +285,11 @@ class Owner extends Component {
                       className="icOpenGallery"
                       alt="input_file"
                       onClick={() => {
-                        this.refInput.click();
+                        if (!this.state.name) {
+                          alert("Please enter a Property Name");
+                        } else {
+                          this.refInput.click();
+                        }
                       }}
                     >
                       Upload Images
@@ -299,7 +319,9 @@ class Owner extends Component {
                       onChange={this.handleChange}
                     ></textarea>
                   </div>
-                  <button type="submit" id="submit">Submit</button>
+                  <button type="submit" id="submit">
+                    Submit
+                  </button>
                 </div>
               </div>
             </div>
