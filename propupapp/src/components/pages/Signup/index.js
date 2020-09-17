@@ -6,10 +6,11 @@ import LoginString from "../Login/LoginStrings";
 import { Link } from "react-router-dom";
 import firebase from "../../../auth/";
 
-{/*
+{
+  /*
 Modal.setAppElement('#Signup')
-const [modalIsOpen, setModalIsOpen] = React.useState(false)*/}
-
+const [modalIsOpen, setModalIsOpen] = React.useState(false)*/
+}
 
 class Signup extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Signup extends Component {
       password: "",
       name: "",
       error: null,
-      username: "",
+
       selector: "",
     };
     this.handleChange = this.handleChange.bind(this);
@@ -34,7 +35,7 @@ class Signup extends Component {
   }
 
   async handleSubmit(event) {
-    const { name, password, email, username, selector } = this.state;
+    const { name, password, email, selector } = this.state;
     event.preventDefault();
     try {
       firebase
@@ -43,13 +44,14 @@ class Signup extends Component {
         .then(async (result) => {
           firebase
             .firestore()
-            .collection("users")
-            .add({
+            .collection("user")
+            .doc(result.user.uid)
+            .set({
               name,
               id: result.user.uid,
               email,
               password,
-              username,
+
               selector,
               URL: "",
               description: "",
@@ -61,7 +63,7 @@ class Signup extends Component {
               localStorage.setItem(LoginString.Email, email);
               localStorage.setItem(LoginString.Password, password);
               localStorage.setItem(LoginString.PhotoURL);
-              localStorage.setItem(LoginString.Username, username);
+
               localStorage.setItem(LoginString.UPLOAD_CHANGED, "state_changed");
               localStorage.setItem(LoginString.Selector, selector);
               localStorage.setItem(LoginString.Description, "");
@@ -79,7 +81,7 @@ class Signup extends Component {
                 password: "",
                 name: "",
                 error: null,
-                username: "",
+
                 selector: "",
                 URL: "",
               });
@@ -95,81 +97,91 @@ class Signup extends Component {
 
   render() {
     return (
-    <div className="hero">
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <div className="notification signup is-desktop">        
-          <div className="field2">
-            <label className="label"><i className="fas fa-user"></i> Name:</label>
-            <div className="control">
-              <input
-                className="input"
-                type="text"
-                name="name"
-                placeholder="Joe Somebody"
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
+      <div className="hero">
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <div className="notification signup is-desktop">
+            <div className="field2">
+              <label className="label">
+                <i className="fas fa-user"></i> Name:
+              </label>
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="name"
+                  placeholder="Joe Somebody"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field2">
-            <label className="label"><i className="fas fa-envelope"></i> Email:</label>
-            <div className="control ">
-              <input
-                className="input"
-                type="email"
-                placeholder="Email Address"
-                name="email"
-                onChange={this.handleChange}
-                value={this.state.email}
-              />
+            <div className="field2">
+              <label className="label">
+                <i className="fas fa-envelope"></i> Email:
+              </label>
+              <div className="control ">
+                <input
+                  className="input"
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  onChange={this.handleChange}
+                  value={this.state.email}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="field2">
-            <label className="label"><i className="fas fa-key"></i> Password:</label>
-            <div className="control has-icons-left has-icons-right">
-              <input
-                className="input"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={this.handleChange}
-                value={this.state.password}
-              />
+            <div className="field2">
+              <label className="label">
+                <i className="fas fa-key"></i> Password:
+              </label>
+              <div className="control has-icons-left has-icons-right">
+                <input
+                  className="input"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={this.handleChange}
+                  value={this.state.password}
+                />
+              </div>
             </div>
-          </div><br></br>          
+            <br></br>
 
-          <div className="columns is-desktop is-12">
-            <div className="column is-5">
-              <div className="field2">
-                <div className="control">
-                  <div className="select">
-                    <select
-                      name="selector"
-                      value={this.state.selector}
-                      onChange={this.handleChange}
-                    >
-                      <option>Select dropdown</option>
-                      <option name="renter" value="renter">
-                        I am a Renter
-                      </option>
-                      <option name="owner" value="owner">
-                        I am an Owner
-                      </option>
-                      <option name="both" value="both">
-                        I am Both
-                      </option>
-                    </select>
+            <div className="columns is-desktop is-12">
+              <div className="column is-5">
+                <div className="field2">
+                  <div className="control">
+                    <div className="select">
+                      <select
+                        name="selector"
+                        value={this.state.selector}
+                        onChange={this.handleChange}
+                      >
+                        <option>Select dropdown</option>
+                        <option name="renter" value="renter">
+                          I am a Renter
+                        </option>
+                        <option name="owner" value="owner">
+                          I am an Owner
+                        </option>
+                        <option name="both" value="both">
+                          I am Both
+                        </option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div><br></br>
-            </div>
-            <div className="column is-6">
+                <br></br>
+              </div>
+              <div className="column is-6">
                 <div className="field">
                   <div className="control">
-                    <label className="label"><i class="fas fa-camera-retro"></i> Add a Profile Picture:</label>
-                      {(this.fileArray || []).map((url) => (
+                    <label className="label">
+                      <i class="fas fa-camera-retro"></i> Add a Profile Picture:
+                    </label>
+                    {(this.fileArray || []).map((url) => (
                       <img
                         className="image"
                         src={url}
@@ -203,20 +215,19 @@ class Signup extends Component {
                     />
                   </div>
                 </div>
+              </div>
             </div>
-          </div>
-        
-          <div className="field2">
-            <div className="control">
-              <label className="checkbox">
-                <input type="checkbox" />I agree to the{" "}
-                
-                <a href="/">terms and conditions</a>
-              </label>
+
+            <div className="field2">
+              <div className="control">
+                <label className="checkbox">
+                  <input type="checkbox" />I agree to the{" "}
+                  <a href="/">terms and conditions</a>
+                </label>
+              </div>
             </div>
-          </div>
-        
-      {/*  Modal Code Block
+
+            {/*  Modal Code Block
 
           <div className="columns">
             <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
@@ -239,41 +250,40 @@ class Signup extends Component {
               </Modal>
       </div> */}
 
-          <div className="field2">
-            <div className="control">
-              <label className="label">Please E-Mail Me Updates</label>
-              <label className="radio">
-                <input type="radio" name="question" />
-                Yes
-              </label>
-              <label className="radio">
-                <input type="radio" name="question" />
-                No
-              </label>
-            </div>
-          </div>
-          <div className="columns is-desktop">
-            <div className="column is-one-fifth">
-              <div className="field">
-                <div className="control">
-                  <button className="button is-link" type="submit">
-                    Submit
-                  </button>
-                </div>
+            <div className="field2">
+              <div className="control">
+                <label className="label">Please E-Mail Me Updates</label>
+                <label className="radio">
+                  <input type="radio" name="question" />
+                  Yes
+                </label>
+                <label className="radio">
+                  <input type="radio" name="question" />
+                  No
+                </label>
               </div>
             </div>
-            <div className="column">
+            <div className="columns is-desktop">
+              <div className="column is-one-fifth">
+                <div className="field">
+                  <div className="control">
+                    <button className="button is-link" type="submit">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="column">
                 <div className="control">
                   <Link to="/" className="button is-link is-light">
                     Cancel
                   </Link>
                 </div>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
-    
+        </form>
+      </div>
     );
   }
 }

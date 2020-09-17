@@ -1,7 +1,7 @@
-import React , {Component} from "react";
-import './styles.css';
+import React, { Component } from "react";
+import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import Weather from '../Weather/index';
+import Weather from "../Weather/index";
 // import Demo4 from '../Results/Demo4.jpg';
 // import Demo5 from '../Results/Demo5.jpg';
 // import Demo6 from '../Results/Demo6.jpg';
@@ -9,96 +9,103 @@ import Weather from '../Weather/index';
 import { Card } from "@material-ui/core";
 import firebase from "../../../auth/";
 
-
-
-
-
 const db = firebase.firestore();
 class Results extends Component {
-    
-    constructor(props){
-        super(props);
-    
-        this.state = {
-            propArray: []
-        }
-    }
-    
- getAll() {
-     db.collection('properties').get().then((snapshot) => {
-         snapshot.forEach((doc) => {
-            let docName = doc.data().ownerID
-            db.collection('users').where("ownerID", "==", docName).get().then((snap) => {
-                console.log("doc.data().name = " + doc.data().name)
-                console.log("doc.data().city = " + doc.data().city)
-            this.setState((prevState) => ({
-               propArray:[ ...prevState.propArray, 
-                {
-                name: doc.data().name,
-                address: doc.data().address,
-                description: doc.data().description,
-                minBid: doc.data().minBid,
-                province: doc.data().province,
-                pic: doc.data().pic,
-                zipC: doc.data().zipC,
-                owner: snap.name,
-                docID: doc.id
-               }
-            ]
-            }))
-            })
-        })
-     })
-        
-    }
-    componentDidMount(){
-        this.getAll()
-    }
-         
-    
+  constructor(props) {
+    super(props);
 
-        render(){
-            let displayPosts = this.state.propArray.map((p) => (
-                <div className="column is-desktop">
-                    <div className="card animate__animated animate__fadeInUp">
-                        <div className="card-image">
-                            <figure className="image is-2by2">
-                            <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
-                            </figure>
-                        </div>
-                        <div className="card-content">
-                            <div className="media">
-                                <div className="media-left">
-                                    <figure className="image is-48x48">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
-                                    </figure>
-                                </div>
-                                <div className="media-content">
-                                    <p className="title is-4" > {p.name} </p>
-                                    <p className="subtitle is-6">Listed By: <i>{p.owner}</i></p>
-                                </div>
-                            </div>
+    this.state = {
+      propArray: [],
+    };
+  }
 
-                            <div className="content">
-                            <p>{p.minBid}</p>
-                            <p>{p.description}</p>
-                            <a href={`/property/${p.docID}`}>More Info</a><br></br>
-                            <a href="/renter" className="button" id="bid">Make a Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))
-    return (
-        <div className="propresult">
-            <div className="column">
-                <h1>Top Matches for your Search:</h1>
+  getAll() {
+    db.collection("property")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          let docName = doc.data().ownerID;
+          console.log("docname = ", docName);
+          db.collection("user")
+            .where("id", "==", docName)
+            .get()
+            .then((snap) => {
+              snap.forEach((doc2) => {
+                console.log("doc.data().name = " + doc.data().name);
+                console.log("doc.data().city = " + doc.data().city);
+                this.setState((prevState) => ({
+                  propArray: [
+                    ...prevState.propArray,
+                    {
+                      name: doc.data().name,
+                      address: doc.data().address,
+                      description: doc.data().description,
+                      minBid: doc.data().minBid,
+                      province: doc.data().province,
+                      pic: doc.data().pic,
+                      zipC: doc.data().zipC,
+                      owner: doc2.data().name,
+                      docID: doc.id,
+                    },
+                  ],
+                }));
+              });
+            });
+        });
+      });
+  }
+  componentDidMount() {
+    this.getAll();
+  }
+
+  render() {
+    let displayPosts = this.state.propArray.map((p) => (
+      <div className="column is-desktop">
+        <div className="card animate__animated animate__fadeInUp">
+          <div className="card-image">
+            <figure className="image is-2by2">
+              <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-left">
+                <figure className="image is-48x48">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div className="media-content">
+                <p className="title is-4"> {p.name} </p>
+                <p className="subtitle is-6">
+                  Listed By: <i>{p.owner}</i>
+                </p>
+              </div>
             </div>
-            <div className="columns is-desktop">
-            <Card>
-                {displayPosts}
-            </Card>
-               {/* <div className="column">
+
+            <div className="content">
+              <p>{p.minBid}</p>
+              <p>{p.description}</p>
+              <a href={`/property/${p.docID}`}>More Info</a>
+              <br></br>
+              <a href="/renter" className="button" id="bid">
+                Make a Bid
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ));
+    return (
+      <div className="propresult">
+        <div className="column">
+          <h1>Top Matches for your Search:</h1>
+        </div>
+        <div className="columns is-desktop">
+          <Card>{displayPosts}</Card>
+          {/* <div className="column">
                     <div className="card">
                         <div className="card-image">
                             <figure className="image is-4by3">
@@ -126,7 +133,7 @@ class Results extends Component {
                         </div>
                     </div>
                 </div> */}
-                {/* <div className="column">
+          {/* <div className="column">
                     <div className="card">
                         <div className="card-image">
                             <figure className="image is-4by3">
@@ -212,22 +219,59 @@ class Results extends Component {
                             </div>
                         </div>
                     </div>
-                </div> */} 
-            </div>
-            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                <a class="pagination-previous">Previous</a>
-                <a class="pagination-next">Next page</a>
-                <ul class="pagination-list">
-                    <li><a class="pagination-link is-current" aria-label="Goto page 1" href='/results'>1</a></li>
-                    <li><a class="pagination-link" aria-label="Goto page 2" href='/results'>2</a></li>
-                    <li><a class="pagination-link" aria-label="Page 3" aria-current="page" href='/results'>3</a></li>
-                    <li><a class="pagination-link" aria-label="Goto page 4" href='/results'>4</a></li>
-                </ul>
-            </nav>
-            <br></br>        
+                </div> */}
+        </div>
+        <nav
+          class="pagination is-centered"
+          role="navigation"
+          aria-label="pagination"
+        >
+          <a class="pagination-previous">Previous</a>
+          <a class="pagination-next">Next page</a>
+          <ul class="pagination-list">
+            <li>
+              <a
+                class="pagination-link is-current"
+                aria-label="Goto page 1"
+                href="/results"
+              >
+                1
+              </a>
+            </li>
+            <li>
+              <a
+                class="pagination-link"
+                aria-label="Goto page 2"
+                href="/results"
+              >
+                2
+              </a>
+            </li>
+            <li>
+              <a
+                class="pagination-link"
+                aria-label="Page 3"
+                aria-current="page"
+                href="/results"
+              >
+                3
+              </a>
+            </li>
+            <li>
+              <a
+                class="pagination-link"
+                aria-label="Goto page 4"
+                href="/results"
+              >
+                4
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <br></br>
         <Weather />
-    </div>
-    )
-};
+      </div>
+    );
+  }
 }
-export default Results;      
+export default Results;
