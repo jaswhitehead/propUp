@@ -3,33 +3,25 @@ import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
-// import firebase from "firebase";
+import { Card } from "@material-ui/core";
 
-// import bidCheck from "../../bidding/bidding"
-
-// import {newBid} from "../../bidding/bidding"
-// const bid = useState("")
-// firebase.initializeApp(config);
 
 const db = firebase.firestore();
 class Renter extends Component {
-  //  componentDidMount(){
-  //   !firebase.apps.length
-  //   ? firebase.initializeApp(config).firestore()
-  //   : firebase.app().firestore();
-  //  }
+
   constructor(props) {
     super(props);
 
     this.state = {
-      newBid: 0,
+      propArray: []
     };
 
     this.updateInputValue = this.updateInputValue.bind(this);
-    this.bidCheck = this.bidCheck.bind(this);
+   
   }
 
   componentDidMount() {
+    this.getAllWhere();
     if (!localStorage.getItem(LoginString.ID)) {
       this.props.history.push("/");
     }
@@ -42,63 +34,69 @@ class Renter extends Component {
     console.log(evt.target.value);
   }
 
-  bidCheck(e) {
-    e.preventDefault();
-    const bidref = db.collection("bids").doc("test");
+  getAllWhere() {
+    
+    db.collection('properties').where("city", "==", this.props.match.params.location).get().then((snapshot) => (
+       snapshot.forEach((doc) => (
+           db.collection('users').doc(doc.data().ownerID).get().then((snap) => {
+               console.log("doc.id = " + doc.id)
+               console.log("doc.data().id = " + doc.data().id)
+           this.setState((prevState) => ({
+              propArray:[ ...prevState.propArray, 
+               {
+               name: doc.data().name,
+               address: doc.data().address,
+               description: doc.data().description,
+               minBid: doc.data().minBid,
+               province: doc.data().province,
+               pic: doc.data().pic,
+               zipC: doc.data().zipC,
+               owner: snap.data().name,
+               docID: doc.id
+              }
+           ]
+           }))
+           })
+       ))
+       ))
 
-    const res = "";
-
-    db.collection("bids")
-      .doc("test")
-      .onSnapshot((snapshot) => {
-        console.log("current bid: " + snapshot.get("currentBid"));
-        console.log("minimum bid: " + snapshot.get("minBid"));
-        // query db checking if current bid exists
-        let currentBid = snapshot.get("currentBid");
-        if (currentBid) {
-          //comparing new bid to current bid
-          if (this.state.newBid > snapshot.get("currentBid")) {
-            //if more update currentBid to newBid
-            bidref.update({ currentBid: this.state.newBid });
-            console.log("updated bid from checking current bid");
-          } else {
-            console.log("bid not higher than current bid");
-          }
-
-          //if no currentBid compare against the minBid
-          // } else {
-
-          //   if (this.state.newBid > snapshot.get("minBid")){
-          //     //if more update currentBid to newBid
-          //      bidref.update({currentBid: this.state.newBid});
-          //     console.log("updated bid from min bid")
-        } else {
-          console.log("bid not higher than min bid");
-        }
-      });
-    console.log(res);
-  }
-  //  db.collection("bids").doc("test").set({currentBid: this.state.newBid});
+   }
 
   render() {
-    return (
-      <div>
-        <div>
-          <h1>Property info:</h1>
-          <p>Picture</p>         
-        </div>
-        <form autoComplete="off" onSubmit={this.bidCheck.bind(this)}>
-          <div>
-            <input
-              type="text"
-              name="newBid"
-              value={this.state.newBid}
-              onChange={this.updateInputValue}
-            />
+    let displayPosts = this.state.propArray.map((p) => (
+      <div className="column is-desktop">
+          <div className="card animate__animated animate__fadeInUp">
+              <div className="card-image">
+                  <figure className="image is-2by2">
+                  <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
+                  </figure>
+              </div>
+              <div className="card-content">
+                  <div className="media">
+                      <div className="media-left">
+                          <figure className="image is-48x48">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
+                          </figure>
+                      </div>
+                      <div className="media-content">
+                          <p className="title is-4" > {p.name} </p>
+                          <p className="subtitle is-6">Listed By: <i>{p.owner}</i></p>
+                      </div>
+                  </div>
+
+                  <div className="content">
+                  <p>{p.description}</p>
+                  <a href={`/property/${p.docID}`}>More Info</a><br></br>
+                  <a href="/renter" className="button" id="bid">Make a Bid</a>
+                  </div>
+              </div>
           </div>
-          <button type="submit">Submit</button>
-        </form>
       </div>
+  ))
+    return (
+      <Card>
+        {displayPosts}
+      </Card>
     );
   }
 }

@@ -10,10 +10,10 @@ import { Card } from "@material-ui/core";
 import firebase from "../../../auth/";
 
 
+
+
+
 const db = firebase.firestore();
-
-
-
 class Results extends Component {
     
     constructor(props){
@@ -23,14 +23,14 @@ class Results extends Component {
             propArray: []
         }
     }
-
- getAll() {
     
-     db.collection('properties').get().then((snapshot) => (
-        snapshot.forEach((doc) => (
-            db.collection('users').doc(doc.data().ownerID).get().then((snap) => {
-                console.log("doc.id = " + doc.id)
-                console.log("doc.data().id = " + doc.data().id)
+ getAll() {
+     db.collection('properties').get().then((snapshot) => {
+         snapshot.forEach((doc) => {
+            let docName = doc.data().ownerID
+            db.collection('users').where("ownerID", "==", docName).get().then((snap) => {
+                console.log("doc.data().name = " + doc.data().name)
+                console.log("doc.data().city = " + doc.data().city)
             this.setState((prevState) => ({
                propArray:[ ...prevState.propArray, 
                 {
@@ -41,19 +41,18 @@ class Results extends Component {
                 province: doc.data().province,
                 pic: doc.data().pic,
                 zipC: doc.data().zipC,
-                owner: snap.data().name,
+                owner: snap.name,
                 docID: doc.id
                }
             ]
             }))
             })
-        ))
-        ))
-
+        })
+     })
+        
     }
     componentDidMount(){
         this.getAll()
-        console.log(this.state.propArray)
     }
          
     
@@ -81,6 +80,7 @@ class Results extends Component {
                             </div>
 
                             <div className="content">
+                            <p>{p.minBid}</p>
                             <p>{p.description}</p>
                             <a href={`/property/${p.docID}`}>More Info</a><br></br>
                             <a href="/renter" className="button" id="bid">Make a Bid</a>

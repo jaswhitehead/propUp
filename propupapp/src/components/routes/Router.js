@@ -23,7 +23,7 @@ class Router extends Component {
         <Route component={Signup} exact path="/Signup" />
         <Route component={Login} exact path="/Login" />
         <Route component={Owner} exact path="/Owner" />
-        <Route component={Renter} exact path="/Renter" />
+        <Route component={Renter} path="/Renter/:location" />
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
         <Route component={Weather} exact path="/Weather" />
