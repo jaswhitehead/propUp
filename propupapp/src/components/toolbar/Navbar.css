@@ -1,17 +1,27 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #19B4DE;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #19b4de;
 }
 
 .toolbar_navigation {
-    display: flex;
-   
+  display: flex;
 }
 
 .button {
-    color: white;
-    background-color: #B2D350;
+  color: white;
+  background-color: #b2d350;
+}
+
+.ProfilePicture {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../img/nopic.jpg);
+  left: 10px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  background-size: 32px 32px;
 }
