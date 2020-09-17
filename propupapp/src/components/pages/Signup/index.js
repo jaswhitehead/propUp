@@ -58,22 +58,26 @@ class Signup extends Component {
               messages: [{ notificationId: "", number: 0 }],
             })
             .then((docRef) => {
+              console.log("docRef = ", docRef);
               localStorage.setItem(LoginString.ID, result.user.uid);
               localStorage.setItem(LoginString.Name, name);
               localStorage.setItem(LoginString.Email, email);
               localStorage.setItem(LoginString.Password, password);
-              localStorage.setItem(LoginString.PhotoURL);
+              localStorage.setItem(LoginString.PhotoURL, URL);
 
               localStorage.setItem(LoginString.UPLOAD_CHANGED, "state_changed");
               localStorage.setItem(LoginString.Selector, selector);
               localStorage.setItem(LoginString.Description, "");
-              localStorage.setItem(LoginString.FirebaseDocumentId, docRef.id);
+              localStorage.setItem(
+                LoginString.FirebaseDocumentId,
+                result.user.uid
+              );
 
               if (this.state.selector === "renter") {
                 this.props.history.push("/Renter");
               }
               if (this.state.selector === "owner") {
-                this.props.history.push("/Owner");
+                this.props.history.push("/OwnerDash");
               }
 
               this.setState({
@@ -87,6 +91,7 @@ class Signup extends Component {
               });
             })
             .catch((error) => {
+              console.log(error);
               console.error("Error adding document");
             });
         });
