@@ -14,36 +14,64 @@ class OwnerDash extends Component {
   }
   // .where("id", "==", ownerID)
   getAll() {
-    db.collection("properties")
+    let docName = localStorage.getItem(LoginString.ID);
+    console.log("docName = ", docName);
+    db.collection("property")
+      .where("ownerID", "==", docName)
       .get()
-      .then((snapshot) => {
-        snapshot.forEach((doc) => {
-          let ownerID = doc.data().ownerID;
-          db.collection("users")
-            .get()
-            .then((snap) => {
-              console.log(snap.name);
-              if (snap.length) {
-                this.setState((prevState) => ({
-                  propArray: [
-                    ...prevState.propArray,
-                    {
-                      name: doc.data().name,
-                      address: doc.data().address,
-                      description: doc.data().description,
-                      minBid: doc.data().minBid,
-                      province: doc.data().province,
-                      pic: doc.data().pic,
-                      zipC: doc.data().zipC,
-                      docID: doc.id,
-                      ownerID: doc.data().ownerID,
-                    },
-                  ],
-                }));
-              }
-            });
+      .then((snap) => {
+        snap.forEach((doc) => {
+          // console.log("doc.data().name = " + doc.data().name);
+          // console.log("doc.data().city = " + doc.data().city);
+          this.setState((prevState) => ({
+            propArray: [
+              ...prevState.propArray,
+              {
+                name: doc.data().name,
+                address: doc.data().address,
+                description: doc.data().description,
+                minBid: doc.data().minBid,
+                province: doc.data().province,
+                pic: doc.data().pic,
+                zipC: doc.data().zipC,
+
+                docID: doc.id,
+              },
+            ],
+          }));
         });
       });
+
+    // db.collection("properties")
+    //   .get()
+    //   .then((snapshot) => {
+    //     snapshot.forEach((doc) => {
+    //       let ownerID = doc.data().ownerID;
+    //       db.collection("users")
+    //         .get()
+    //         .then((snap) => {
+    //           console.log(snap.name);
+    //           if (snap.length) {
+    //             this.setState((prevState) => ({
+    //               propArray: [
+    //                 ...prevState.propArray,
+    //                 {
+    //                   name: doc.data().name,
+    //                   address: doc.data().address,
+    //                   description: doc.data().description,
+    //                   minBid: doc.data().minBid,
+    //                   province: doc.data().province,
+    //                   pic: doc.data().pic,
+    //                   zipC: doc.data().zipC,
+    //                   docID: doc.id,
+    //                   ownerID: doc.data().ownerID,
+    //                 },
+    //               ],
+    //             }));
+    //           }
+    //         });
+    //     });
+    //   });
   }
   componentDidMount() {
     this.getAll();
@@ -71,9 +99,9 @@ class OwnerDash extends Component {
               </div>
               <div className="media-content">
                 <p className="title is-4"> {p.name} </p>
-                <p className="subtitle is-6">
+                {/* <p className="subtitle is-6">
                   Listed By: <i>{p.owner}</i>
-                </p>
+                </p> */}
               </div>
             </div>
             <div className="content">
