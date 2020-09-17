@@ -6,8 +6,7 @@
   flex-direction: column;
   width: 100%;
   position: relative;
-
-  /* background-image: url("https://i.pinimg.com/474x/2e/2e/25/2e2e25c53d858f4af66151304fdb68b7.jpg"); */
+  background-image: url("https://scottarial.com/wp-content/uploads/Faded-house-bkg.png");
 
   backface-visibility: hidden;
   border-left: 1px solid #ededed;
