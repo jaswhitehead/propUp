@@ -140,39 +140,72 @@ class Signup extends Component {
             </div>
           </div><br></br>          
 
-          <div className="field2">
-            <div className="control">
-              <div className="select">
-                <select
-                  name="selector"
-                  value={this.state.selector}
-                  onChange={this.handleChange}
-                >
-                  <option>Select dropdown</option>
-                  <option name="renter" value="renter">
-                    I am a Renter
-                  </option>
-                  <option name="owner" value="owner">
-                    I am an Owner
-                  </option>
-                  <option name="both" value="both">
-                    I am Both
-                  </option>
-                </select>
-              </div>
+          <div className="columns is-desktop is-12">
+            <div className="column is-5">
+              <div className="field2">
+                <div className="control">
+                  <div className="select">
+                    <select
+                      name="selector"
+                      value={this.state.selector}
+                      onChange={this.handleChange}
+                    >
+                      <option>Select dropdown</option>
+                      <option name="renter" value="renter">
+                        I am a Renter
+                      </option>
+                      <option name="owner" value="owner">
+                        I am an Owner
+                      </option>
+                      <option name="both" value="both">
+                        I am Both
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div><br></br>
             </div>
-          </div><br></br>
-
-          {/* <div className="field">
-          <label className="label">Message</label>
-          <div className="control">
-            <textarea
-              className="textarea"
-              placeholder="Your Message Goes Here"
-            ></textarea>
+            <div className="column is-6">
+                <div className="field">
+                  <div className="control">
+                    <label className="label"><i class="fas fa-camera-retro"></i> Add a Profile Picture:</label>
+                      {(this.fileArray || []).map((url) => (
+                      <img
+                        className="image"
+                        src={url}
+                        alt="Property Image"
+                        key={url}
+                      />
+                    ))}
+                    <button
+                      type="button"
+                      id="avatar"
+                      className="icOpenGallery"
+                      alt="input_file"
+                      onClick={() => {
+                        if (!this.state.name) {
+                          alert("Please enter your Name");
+                        } else {
+                          this.refInput.click();
+                        }
+                      }}
+                    >
+                      Upload Images
+                    </button>
+                    <input
+                      ref={(el) => {
+                        this.refInput = el;
+                      }}
+                      className="viewInputGallery"
+                      accept="image/*"
+                      type="file"
+                      onChange={this.onChoosePhoto}
+                    />
+                  </div>
+                </div>
+            </div>
           </div>
-        </div> */}
-
+        
           <div className="field2">
             <div className="control">
               <label className="checkbox">
@@ -182,7 +215,7 @@ class Signup extends Component {
               </label>
             </div>
           </div>
-          
+        
       {/*  Modal Code Block
 
           <div className="columns">
@@ -240,6 +273,7 @@ class Signup extends Component {
         </div>
       </form>
     </div>
+    
     );
   }
 }

@@ -256,7 +256,7 @@ class Chat extends Component {
   render() {
     return (
       <div className="root">
-        <div className="body">
+        <div className="body" id="chatdiv">
           <div className="viewListUser">
             <div className="profileviewleftside">
               <img

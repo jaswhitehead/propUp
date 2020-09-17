@@ -24,3 +24,10 @@
       width:300px;
     }
   }
+
+  #avatar {
+    background-color:#B2D350;
+    color: white;
+    border-radius: 35px; 
+    width: 140px;  
+  }
