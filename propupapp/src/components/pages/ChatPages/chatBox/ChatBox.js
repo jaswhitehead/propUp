@@ -135,7 +135,11 @@ class ChatBox extends Component {
 
   scrollToBottom = () => {
     if (this.messagesEnd) {
-      this.messagesEnd.scrollIntoView({});
+      this.messagesEnd.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
     }
   };
 
