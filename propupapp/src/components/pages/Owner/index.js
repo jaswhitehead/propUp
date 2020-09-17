@@ -120,11 +120,11 @@ class Owner extends Component {
       <div className="hero">
         <div className="notification property is-desktop"> 
           <form onSubmit={this.handleSubmit} id="form">
-            <div className="columns is-desktop">
-              <div className="column">
+            <div className="columns is-desktop is-12">
+              <div className="column is-3">
                 <div className="field">
                   <div className="control">
-                    <label className="label">Property Name</label>
+                    <label className="label">Property Name:</label>
                     <input
                       className="input"
                       type="text"
@@ -137,10 +137,10 @@ class Owner extends Component {
                 </div>
               </div>
 
-              <div className="column">
+              <div className="column is-4">
                 <div className="field">
                   <div className="control">
-                    <label className="label">Street Address</label>
+                    <label className="label">Street Address:</label>
                     <input
                       className="input"
                       type="text"
@@ -153,7 +153,23 @@ class Owner extends Component {
                 </div>
               </div>
 
-              <div className="column">
+              <div className="column is-2">
+                <div className="field">
+                  <div className="control">
+                    <label className="label">City:</label>
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Nasvhille"
+                      name="city"
+                      value={this.state.city}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="column is-2">
                 <div className="field">
                   <div className="control">
                     <label className="label">Choose Your State:</label>
@@ -219,10 +235,10 @@ class Owner extends Component {
                 </div>
               </div>
 
-              <div className="column">
+              <div className="column is-1">
                 <div className="field">
                   <div className="control">
-                    <label className="label">Zip Code</label>
+                    <label className="label">Zip Code:</label>
                     <input
                       className="input"
                       placeholder="37129"
@@ -242,29 +258,30 @@ class Owner extends Component {
                     <label className="label">
                       Desired Starting Bid (per night)
                     </label>
-                    <input
-                      className="input"
-                      type="text"
-                      placeholder="$300"
-                      name="minBid"
-                      value={this.state.minBid}
-                      onChange={this.handleChange}
-                    />
+                      <input
+                        className="input"
+                        type="text"
+                        placeholder="$300"
+                        name="minBid"
+                        value={this.state.minBid}
+                        onChange={this.handleChange}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              
 
               <div className="column">
                 <div className="field">
                   <div className="control">
-                    <label className="label">Add Property Pictures</label>
+                    <label className="label">Add Property Pictures:</label>
                     {/* <button type="button">Upload Image</button> */}
                     {/* <img src={this.state.pic}></img> */}
                     {(this.fileArray || []).map((url) => (
                       <img className="image" src={url} alt="Property Image" />
                     ))}
                     <button
-                      type="button upload"
+                      type="button"
                       id="upload"
                       className="icOpenGallery"
                       alt="input_file"
@@ -290,7 +307,7 @@ class Owner extends Component {
               <div className="column is-half">
                 <div className="field">
                   <div className="control">
-                    <label className="label">Property Description</label>
+                    <label className="label">Property Description:</label>
                     <textarea
                       className="textarea"
                       placeholder="Enter Your Description"

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "../Home/styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import pic1 from '../Home/pool.jpg';
-import pic2 from '../Home/events2.jpg';
-import pic3 from '../Home/property.jpg';
+import pic1 from '../Home/images/pool.jpg';
+import pic2 from '../Home/images/events2.jpg';
+import pic3 from '../Home/images/property.jpg';
 import Typical from 'react-typical';
 import Book from '../Book';
 import Location from '../../location/Location'
@@ -53,7 +53,7 @@ class Home extends Component {
 render(){
   return(
     <>
-    <div className="hero is-mobile">     
+    <div className="hero is-desktop">     
       <form className="searchbar animate__animated animate__pulse" onSubmit={this.handleSubmit}>
         <div className="columns is-desktop">            
           <div className="column">
