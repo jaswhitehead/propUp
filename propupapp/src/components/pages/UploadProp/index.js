@@ -15,7 +15,7 @@ class Owner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ownerID: localStorage.getItem(LoginString.FirebaseDocumentId),
+      ownerID: localStorage.getItem(LoginString.ID),
       name: "",
       address: "",
       province: "",
@@ -23,6 +23,7 @@ class Owner extends Component {
       minBid: "",
       pic: [null],
       description: "",
+      city: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,7 +42,7 @@ class Owner extends Component {
 
     const db = firebase.firestore();
 
-    db.collection("properties")
+    db.collection("property")
       .doc(this.state.name)
       .set({
         ownerID: this.state.ownerID,
@@ -52,6 +53,7 @@ class Owner extends Component {
         minBid: this.state.minBid,
         pic: this.fileArray,
         description: this.state.description,
+        city: this.state.city,
       })
       .then(() => {
         console.log("prop submitted");
@@ -188,7 +190,11 @@ class Owner extends Component {
                       value={this.state.province}
                       onChange={this.handleChange}
                     >
-                      <select>
+                      <select
+                        name="province"
+                        value={this.state.province}
+                        onChange={this.handleChange}
+                      >
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -269,18 +275,17 @@ class Owner extends Component {
                     <label className="label">
                       Desired Starting Bid (per night)
                     </label>
-                      <input
-                        className="input"
-                        type="text"
-                        placeholder="$300"
-                        name="minBid"
-                        value={this.state.minBid}
-                        onChange={this.handleChange}
-                      />
-                    </div>
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="$300"
+                      name="minBid"
+                      value={this.state.minBid}
+                      onChange={this.handleChange}
+                    />
                   </div>
                 </div>
-              
+              </div>
 
               <div className="column">
                 <div className="field">
