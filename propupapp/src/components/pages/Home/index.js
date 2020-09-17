@@ -9,6 +9,7 @@ import Book from '../Book';
 import Location from '../../location/Location'
 import LoginString from "../Login/LoginStrings";
 import firebase from "../../../auth"
+import { GoogleComponent } from 'react-google-location';
 
 
 
@@ -21,34 +22,32 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        location: ""
-      
+        place: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+   
   }
-
+ 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
     console.log(event.target.value);
+   
   }
 
   handleSubmit(event){
     event.preventDefault();
+    let placeArray = []
+  
+    placeArray.push(this.state.place.place.split(","));
+    
+    console.log(placeArray[0][0])
+      this.props.history.push("/Renter/" + placeArray[0][0])
+}
 
-    const db = firebase.firestore()
-
-   let snapshot = db.collection("properties").where("location", "==", this.state.location).get();
-    if(snapshot.empty) {
-      console.log("No results found")
-    } else {
-      console.log("search good")
-    }
-
-
-  }
+ 
 
 render(){
   return(
@@ -58,7 +57,17 @@ render(){
         <div className="columns is-desktop">            
           <div className="column">
             <label className="label">&nbsp;&nbsp;&nbsp;&nbsp;Choose a Location:</label>
-              <Location name="location" onChange={this.handleChange} />
+            <div className="container">
+        <GoogleComponent
+        
+        apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
+        language={'en'}
+        country={'country:us'}
+        coordinates={true}
+        locationBoxStyle={'custom-style'}
+        locationListStyle={'custom-style-list'}
+        onChange={(e) => { this.setState({ place: e }) }} />
+      </div>
           </div>
 
           <div className="column">
@@ -95,7 +104,7 @@ render(){
     
     <div className="content-blocks is-mobile">
       <div className="columns is-desktop">
-        <div className="column is-one-third"><a href="/Renter">
+        <div className="column is-one-third"><a href="/Results">
           <h2 className="left"><u>Find Your Dream Vacation</u></h2>
           <img src={ pic1 } alt="Rent Me" /></a>
         </div>

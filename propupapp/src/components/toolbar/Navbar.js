@@ -63,7 +63,7 @@ class navbar extends Component {
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
-            <a className="navbar-item" href="/Renter">
+            <a className="navbar-item" href="/Results">
               Start Your Vacation&nbsp;&nbsp;
               <i className="fas fa-map-marked-alt"></i>
             </a>
