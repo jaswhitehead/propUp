@@ -96,60 +96,62 @@ export default class ProfileModal extends Component {
       <section>
         {image}
         {/* <input type="button" value="Open" onClick={() => this.openModal()} /> */}
-        <Modal
-          visible={this.state.show}
-          width="400"
-          height="500"
-          effect="fadeInUp"
-          onClickAway={() => this.closeModal()}
-        >
-          <div>
-            <h1 className="centerStuff">
-              {localStorage.getItem(LoginString.Name)}
-            </h1>
-            <img
-              className="centerPic is-rounded"
-              id="ProfilePicture"
-              //   src={this.props.currentUserPhoto}
-              src={localStorage.getItem(LoginString.PhotoURL)}
-              alt=""
-            />
-            <label className="label centerStuff">
-              <i class="fas fa-camera-retro"></i> Change Your Profile Picture:
-            </label>
+        {this.state.show ? (
+          <Modal
+            visible={this.state.show}
+            width="400"
+            height="500"
+            effect="fadeInUp"
+            onClickAway={() => this.closeModal()}
+          >
+            <div>
+              <h1 className="centerStuff">
+                {localStorage.getItem(LoginString.Name)}
+              </h1>
+              <img
+                className="centerPic is-rounded"
+                id="ProfilePicture"
+                //   src={this.props.currentUserPhoto}
+                src={localStorage.getItem(LoginString.PhotoURL)}
+                alt=""
+              />
+              <label className="label centerStuff">
+                <i class="fas fa-camera-retro"></i> Change Your Profile Picture:
+              </label>
 
-            <button
-              type="button"
-              id="avatar"
-              className="centerButt icOpenGallery"
-              alt="input_file"
-              onClick={() => {
-                this.refInput.click();
-              }}
-            >
-              Upload Image
-            </button>
-            <input
-              ref={(el) => {
-                this.refInput = el;
-              }}
-              className="centerStuff viewInputGallery"
-              accept="image/*"
-              type="file"
-              onChange={this.onChoosePhoto}
-            />
-            <br />
-            <br />
+              <button
+                type="button"
+                id="avatar"
+                className="centerButt icOpenGallery"
+                alt="input_file"
+                onClick={() => {
+                  this.refInput.click();
+                }}
+              >
+                Upload Image
+              </button>
+              <input
+                ref={(el) => {
+                  this.refInput = el;
+                }}
+                className="centerStuff viewInputGallery"
+                accept="image/*"
+                type="file"
+                onChange={this.onChoosePhoto}
+              />
+              <br />
+              <br />
 
-            <a
-              className="centerStuff"
-              //   href="javascript:void(0);"
-              onClick={() => this.closeModal()}
-            >
-              Close
-            </a>
-          </div>
-        </Modal>
+              <a
+                className="centerStuff"
+                //   href="javascript:void(0);"
+                onClick={() => this.closeModal()}
+              >
+                Close
+              </a>
+            </div>
+          </Modal>
+        ) : null}
       </section>
     );
   }
