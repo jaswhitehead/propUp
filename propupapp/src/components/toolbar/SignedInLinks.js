@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../../auth";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import ProfileModal from "../pages/Modal";
 
 class SignedInLinks extends Component {
   logout() {
@@ -21,11 +22,7 @@ class SignedInLinks extends Component {
               Log out
             </a>
 
-            <img
-              className="ProfilePicture is-rounded"
-              src={this.props.currentUserPhoto}
-              alt=""
-            />
+            <ProfileModal />
           </div>
         </div>
       </div>

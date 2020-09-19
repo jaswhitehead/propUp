@@ -52,6 +52,11 @@ class Login extends Component {
       .then(async (result) => {
         let user = result.user;
         if (user) {
+          // await firebase
+          // .storage()
+          // .ref(localStorage.getItem(LoginString.ID))
+          // .child()
+
           await firebase
             .firestore()
             .collection("user")
@@ -71,7 +76,7 @@ class Login extends Component {
                   LoginString.Password,
                   currentdata.password
                 );
-                localStorage.setItem(LoginString.PhotoURL, currentdata.URL);
+                // localStorage.setItem(LoginString.PhotoURL, currentdata.URL);
                 localStorage.setItem(
                   LoginString.Description,
                   currentdata.description
