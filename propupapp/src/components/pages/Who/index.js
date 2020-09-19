@@ -1,10 +1,10 @@
 import React from "react";
 import './styles.css';
 import "react-bulma-components/dist/react-bulma-components.min.css";
-import Chip from '../Who/Chip.jpg';
-import Jason from '../Who/Jason.jpg';
-import Mason from '../Who/Mason.jpg';
-import Micah from '../Who/Micah.jpg';
+import Chip from '../Who/images/Chip.jpg';
+import Jason from '../Who/images/Jason.jpg';
+import Mason from '../Who/images/Mason.jpg';
+import Micah from '../Who/images/Micah.jpg';
 
 
 const Who = () => {
@@ -15,7 +15,12 @@ const Who = () => {
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
-                                <img src={Jason} alt="Jason Whitehead" />
+                                <img src={Jason} 
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    window.open("https://github.com/jaswhitehead", "Popup", "width=580, height=600, top=30")
+                                }}
+                                alt="Jason Whitehead" />
                             </figure>
                         </div>
                         <div className="media-content">
@@ -34,18 +39,28 @@ const Who = () => {
                             <nav className="level is-desktop">
                                 <div className="level-left">
                                     <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
-                                        <span className="icon">
-                                            <i className="fas fa-envelope" aria-hidden="true"></i>
+                                        <span className="icons">
+                                            <i className="fas fa-envelope fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/jasonwhitehead1/" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-linkedin" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="linkedIn" 
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://www.linkedin.com/in/jasonwhitehead1/", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-linkedin fa-2x" aria-hidden="true" />
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="github" href="https://github.com/jaswhitehead" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-github" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="github"
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://github.com/jaswhitehead", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-github fa-2x" aria-hidden="true" />
                                         </span>
                                     </a>
                                 </div>
@@ -58,13 +73,18 @@ const Who = () => {
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
-                                <img src={Chip} alt="Chip Johnson" />
+                                <img src={Chip} 
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    window.open("https://github.com/cjohnson1580", "Popup", "width=580, height=600, top=30")
+                                }}                                
+                                alt="Chip Johnson" />
                             </figure>
                         </div>
                         <div className="media-content">
                             <div className="content">
                                 <p>
-                                    <strong>Chip Johnson</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @chipjohsnon</small>
+                                    <strong>Chip Johnson</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @ChipJohsnon</small>
                                     <br />
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     Aenean efficitur sit amet massa fringilla egestas. Nullam
@@ -76,19 +96,29 @@ const Who = () => {
                             </div>
                             <nav className="level is-mobile">
                                 <div className="level-left">
-                                    <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com" target="blank">
-                                        <span className="icon">
-                                            <i className="fas fa-envelope" aria-hidden="true"></i>
+                                    <a className="level-item" aria-label="reply" href="mailto:cjohnson1580@gmail.com" target="blank">
+                                        <span className="icons">
+                                            <i className="fas fa-envelope fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/chip-johnson-17077839/" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-linkedin" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="linkedIn" 
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://www.linkedin.com/in/chip-johnson-17077839/", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="github" href="https://github.com/cjohnson1580" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-github" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="github" 
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://github.com/cjohnson1580", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-github fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
                                 </div>
@@ -103,7 +133,12 @@ const Who = () => {
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
-                                <img src={Micah} alt="Micah Lea" />
+                                <img src={Micah} 
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    window.open("https://github.com/micahslea", "Popup", "width=580, height=600, top=30")
+                                }}   
+                                alt="Micah Lea" />
                             </figure>
                         </div>
                         <div className="media-content">
@@ -122,18 +157,28 @@ const Who = () => {
                             <nav className="level is-mobile">
                                 <div className="level-left">
                                     <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
-                                        <span className="icon">
-                                            <i className="fas fa-envelope" aria-hidden="true"></i>
+                                        <span className="icons">
+                                            <i className="fas fa-envelope fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="retweet">
-                                        <span className="icon">
-                                            <i className="fab fa-linkedin" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="LinkedIn"
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://www.linkedin.com/in/micah-lea-36357511/", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="like" href="https://github.com/micahslea" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-github" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="GitHub" 
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://github.com/micahslea", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-github fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
                                 </div>
@@ -145,13 +190,18 @@ const Who = () => {
                     <article className="media">
                         <div className="media-left">
                             <figure className="image">
-                                <img src={Mason} alt="Mason Shadrick" />
+                                <img src={Mason} 
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    window.open("https://github.com/Mason-Shadrick", "Popup", "width=580, height=600, top=30")
+                                }}   
+                                alt="Mason Shadrick" />
                             </figure>
                         </div>
                         <div className="media-content">
                             <div className="content">
                                 <p>
-                                    <strong>Mason Shadrick</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @masonshadrick</small>
+                                    <strong>Mason Shadrick</strong>&nbsp;&nbsp;&nbsp;<i className="fab fa-twitter"></i><small> @MasonShadrick</small>
                                     <br />
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Aenean efficitur sit amet massa fringilla egestas. Nullam
@@ -164,18 +214,28 @@ const Who = () => {
                             <nav className="level is-mobile">
                                 <div className="level-left">
                                     <a className="level-item" aria-label="reply" href="mailto:jaswhitehead@gmail.com">
-                                        <span className="icon">
-                                            <i className="fas fa-envelope" aria-hidden="true"></i>
+                                        <span className="icons">
+                                            <i className="fas fa-envelope fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="linkedIn" href="https://www.linkedin.com/in/masondshadrick/" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-linkedin" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="linkedIn"
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://www.linkedin.com/in/masondshadrick/", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
-                                    <a className="level-item" aria-label="github" href="https://github.com/Mason-Shadrick" target="blank">
-                                        <span className="icon">
-                                            <i className="fab fa-github" aria-hidden="true"></i>
+                                    <a className="level-item" 
+                                        aria-label="github" 
+                                        style={{ cursor: 'pointer' }}
+                                        onClick={() => {
+                                        window.open("https://github.com/Mason-Shadrick", "Popup", "width=580, height=600, top=30")
+                                        }} >
+                                        <span className="icons">
+                                            <i className="fab fa-github fa-2x" aria-hidden="true"></i>
                                         </span>
                                     </a>
                                 </div>

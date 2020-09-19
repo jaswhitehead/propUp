@@ -12,9 +12,8 @@
     height: 350px;   
 }
 
-.level-item {
-    color: blue;
-    margin-right: 100px;
+.icons {
+    margin-left: 10px;
 }
 
 .media {
