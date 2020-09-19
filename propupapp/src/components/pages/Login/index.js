@@ -52,10 +52,15 @@ class Login extends Component {
       .then(async (result) => {
         let user = result.user;
         if (user) {
-          // await firebase
-          // .storage()
-          // .ref(localStorage.getItem(LoginString.ID))
-          // .child()
+          firebase
+            .storage()
+            .ref(user.uid + "/ProfilePhoto")
+            .getDownloadURL()
+            .then((snapshot) => {
+              console.log("storage = ", snapshot);
+              console.log("uid = ", user.uid);
+              localStorage.setItem(LoginString.PhotoURL, snapshot);
+            });
 
           await firebase
             .firestore()
@@ -97,6 +102,7 @@ class Login extends Component {
           error: "Error while signing in. Please try again.",
         });
       });
+    window.location.reload(false);
   }
 
   render() {

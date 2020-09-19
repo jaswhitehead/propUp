@@ -9,7 +9,7 @@ export default class ProfileModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false,
+      show: false,
     };
     this.currentPhotoFile = [];
   }
@@ -39,7 +39,6 @@ export default class ProfileModal extends Component {
 
   uploadPhoto = (e) => {
     if (this.fileArray.length) {
-      const timestamp = Date.now().toString();
       localStorage.setItem(LoginString.PhotoURL, this.fileArray[0]);
 
       const uploadTask = firebase
@@ -71,31 +70,34 @@ export default class ProfileModal extends Component {
 
   openModal() {
     this.setState({
-      visible: true,
+      show: true,
     });
     console.log("opened modal");
   }
 
   closeModal() {
     this.setState({
-      visible: false,
+      show: false,
     });
   }
 
   render() {
+    const image = (
+      <img
+        className="ProfilePicture is-rounded"
+        src={localStorage.getItem(LoginString.PhotoURL)}
+        alt=""
+        type="button"
+        value="Open"
+        onClick={() => this.openModal()}
+      />
+    );
     return (
       <section>
-        <img
-          className="ProfilePicture is-rounded"
-          src={localStorage.getItem(LoginString.PhotoURL)}
-          alt=""
-          type="button"
-          value="Open"
-          onClick={() => this.openModal()}
-        />
+        {image}
         {/* <input type="button" value="Open" onClick={() => this.openModal()} /> */}
         <Modal
-          visible={this.state.visible}
+          visible={this.state.show}
           width="400"
           height="500"
           effect="fadeInUp"
@@ -141,7 +143,7 @@ export default class ProfileModal extends Component {
 
             <a
               className="centerStuff"
-              href="javascript:void(0);"
+              //   href="javascript:void(0);"
               onClick={() => this.closeModal()}
             >
               Close
