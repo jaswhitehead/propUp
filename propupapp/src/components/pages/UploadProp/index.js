@@ -100,7 +100,7 @@ class Owner extends Component {
 
       const uploadTask = firebase
         .storage()
-        .ref(this.state.name + "/")
+        .ref(localStorage.getItem(LoginString.ID) + "/" + this.state.name + "/")
         .child(this.files.name)
         .put(this.files);
 
