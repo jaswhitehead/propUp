@@ -4,7 +4,9 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import { Card } from "@material-ui/core";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
+
 const db = firebase.firestore();
+
 class OwnerDash extends Component {
   constructor(props) {
     super(props);
