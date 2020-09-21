@@ -4,7 +4,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import LoginString from "../Login/LoginStrings";
 import firebase from "../../../auth";
 
-class Owner extends Component {
+class UploadProp extends Component {
   fileArray = [];
   imageArray = [];
 
@@ -357,4 +357,4 @@ class Owner extends Component {
   }
 }
 
-export default Owner;
+export default UploadProp;
