@@ -21,6 +21,7 @@
     "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
     "react-google-location": "^1.2.2",
+    "react-image-gallery": "^1.0.8",
     "react-loading": "^2.0.3",
     "react-modal": "^3.11.2",
     "react-moment": "^0.9.7",
