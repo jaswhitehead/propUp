@@ -3,6 +3,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
 import MyGallery from "../ImageGallery";
+import BidModal from "../BidModal";
 
 const db = firebase.firestore();
 
@@ -65,6 +66,7 @@ class Property extends Component {
               highBidder: this.state.highBidder,
             });
             console.log("updated bid from checking current bid");
+            return <BidModal show={true} />;
           } else {
             console.log("bid not higher than current bid");
           }
@@ -115,7 +117,7 @@ class Property extends Component {
 
     let images = [];
 
-    let picGallery = this.state.pic.map((pics) => {
+    this.state.pic.map((pics) => {
       images.push({
         original: pics,
         thumbnail: pics,
@@ -178,7 +180,8 @@ class Property extends Component {
           <p>{this.state.description}</p>
 
           <br></br>
-          <input
+          <p>{`The current bid is $${this.state.minBid} per night`}</p>
+          {/* <input
             type="text"
             name="newBid"
             value={this.state.newBid}
@@ -187,7 +190,8 @@ class Property extends Component {
           <button className="bid" onClick={this.bidCheck}>
             {" "}
             Make a Bid{" "}
-          </button>
+          </button> */}
+          <BidModal propId={this.props.match.params.id} />
         </div>
       </div>
     );
