@@ -123,12 +123,12 @@ class Property extends Component {
     });
 
     return (
-      <div className="column">
-        <div className="card">
+      <div className="column" style={{ marginTop: "100px" }}>
+        {/* <div className="card">
           <div className="card-image">
-            <figure className="image is-4by3">
-              {/* <img src={this.state.pic[0]} alt="House1" /> */}
-            </figure>
+            <figure className="image is-4by3"> */}
+        {/* <img src={this.state.pic[0]} alt="House1" /> */}
+        {/* </figure>
           </div>
           <div className="card-content">
             <div className="media">
@@ -164,9 +164,31 @@ class Property extends Component {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* {displayPics} */}
-        <MyGallery images={images} />;
+
+        <MyGallery images={images} />
+        <div className="media-content text-center">
+          <p className="title is-4"> {this.state.name} </p>
+          <p className="subtitle is-6">
+            Listed By: <i>{this.state.owner}</i>
+          </p>
+        </div>
+        <div className="content text-center">
+          <p>{this.state.description}</p>
+
+          <br></br>
+          <input
+            type="text"
+            name="newBid"
+            value={this.state.newBid}
+            onChange={this.updateInputValue}
+          />
+          <button className="bid" onClick={this.bidCheck}>
+            {" "}
+            Make a Bid{" "}
+          </button>
+        </div>
       </div>
     );
   }
