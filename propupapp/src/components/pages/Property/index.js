@@ -16,7 +16,7 @@ class Property extends Component {
       description: "",
       minBid: "",
       province: "",
-      pic: "",
+      pic: [],
       zipC: "",
       owner: "",
       highBidder: "",
@@ -42,11 +42,11 @@ class Property extends Component {
 
   bidCheck(e) {
     e.preventDefault();
-    let bidref = db.collection("properties").doc(this.state.name);
+    let bidref = db.collection("property").doc(this.state.name);
 
     let res = "";
 
-    db.collection("properties")
+    db.collection("property")
       .doc(this.state.name)
       .onSnapshot((snapshot) => {
         console.log("minimum bid: " + snapshot.get("minBid"));
@@ -83,11 +83,11 @@ class Property extends Component {
   }
 
   getOne() {
-    db.collection("properties")
+    db.collection("property")
       .doc(this.props.match.params.id)
       .get()
       .then((doc) => {
-        db.collection("users")
+        db.collection("user")
           .doc(doc.data().ownerID)
           .get()
           .then((snap) => {
@@ -107,12 +107,16 @@ class Property extends Component {
   }
 
   render() {
+    let displayPics = this.state.pic.map((pics) => {
+      console.log(`pics = ${pics}`);
+      return <img src={pics} alt="House1" />;
+    });
     return (
       <div className="column">
         <div className="card">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src={this.state.pic[0]} alt="House1" />
+              {/* <img src={this.state.pic[0]} alt="House1" /> */}
             </figure>
           </div>
           <div className="card-content">
@@ -150,6 +154,7 @@ class Property extends Component {
             </div>
           </div>
         </div>
+        {displayPics}
       </div>
     );
   }

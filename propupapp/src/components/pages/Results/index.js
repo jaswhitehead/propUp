@@ -8,6 +8,7 @@ import Weather from "../Weather/index";
 // import Demo7 from '../Results/Demo7.jpg';
 import { Card } from "@material-ui/core";
 import firebase from "../../../auth/";
+import LoginString from "../Login/LoginStrings";
 
 const db = firebase.firestore();
 class Results extends Component {
@@ -24,7 +25,7 @@ class Results extends Component {
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          let docName = doc.data().ownerID;
+          let docName = localStorage.getItem(LoginString.ID);
           console.log("docname = ", docName);
           db.collection("user")
             .where("id", "==", docName)

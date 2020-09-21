@@ -6,6 +6,7 @@ import firebase from "../../../auth";
 
 class Owner extends Component {
   fileArray = [];
+  imageArray = [];
 
   componentDidMount() {
     if (!localStorage.getItem(LoginString.ID)) {
@@ -51,7 +52,7 @@ class Owner extends Component {
         province: this.state.province,
         zipC: this.state.zipC,
         minBid: this.state.minBid,
-        pic: this.fileArray,
+        pic: this.imageArray,
         description: this.state.description,
         city: this.state.city,
       })
@@ -113,6 +114,8 @@ class Owner extends Component {
         },
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            console.log("downloadURL = ", downloadURL);
+            this.imageArray.push(downloadURL);
             this.setState({
               isLoading: false,
             });
