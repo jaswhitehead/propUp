@@ -67,7 +67,7 @@ class navbar extends Component {
               Start Your Vacation&nbsp;&nbsp;
               <i className="fas fa-map-marked-alt"></i>
             </a>
-            <a className="navbar-item" href="/Owner">
+            <a className="navbar-item" href="/NewProp">
               List a Property&nbsp;&nbsp;<i className="fas fa-home"></i>
             </a>
             <a className="navbar-item" href="/Welcome">

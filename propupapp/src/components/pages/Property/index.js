@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
+import MyGallery from "../ImageGallery";
 
 const db = firebase.firestore();
 
@@ -111,6 +112,16 @@ class Property extends Component {
       console.log(`pics = ${pics}`);
       return <img src={pics} alt="House1" />;
     });
+
+    let images = [];
+
+    let picGallery = this.state.pic.map((pics) => {
+      images.push({
+        original: pics,
+        thumbnail: pics,
+      });
+    });
+
     return (
       <div className="column">
         <div className="card">
@@ -154,7 +165,8 @@ class Property extends Component {
             </div>
           </div>
         </div>
-        {displayPics}
+        {/* {displayPics} */}
+        <MyGallery images={images} />;
       </div>
     );
   }
