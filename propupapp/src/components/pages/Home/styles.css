@@ -9,6 +9,38 @@
     border: 2px solid black;
 }
 
+@media screen and (max-width: 1700px) {
+    .searchbar {
+      margin-left: 150px;
+      margin-top: 50px;
+      width: 1000px;
+    }
+  }
+
+@media screen and (max-width: 1400px) {
+    .searchbar {
+      margin-left: 50px;
+      margin-top: 50px;
+      width: 1000px;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    .searchbar {
+      margin-left: 150px;
+      margin-top: 50px;
+      width: 600px;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .searchbar {
+      margin-left: 100px;
+      margin-top: 50px;
+      width: 400px;
+    }
+  }
+
 @media screen and (max-width: 600px) {
     .searchbar {
       margin-left: 0px;
@@ -53,6 +85,46 @@
     font-family: 'Anton', sans-serif;
 }
 
+@media screen and (max-width: 600px) {
+    .typed {
+      margin-left: 0px;
+      font-size: 18px;
+      font-family: 'Anton', sans-serif;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    .typed {
+      margin-left: 0px;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    #depart {
+      margin-left: 10px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    #depart {
+      margin-left: 10px;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    #book {
+      margin-left: 20px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    #book {
+      margin-left: 20px;
+    }
+  }
+
 .submitbutton {
     margin-top: 40px;
     height: 50px;
@@ -61,6 +133,18 @@
     background: #B2D350;
     color: white;
 }
+
+@media screen and (max-width: 1000px) {
+    .submitbutton {
+      margin-left: 20px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .submitbutton {
+      margin-left: 20px;
+    }
+  }
 
 h2.left {
     font-size: 24px;
