@@ -3,7 +3,6 @@ import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import LoginString from "./LoginStrings";
 import firebase from "../../../auth/";
-import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -97,11 +96,8 @@ class Login extends Component {
       })
       .catch(function (error) {
         console.log(error);
-        this.setState({
-          error: "Error while signing in. Please try again.",
-        });
+        alert(error);
       });
-    window.location.reload(false);
   }
 
   render() {
