@@ -226,8 +226,14 @@ class Signup extends Component {
             <div className="field2">
               <div className="control">
                 <label className="checkbox">
-                  <input type="checkbox" />I agree to the{" "}
-                  <a href="/">terms and conditions</a>
+                  <input type="checkbox" /> I agree to the{" "}
+                  <a 
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                    window.open("/Terms", "Popup", "width=580, height=600, top=30")
+                    }} >
+                    terms and conditions
+                  </a>
                 </label>
               </div>
             </div>

@@ -14,8 +14,12 @@ import Results from "../pages/Results";
 import Welcome from "../pages/Welcome";
 import Property from "../pages/Property";
 import OwnerDash from "../pages/OwnerDash";
+
 import RenterId from "../pages/RenterId";
 import DashNav from "../pages/DashNav";
+
+import Terms from "../pages/Terms"
+
 
 class Router extends Component {
   render() {
@@ -37,6 +41,7 @@ class Router extends Component {
         <Route component={Welcome} exact path="/Welcome" />
         <Route component={Property} path="/property/:id" />
         <Route component={OwnerDash} path="/OwnerDash" />
+        <Route component={Terms} path="/Terms" />
       </Switch>
     );
   }
