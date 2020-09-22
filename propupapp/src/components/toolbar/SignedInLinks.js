@@ -6,7 +6,7 @@ import ProfileModal from "../pages/Modal";
 class SignedInLinks extends Component {
   logout() {
     firebase.auth().signOut();
-    // this.props.history.push("/Home");
+ 
     localStorage.clear();
   }
   render() {

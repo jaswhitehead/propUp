@@ -59,15 +59,6 @@ class UploadProp extends Component {
       .then(() => {
         console.log("prop submitted");
         console.log(this.state.ownerID);
-        // this.setState({
-        //   name: "",
-        //   address: "",
-        //   province: "",
-        //   zipC: "",
-        //   minBid: "",
-        //   pic: [null],
-        //   description: "",
-        // });
         window.location.reload(false);
       });
   }
@@ -294,8 +285,7 @@ class UploadProp extends Component {
                 <div className="field">
                   <div className="control">
                     <label className="label">Add Property Pictures:</label>
-                    {/* <button type="button">Upload Image</button> */}
-                    {/* <img src={this.state.pic}></img> */}
+                   
                     {(this.fileArray || []).map((url) => (
                       <img
                         className="image"

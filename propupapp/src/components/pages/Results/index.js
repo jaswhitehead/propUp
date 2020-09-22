@@ -18,7 +18,6 @@ class Results extends Component {
     this.state = {
       propArray: [],
     };
-    // this.desCheck = this.desCheck.bind(this)
   }
 
   getAll() {
@@ -29,7 +28,7 @@ class Results extends Component {
           let docName = localStorage.getItem(LoginString.ID);
           console.log("docname = ", docName);
           db.collection("user")
-            .where("id", "==", docName)
+            .where("id", "==", doc.data().ownerID)
             .get()
             .then((snap) => {
               snap.forEach((doc2) => {
@@ -60,18 +59,6 @@ class Results extends Component {
     this.getAll();
   }
 
-//  desCheck()  {
-//     if(!"undefined"){
-//      if(this.state.description.length > 144){
-//        console.log("if")
-//        return this.state.description.charAt(144)+"..."
-       
-//      } else {
-//        console.log("else")
-//        return this.state.description
-//      }
-//    } 
-//  }
 
   
   render() {
@@ -106,10 +93,9 @@ class Results extends Component {
             <div className="content">
               <p>{p.minBid}</p>
               <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
-              <a href={`/property/${p.docID}`}>More Info</a>
               <br></br>
-              <a href="/renter" className="button" id="bid">
-                Make a Bid
+              <a href={`/property/${p.docID}`} className="button" id="bid">
+                More Info
               </a>
             </div>
           </div>

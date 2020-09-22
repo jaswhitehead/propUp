@@ -86,8 +86,7 @@ class Renter extends Component {
 
                   <div className="content">
                   <p>{p.description}</p>
-                  <a href={`/property/${p.docID}`}>More Info</a><br></br>
-                  <a href="/renter" className="button" id="bid">Make a Bid</a>
+                  <a href={`/property/${p.docID}`} className="button" id="bid">More Info</a>
                   </div>
               </div>
           </div>
