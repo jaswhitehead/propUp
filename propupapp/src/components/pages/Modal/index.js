@@ -56,6 +56,13 @@ export default class ProfileModal extends Component {
         },
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            firebase
+              .firestore()
+              .collection("user")
+              .doc(localStorage.getItem(LoginString.ID))
+              .update({
+                URL: downloadURL,
+              });
             this.setState({
               isLoading: false,
             });
@@ -95,7 +102,7 @@ export default class ProfileModal extends Component {
     return (
       <section>
         {image}
-        
+
         {this.state.show ? (
           <Modal
             visible={this.state.show}
@@ -111,7 +118,6 @@ export default class ProfileModal extends Component {
               <img
                 className="centerPic is-rounded"
                 id="ProfilePicture"
-                
                 src={localStorage.getItem(LoginString.PhotoURL)}
                 alt=""
               />
@@ -142,11 +148,7 @@ export default class ProfileModal extends Component {
               <br />
               <br />
 
-              <a
-                className="centerStuff"
-                
-                onClick={() => this.closeModal()}
-              >
+              <a className="centerStuff" onClick={() => this.closeModal()}>
                 Close
               </a>
             </div>

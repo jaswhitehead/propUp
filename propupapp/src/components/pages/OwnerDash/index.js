@@ -4,6 +4,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import { Card } from "@material-ui/core";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
+import UpdateModal from "../UpdateModal";
 
 const db = firebase.firestore();
 
@@ -14,7 +15,7 @@ class OwnerDash extends Component {
       propArray: [],
     };
   }
- 
+
   getAll() {
     let docName = localStorage.getItem(LoginString.ID);
     console.log("docName = ", docName);
@@ -23,7 +24,6 @@ class OwnerDash extends Component {
       .get()
       .then((snap) => {
         snap.forEach((doc) => {
-     
           this.setState((prevState) => ({
             propArray: [
               ...prevState.propArray,
@@ -54,7 +54,12 @@ class OwnerDash extends Component {
         <div className="card animate__animated animate__fadeInUp">
           <div className="card-image">
             <figure className="image is-2by2">
-              <img src={p.pic[0]} alt="House1" alt="Placeholder image" className="propPic"/>
+              <img
+                src={p.pic[0]}
+                alt="House1"
+                alt="Placeholder image"
+                className="propPic"
+              />
             </figure>
           </div>
           <div className="card-content">
@@ -74,10 +79,10 @@ class OwnerDash extends Component {
             <div className="content">
               <p>{p.minBid}</p>
               <p>{p.description}</p>
-              <a href={`/property/${p.docID}`}>More Info</a>
+              {/* <a href={`/property/${p.docID}`}>More Info</a> */}
               <br></br>
-              <a href="/renter" className="button" id="bid">
-                Update/Delete Prop
+              <a href={`/edit/${p.docID}`} className="button" id="bid">
+                Edit Prop
               </a>
             </div>
           </div>
