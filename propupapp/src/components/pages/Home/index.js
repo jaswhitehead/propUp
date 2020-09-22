@@ -70,8 +70,8 @@ render(){
       </div>
           </div>
 
-          <div className="column">
-            <label className="label">Departure and Arrival Dates:</label>
+          <div className="column" id="book">
+            <label className="label" id="depart">Departure and Arrival Dates:</label>
               <Book />
           </div>
             
