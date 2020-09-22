@@ -77,7 +77,7 @@ export default class BidModal extends Component {
               highBidder: this.state.highBidder,
             });
             console.log("updated bid from checking current bid");
-            return <BidModal show={true} />;
+            this.setState({show: true})
           } else {
             console.log("bid not higher than current bid");
           }
@@ -150,7 +150,7 @@ export default class BidModal extends Component {
 
             <a
               className="centerStuff"
-              href="/Renter"
+              // href="/Renter"
               onClick={() => this.closeModal()}
             >
               Close
