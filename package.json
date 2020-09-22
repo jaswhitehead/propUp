@@ -1,0 +1,34 @@
+{
+  "name": "propup",
+  "version": "1.0.0",
+  "description": "A bidding platform for short-term rental properties",
+  "main": "index.js",
+  "dependencies": {
+    "react-router-dom": "^5.2.0",
+    "react-stringify": "^1.0.0",
+    "typewriter-effect": "^2.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaswhitehead/propUp.git"
+  },
+  "keywords": [
+    "Rent",
+    "Bid",
+    "Own",
+    "Find"
+  ],
+  "author": "Jason Whitehead",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaswhitehead/propUp/issues"
+  },
+  "homepage": "https://github.com/jaswhitehead/propUp#readme"
+}
