@@ -4,7 +4,7 @@ import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
 import MyGallery from "../ImageGallery";
 import UpdateModal from "../UpdateModal";
-import { withRouter } from "react-router-dom";
+import DeleteModal from "../DeleteModal";
 
 const db = firebase.firestore();
 
@@ -29,16 +29,21 @@ class Edit extends Component {
     this.updateInputValue = this.updateInputValue.bind(this);
   }
 
-  delete() {
-    if (window.confirm("Are you sure you want to delete this property")) {
-      db.collection("property")
-        .doc(this.props.match.params.id)
-        .delete()
-        .then(this.props.history.push("/Dashboard"));
-    } else {
-      document.getElementById("root").innerHTML = "blah";
-    }
-  }
+  //   delete() {
+  //     if (window.confirm("Are you sure you want to delete this property")) {
+  //       db.collection("property")
+  //         .doc(this.props.match.params.id)
+  //         .delete()
+  //         .then(this.props.history.push("/Dashboard"));
+  //     } else {
+  //       document.getElementById("root").innerHTML = (
+
+  //         <div>
+  //           <a href="/Dashboard">Go Back To Your Dashboard</a>
+  //         </div>
+  //       );
+  //     }
+  //   }
 
   componentDidMount() {
     this.getOne();
@@ -109,16 +114,10 @@ class Edit extends Component {
           <p>{`The current bid is $${this.state.minBid} per night`}</p>
 
           <UpdateModal propId={this.props.match.params.id} />
-          <button
-            className="button is-danger"
-            type="button"
-            onClick={this.delete}
-          >
-            Delete
-          </button>
+          <DeleteModal propId={this.props.match.params.id} />
         </div>
       </div>
     );
   }
 }
-export default withRouter(Edit);
+export default Edit;

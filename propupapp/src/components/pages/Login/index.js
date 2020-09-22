@@ -89,10 +89,10 @@ class Login extends Component {
             });
         }
         if (localStorage.getItem(LoginString.Selector) === "renter") {
-          this.props.history.push("./Renter");
+          this.props.history.push("./Dashboard");
         }
         if (localStorage.getItem(LoginString.Selector) === "owner") {
-          this.props.history.push("./OwnerDash");
+          this.props.history.push("./Dashboard");
         }
       })
       .catch(function (error) {

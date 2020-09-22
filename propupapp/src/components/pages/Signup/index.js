@@ -6,7 +6,6 @@ import LoginString from "../Login/LoginStrings";
 import { Link } from "react-router-dom";
 import firebase from "../../../auth/";
 
-
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -69,10 +68,10 @@ class Signup extends Component {
               );
 
               if (this.state.selector === "renter") {
-                this.props.history.push("/Renter");
+                this.props.history.push("/dashboard");
               }
               if (this.state.selector === "owner") {
-                this.props.history.push("/OwnerDash");
+                this.props.history.push("/dashboard");
               }
 
               this.setState({
@@ -222,18 +221,21 @@ class Signup extends Component {
               <div className="control">
                 <label className="checkbox">
                   <input type="checkbox" /> I agree to the{" "}
-                  <a 
-                    style={{ cursor: 'pointer' }}
+                  <a
+                    style={{ cursor: "pointer" }}
                     onClick={() => {
-                    window.open("/Terms", "Popup", "width=580, height=600, top=30")
-                    }} >
+                      window.open(
+                        "/Terms",
+                        "Popup",
+                        "width=580, height=600, top=30"
+                      );
+                    }}
+                  >
                     terms and conditions
                   </a>
                 </label>
               </div>
             </div>
-
-            
 
             <div className="field2">
               <div className="control">
