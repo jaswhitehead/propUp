@@ -92,7 +92,7 @@ class OwnerDash extends Component {
     return (
       <div className="propresult">
         <div className="column">
-          <h1>Top Matches for your Search:</h1>
+          <h1>Your Current Listings:</h1>
         </div>
         <div className="columns is-desktop">
           <Card>{displayPosts}</Card>
