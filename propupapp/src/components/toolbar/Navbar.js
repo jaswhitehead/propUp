@@ -78,7 +78,12 @@ class navbar extends Component {
                 More
               </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item" href="/Events">
+                <a className="navbar-item"
+                  aria-label="Eventful" 
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                  window.open("https://jaswhitehead.github.io/PropUpEvents/", "Popup", "width=530, height=850, top=100")
+                }} >
                   Find Events
                 </a>
                 <a className="navbar-item" href="/Chat">

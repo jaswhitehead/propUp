@@ -22,6 +22,7 @@
 
 .carousel.slide  {
     width: 700px;
+    margin-left: 150px;;
 }
 
 .carousel-control-prev-icon {
@@ -53,3 +54,6 @@
     color: red;
 }
 
+#key {
+    height: 400px;
+}
