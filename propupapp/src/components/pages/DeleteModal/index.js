@@ -16,6 +16,7 @@ export default class BidModal extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.delete = this.delete.bind(this);
+    this.closeModal = this.closeModal.bind(this)
   }
 
   delete() {
