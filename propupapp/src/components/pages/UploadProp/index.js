@@ -38,7 +38,7 @@ class UploadProp extends Component {
     });
     console.log(event.target.value);
   }
-  handleSubmit(event) {
+handleSubmit(event) {
     event.preventDefault();
 
     const db = firebase.firestore();
@@ -59,7 +59,8 @@ class UploadProp extends Component {
       .then(() => {
         console.log("prop submitted");
         console.log(this.state.ownerID);
-        window.location.reload(false);
+        // window.location.reload(false);
+        this.props.history.push("/Dashboard")
       });
   }
 
@@ -334,7 +335,7 @@ class UploadProp extends Component {
                       onChange={this.handleChange}
                     ></textarea>
                   </div>
-                  <button type="submit" id="submit">
+                  <button type="submit" id="submit" >
                     Submit
                   </button>
                 </div>
