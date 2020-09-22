@@ -21,7 +21,7 @@ return(
       <div className="column"> <h5 className="white-text"><u><strong>Quick Links</strong></u></h5>
         <ul>
           <li><a className="white-text" href="/Signup"><i class="fas fa-user-plus"></i>&nbsp;Login / Sign Up</a></li>
-          <li><a className="white-text" href="/Owner"><i class="fas fa-home"></i>&nbsp;Property Owner</a></li>
+          <li><a className="white-text" href="/OwnerDash"><i class="fas fa-home"></i>&nbsp;Property Owner</a></li>
           <li><a className="white-text" href="/Renter"><i class="fas fa-door-open"></i>&nbsp;Renter</a></li>
           <li><a className="white-text" href="/Who"><i class="fas fa-users"></i>&nbsp;Who we are</a></li>               
         </ul>
