@@ -29,7 +29,6 @@ class Login extends Component {
     if (localStorage.getItem(LoginString.ID)) {
       this.setState({ isLoading: false }, () => {
         this.setState({ isLoading: false });
-        // this.props.showToast(1, "Login success");
         if (localStorage.getItem(LoginString.Selector) === "renter") {
           this.props.history.push("./Renter");
         }

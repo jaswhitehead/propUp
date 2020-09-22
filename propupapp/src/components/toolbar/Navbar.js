@@ -7,9 +7,7 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import LoginString from "../pages/Login/LoginStrings";
 
-// const links = firebase.auth().onAuthStateChanged(function (user) {
-//   return user ? <SignedInLinks /> : <SignedOutLinks />;
-// });
+
 
 class navbar extends Component {
   constructor(props) {

@@ -95,7 +95,7 @@ export default class ProfileModal extends Component {
     return (
       <section>
         {image}
-        {/* <input type="button" value="Open" onClick={() => this.openModal()} /> */}
+        
         {this.state.show ? (
           <Modal
             visible={this.state.show}
@@ -111,7 +111,7 @@ export default class ProfileModal extends Component {
               <img
                 className="centerPic is-rounded"
                 id="ProfilePicture"
-                //   src={this.props.currentUserPhoto}
+                
                 src={localStorage.getItem(LoginString.PhotoURL)}
                 alt=""
               />
@@ -144,7 +144,7 @@ export default class ProfileModal extends Component {
 
               <a
                 className="centerStuff"
-                //   href="javascript:void(0);"
+                
                 onClick={() => this.closeModal()}
               >
                 Close

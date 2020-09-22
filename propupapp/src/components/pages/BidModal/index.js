@@ -30,9 +30,7 @@ export default class BidModal extends Component {
 
   componentDidMount() {
     this.getOne();
-    // if (!localStorage.getItem(LoginString.ID)) {
-    //   this.props.history.push("/");
-    // }
+  
   }
 
   openModal() {
@@ -84,13 +82,7 @@ export default class BidModal extends Component {
             console.log("bid not higher than current bid");
           }
 
-          //if no currentBid compare against the minBid
-          // } else {
-
-          //   if (this.state.newBid > snapshot.get("minBid")){
-          //     //if more update currentBid to newBid
-          //      bidref.update({currentBid: this.state.newBid});
-          //     console.log("updated bid from min bid")
+         
         } else {
           console.log("bid not higher than min bid");
         }
@@ -125,7 +117,7 @@ export default class BidModal extends Component {
   render() {
     return (
       <section>
-        {/* <input type="button" value="Open" onClick={() => this.openModal()} /> */}
+       
         <input
           type="text"
           name="newBid"

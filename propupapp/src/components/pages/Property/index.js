@@ -71,13 +71,7 @@ class Property extends Component {
             console.log("bid not higher than current bid");
           }
 
-          //if no currentBid compare against the minBid
-          // } else {
-
-          //   if (this.state.newBid > snapshot.get("minBid")){
-          //     //if more update currentBid to newBid
-          //      bidref.update({currentBid: this.state.newBid});
-          //     console.log("updated bid from min bid")
+         
         } else {
           console.log("bid not higher than min bid");
         }
@@ -126,48 +120,7 @@ class Property extends Component {
 
     return (
       <div className="column" style={{ marginTop: "100px" }}>
-        {/* <div className="card">
-          <div className="card-image">
-            <figure className="image is-4by3"> */}
-        {/* <img src={this.state.pic[0]} alt="House1" /> */}
-        {/* </figure>
-          </div>
-          <div className="card-content">
-            <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"
-                    alt="Placeholder image"
-                  />
-                </figure>
-              </div>
-              <div className="media-content">
-                <p className="title is-4"> {this.state.name} </p>
-                <p className="subtitle is-6">
-                  Listed By: <i>{this.state.owner}</i>
-                </p>
-              </div>
-            </div>
-
-            <div className="content">
-              <p>{this.state.description}</p>
-              <a href={`/property/${this.state.docID}`}>More Info</a>
-              <br></br>
-              <input
-                type="text"
-                name="newBid"
-                value={this.state.newBid}
-                onChange={this.updateInputValue}
-              />
-              <button className="bid" onClick={this.bidCheck}>
-                {" "}
-                Make a Bid{" "}
-              </button>
-            </div>
-          </div>
-        </div> */}
-        {/* {displayPics} */}
+        
 
         <MyGallery images={images} />
         <div className="media-content text-center">
@@ -181,16 +134,7 @@ class Property extends Component {
 
           <br></br>
           <p>{`The current bid is $${this.state.minBid} per night`}</p>
-          {/* <input
-            type="text"
-            name="newBid"
-            value={this.state.newBid}
-            onChange={this.updateInputValue}
-          />
-          <button className="bid" onClick={this.bidCheck}>
-            {" "}
-            Make a Bid{" "}
-          </button> */}
+         
           <BidModal propId={this.props.match.params.id} />
         </div>
       </div>

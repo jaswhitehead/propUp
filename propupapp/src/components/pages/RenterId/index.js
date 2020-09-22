@@ -14,7 +14,7 @@ class RenterDash extends Component {
       propArray: [],
     };
   }
-  // .where("id", "==", ownerID)
+  
   getAll() {
     let docName = localStorage.getItem(LoginString.ID);
     console.log("docName = ", docName);
@@ -23,8 +23,7 @@ class RenterDash extends Component {
       .get()
       .then((snap) => {
         snap.forEach((doc) => {
-          // console.log("doc.data().name = " + doc.data().name);
-          // console.log("doc.data().city = " + doc.data().city);
+         
           this.setState((prevState) => ({
             propArray: [
               ...prevState.propArray,
@@ -44,36 +43,7 @@ class RenterDash extends Component {
         });
       });
 
-    // db.collection("properties")
-    //   .get()
-    //   .then((snapshot) => {
-    //     snapshot.forEach((doc) => {
-    //       let ownerID = doc.data().ownerID;
-    //       db.collection("users")
-    //         .get()
-    //         .then((snap) => {
-    //           console.log(snap.name);
-    //           if (snap.length) {
-    //             this.setState((prevState) => ({
-    //               propArray: [
-    //                 ...prevState.propArray,
-    //                 {
-    //                   name: doc.data().name,
-    //                   address: doc.data().address,
-    //                   description: doc.data().description,
-    //                   minBid: doc.data().minBid,
-    //                   province: doc.data().province,
-    //                   pic: doc.data().pic,
-    //                   zipC: doc.data().zipC,
-    //                   docID: doc.id,
-    //                   ownerID: doc.data().ownerID,
-    //                 },
-    //               ],
-    //             }));
-    //           }
-    //         });
-    //     });
-    //   });
+   
   }
   componentDidMount() {
     this.getAll();
@@ -101,9 +71,7 @@ class RenterDash extends Component {
               </div>
               <div className="media-content">
                 <p className="title is-4"> {p.name} </p>
-                {/* <p className="subtitle is-6">
-                  Listed By: <i>{p.owner}</i>
-                </p> */}
+               
               </div>
             </div>
             <div className="content">
