@@ -52,11 +52,11 @@ class RenterDash extends Component {
   }
   render() {
     let displayPosts = this.state.propArray.map((p) => (
-      <div className="column is-desktop">
+      <div className="column is-desktop propCard propSingleCard">
         <div className="card animate__animated animate__fadeInUp">
           <div className="card-image">
             <figure className="image is-2by2">
-              <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
+              <img src={p.pic[0]} alt="House1" alt="Placeholder image" className="propPic" />
             </figure>
           </div>
           <div className="card-content">
@@ -76,7 +76,7 @@ class RenterDash extends Component {
             </div>
             <div className="content">
               <p>{p.minBid}</p>
-              <p>{p.description}</p>
+              <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
               <a href={`/property/${p.docID}`}>More Info</a>
               <br></br>
               <a href="/renter" className="button" id="bid">

@@ -78,7 +78,7 @@ class OwnerDash extends Component {
             </div>
             <div className="content">
               <p>{p.minBid}</p>
-              <p>{p.description}</p>
+              <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
               {/* <a href={`/property/${p.docID}`}>More Info</a> */}
               <br></br>
               <a href={`/edit/${p.docID}`} className="button" id="bid">
