@@ -11,6 +11,8 @@ import LoginString from "../pages/Login/LoginStrings";
 //   return user ? <SignedInLinks /> : <SignedOutLinks />;
 // });
 
+const [isActive, setisActive] = React.useState(false);
+
 class navbar extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +40,7 @@ class navbar extends Component {
       }.bind(this)
     );
   };
+  
 
   render() {
     return (
@@ -48,9 +51,11 @@ class navbar extends Component {
           </a>
 
           <a
-            href="/"
+            onClick={() => {
+              setisActive(!isActive);
+            }}
             role="button"
-            class="navbar-burger burger"
+            className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
