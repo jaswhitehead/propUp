@@ -12,12 +12,12 @@ import Enjoy from '../Welcome/Superman.gif';
 const Welcome = () => {
     return (
         <div className="wrapper">            
-            <div className="columns is-desktop  animate__animated animate__backInDown">
-                <div className="column is-12 is-offset-4">
+            <div className="columns is-desktop is-centered animate__animated animate__backInDown">
+                <div className="column is-half">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="14000">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <h3>Lets Walk you Through Getting Started:</h3>
+                                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lets Walk you Through Getting Started:</h3>
                                 <img src={Announcer} alt="Demo1" />                            
                             </div>
                             <div className="carousel-item">
@@ -56,7 +56,7 @@ const Welcome = () => {
                             <p className="start">How does the bidding system work?</p>
                         </div>
                         <div className="message-body">
-                        <img src={Keys} alt="Keys" /><br></br><br></br>
+                        <img src={Keys} alt="Keys" id="key" /><br></br><br></br>
                             Unlike other property rental platforms, <strong>PropUp</strong> allows you to make a "proposition" 
                             for the property you want at a price that you feel is fair. If you are the winning bid,
                             the property is yours at the price you set. If someone outbids you, the power is in your hands 

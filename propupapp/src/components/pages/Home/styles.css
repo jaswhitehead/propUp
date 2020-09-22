@@ -21,17 +21,16 @@
     padding-left: 20px;
 }
 
-.box {
-    
+.box {    
     position: top;
     height: 70px;
     border: 2px solid black;
 }
 
 .column img {
-    height: 400px;
     width: 600px;
-    border-radius: 25px;
+    max-height: 325px;
+    border-radius: 45px;
 }
 
 .hero {  

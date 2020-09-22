@@ -12,7 +12,7 @@ return(
     <a href="/"><img src={ Logo } alt="PropUp" /></a>
   </div>
   <hr></hr>  
-  <div className="columns is-mobile">
+  <div className="columns is-deaktop">
       <div className="column"><h5 className="white-text"><u><strong>Team Bio</strong></u></h5>
         <p className="grey-text text-lighten-4">We are a team of students from Vanderbilt Bootcamp working on
           this project like it's our full time job. We love to code and are always looking for better and 

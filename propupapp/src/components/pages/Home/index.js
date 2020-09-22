@@ -109,7 +109,12 @@ render(){
           <img src={ pic1 } alt="Rent Me" /></a>
         </div>
   
-        <div className="column is-one-third"><a href="/Events">
+        <div className="column is-one-third">
+            <a aria-label="Eventful" 
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+              window.open("https://jaswhitehead.github.io/PropUpEvents/", "Popup", "width=530, height=850, top=100")
+            }} >
           <h2 className="center"><u>Discover Things To Do</u></h2>
           <img src={ pic2 } alt="Find Events" /></a>
         </div>
