@@ -115,7 +115,7 @@ render(){
               onClick={() => {
               window.open("https://jaswhitehead.github.io/PropUpEvents/", "Popup", "width=530, height=850, top=100")
             }} >
-          <h2 className="center"><u>Discover Things To Do</u></h2>
+          <h2 className="center" id="things"><u>Discover Things To Do</u></h2>
           <img src={ pic2 } alt="Find Events" /></a>
         </div>
         <div className="column is-one-third"><a href="/Signup">
@@ -133,13 +133,13 @@ render(){
         wrapper="b"
         steps={[
           'Find the perfect vacation spot 🏄‍♂️',
-          500,
+          800,
           'Get the price I am willing to pay 💵',
-          500,
+          800,
           'Watch amazing events during my stay 👀',          
-          500, 
+          800, 
           'Get fair market value from my listings 💰',
-          500,                   
+          800,                   
         ]}
         />
       </p>  

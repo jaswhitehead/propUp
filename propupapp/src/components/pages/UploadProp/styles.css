@@ -11,10 +11,46 @@
     top: 50px;
 }
 
+@media screen and (max-width: 2000px) {
+  .notification.property {
+    margin-top: 50px;
+    width: 1500px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .notification.property {
+    margin-top: 50px;
+    width: 1300px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .notification.property {
+    margin-top: 50px;
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .notification.property {
+    margin-top: 50px;
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .notification.property {
+    margin-left: 0px;
+    margin-top: 50px;
+    width: 550px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
     .notification.property {
       margin-left: 0px;
-      width:340px;
+      width: 340px;
     }
   }
 
@@ -33,9 +69,44 @@
     margin-top: 30px;
 }
 
+@media only screen and (max-width: 2000px) {
+  #submit {
+    margin-left: 550px;
+    width:140px;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  #submit {
+    margin-left: 450px;
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  #submit {
+    margin-left: 300px;
+    width:140px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #submit {
+    margin-left: 200px;
+    width:140px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #submit {
+    margin-left: 20px;
+    width:140px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
     #submit {
-      margin-left: 50px;
+      margin-left: 20px;
       width:140px;
     }
   }

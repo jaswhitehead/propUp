@@ -94,6 +94,7 @@ const Terms = () => {
                 be English. Any award, verdict or settlement issued under such arbitration may be entered by any 
                 party for order of enforcement by any court of competent jurisdiction.</p><br></br>
         </div>
+       
 
     )
 };
