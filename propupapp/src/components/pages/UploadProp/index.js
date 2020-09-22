@@ -10,7 +10,7 @@ class UploadProp extends Component {
 
   componentDidMount() {
     if (!localStorage.getItem(LoginString.ID)) {
-      this.props.history.push("/");
+      this.props.history.push("/Signup");
     }
   }
   constructor(props) {
@@ -285,7 +285,7 @@ class UploadProp extends Component {
                 <div className="field">
                   <div className="control">
                     <label className="label">Add Property Pictures:</label>
-                   
+
                     {(this.fileArray || []).map((url) => (
                       <img
                         className="image"
