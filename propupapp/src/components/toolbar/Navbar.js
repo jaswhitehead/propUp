@@ -7,8 +7,6 @@ import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
 import LoginString from "../pages/Login/LoginStrings";
 
-
-
 class navbar extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +46,7 @@ class navbar extends Component {
           <a
             href="/"
             role="button"
-            class="navbar-burger burger"
+            className="navbar-burger burger"
             aria-label="menu"
             aria-expanded="false"
             data-target="main navigation"
@@ -76,12 +74,21 @@ class navbar extends Component {
                 More
               </a>
               <div className="navbar-dropdown">
-                <a className="navbar-item"
-                  aria-label="Eventful" 
-                  style={{ cursor: 'pointer' }}
+                <a className="navbar-item" href="/Dashboard">
+                  Your Dashboard
+                </a>
+                <a
+                  className="navbar-item"
+                  aria-label="Eventful"
+                  style={{ cursor: "pointer" }}
                   onClick={() => {
-                  window.open("https://jaswhitehead.github.io/PropUpEvents/", "Popup", "width=530, height=850, top=100")
-                }} >
+                    window.open(
+                      "https://jaswhitehead.github.io/PropUpEvents/",
+                      "Popup",
+                      "width=530, height=850, top=100"
+                    );
+                  }}
+                >
                   Find Events
                 </a>
                 <a className="navbar-item" href="/Chat">
