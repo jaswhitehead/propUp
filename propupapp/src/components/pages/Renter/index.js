@@ -36,9 +36,9 @@ class Renter extends Component {
 
   getAllWhere() {
     
-    db.collection('properties').where("city", "==", this.props.match.params.location).get().then((snapshot) => (
+    db.collection('property').where("city", "==", this.props.match.params.location).get().then((snapshot) => (
        snapshot.forEach((doc) => (
-           db.collection('users').doc(doc.data().ownerID).get().then((snap) => {
+           db.collection('user').doc(doc.data().ownerID).get().then((snap) => {
                console.log("doc.id = " + doc.id)
                console.log("doc.data().id = " + doc.data().id)
            this.setState((prevState) => ({
@@ -64,11 +64,11 @@ class Renter extends Component {
 
   render() {
     let displayPosts = this.state.propArray.map((p) => (
-      <div className="column is-desktop">
+      <div className="column is-desktop propCard propSingleCard">
           <div className="card animate__animated animate__fadeInUp">
               <div className="card-image">
                   <figure className="image is-2by2">
-                  <img src={p.pic[0]} alt="House1" alt="Placeholder image" />
+                  <img src={p.pic[0]} alt="House1" alt="Placeholder image" className="propPic"/>
                   </figure>
               </div>
               <div className="card-content">
