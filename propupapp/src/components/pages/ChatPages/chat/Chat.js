@@ -54,7 +54,7 @@ class Chat extends Component {
     } else {
       firebase
         .firestore()
-        .collection("users")
+        .collection("user")
         .doc(this.currentUserDocumentId)
         .get()
         .then((doc) => {
@@ -73,7 +73,7 @@ class Chat extends Component {
   }
 
   getListUser = async () => {
-    const result = await firebase.firestore().collection("users").get();
+    const result = await firebase.firestore().collection("user").get();
     if (result.docs.length > 0) {
       let listUsers = [];
       listUsers = [...result.docs];
@@ -139,7 +139,7 @@ class Chat extends Component {
   updateRenderList = () => {
     firebase
       .firestore()
-      .collection("users")
+      .collection("user")
       .doc(this.currentUserDocumentId)
       .update({ messages: this.notificationMessagesErase });
 

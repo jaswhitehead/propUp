@@ -14,6 +14,9 @@ import Results from "../pages/Results";
 import Welcome from "../pages/Welcome";
 import Property from "../pages/Property";
 import OwnerDash from "../pages/OwnerDash";
+import RenterId from "../pages/RenterId";
+import DashNav from "../pages/DashNav";
+
 class Router extends Component {
   render() {
     return (
@@ -23,6 +26,8 @@ class Router extends Component {
         <Route component={Login} exact path="/Login" />
         <Route component={UploadProp} exact path="/NewProp" />
         <Route component={Renter} path="/Renter/:location" />
+        <Route component={RenterId} exact path="/Renter" />
+        <Route component={DashNav} exact path="/Dashboard" />
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
         <Route component={Weather} exact path="/Weather" />

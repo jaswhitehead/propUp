@@ -161,7 +161,7 @@ export default class BidModal extends Component {
 
             <a
               className="centerStuff"
-              //   href="javascript:void(0);"
+              href="/Renter"
               onClick={() => this.closeModal()}
             >
               Close

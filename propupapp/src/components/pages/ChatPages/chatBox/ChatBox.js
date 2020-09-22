@@ -32,7 +32,7 @@ class ChatBox extends Component {
 
     firebase
       .firestore()
-      .collection("users")
+      .collection("user")
       .doc(this.currentPeerUser.documentKey)
       .get()
       .then((docRef) => {
