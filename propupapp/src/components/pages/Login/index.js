@@ -50,15 +50,15 @@ class Login extends Component {
       .then(async (result) => {
         let user = result.user;
         if (user) {
-          firebase
-            .storage()
-            .ref(user.uid + "/ProfilePhoto")
-            .getDownloadURL()
-            .then((snapshot) => {
-              console.log("storage = ", snapshot);
-              console.log("uid = ", user.uid);
-              localStorage.setItem(LoginString.PhotoURL, snapshot);
-            });
+          // firebase
+          //   .storage()
+          //   .ref(user.uid + "/ProfilePhoto")
+          //   .getDownloadURL()
+          //   .then((snapshot) => {
+          //     console.log("storage = ", snapshot);
+          //     console.log("uid = ", user.uid);
+          //     localStorage.setItem(LoginString.PhotoURL, snapshot);
+          //   });
 
           await firebase
             .firestore()
@@ -79,6 +79,7 @@ class Login extends Component {
                   LoginString.Password,
                   currentdata.password
                 );
+                localStorage.setItem(LoginString.PhotoURL, currentdata.URL);
                 // localStorage.setItem(LoginString.PhotoURL, currentdata.URL);
                 localStorage.setItem(
                   LoginString.Description,
@@ -89,9 +90,11 @@ class Login extends Component {
         }
         if (localStorage.getItem(LoginString.Selector) === "renter") {
           this.props.history.push("./Dashboard");
+          window.location.reload(false);
         }
         if (localStorage.getItem(LoginString.Selector) === "owner") {
           this.props.history.push("./Dashboard");
+          window.location.reload(false);
         }
       })
       .catch(function (error) {
