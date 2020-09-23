@@ -43,19 +43,20 @@ class navbar extends Component {
             <img src={logo} width="35" height="28" alt="" />
           </a>
 
-          <a
-            href="/"
-            role="button"
-            className="navbar-burger burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="main navigation"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+            <label
+                  role="button"
+                  className="navbar-burger burger1"
+                  aria-label="menu"
+                  aria-expanded="false"
+                  htmlFor="nav-toggle-state"
+                >
+                  <span aria-hidden="true" />
+                  <span aria-hidden="true" />
+                  <span aria-hidden="true" />
+              </label>
+
         </div>
+          <input type="checkbox" id="nav-toggle-state" />
 
         <div id="navbarBasicExample" className="navbar-menu">
           <div className="navbar-start">
