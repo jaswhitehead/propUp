@@ -1,3 +1,4 @@
+
 .login-container {
     margin-top: 80px;
     margin-bottom: 20px;
@@ -11,10 +12,51 @@
     margin-top: 0px;
 }
 
+@media screen and (max-width: 1700px) {
+    .form {
+      margin-right: 150px;
+      margin-left: 0px;
+      margin-top: 50px;
+    }
+  }
+
+@media screen and (max-width: 1400px) {
+    .form {
+      margin-right: 150px;
+      margin-left: 0px;
+      margin-top: 50px;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    .form {
+      margin-right: 350px;
+      margin-left: 0px;
+      margin-top: 50px;
+      width: 350px;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .form {
+      margin-right: 1000px;
+      margin-left: 0px;
+      margin-top: 50px;
+      width: 280px;
+    }
+  }
+
 .level-center {
     margin-left: 33%;
     border-radius: 25px;
 } 
+
+@media screen and (max-width: 600px) {
+    .level-center {
+      margin-left: 0%;
+      padding: 0px;
+    }
+  }
 
 .login-container h1 {
     font-family: 'Patua One', cursive;
