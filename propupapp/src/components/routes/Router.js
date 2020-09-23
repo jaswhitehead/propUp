@@ -28,7 +28,7 @@ class Router extends Component {
         <Route component={Signup} exact path="/Signup" />
         <Route component={Login} exact path="/Login" />
         <Route component={UploadProp} exact path="/NewProp" />
-        <Route component={Renter} path="/Renter/:location" />
+        <Route component={Renter} path="/Renter/:location/:province" />
         {/* <Route component={RenterId} exact path="/Renter" /> */}
         <Route component={DashNav} exact path="/Dashboard" />
         <Route component={Events} exact path="/Events" />
