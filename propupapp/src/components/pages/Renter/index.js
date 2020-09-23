@@ -4,7 +4,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
 import { Card } from "@material-ui/core";
-
+import Weather from "../Weather"
 
 const db = firebase.firestore();
 class Renter extends Component {
@@ -93,11 +93,66 @@ class Renter extends Component {
       </div>
   ))
     return (
-      <Card>
-        {displayPosts}
-      </Card>
-    );
-  }
+      <div className="propresult">
+      <div className="column">
+        <h1>Top Matches for your Search:</h1>
+      </div>
+      <div className="columns is-desktop propCard">
+        <Card>{displayPosts}</Card>
+       
+      </div>
+      <nav
+        class="pagination is-centered"
+        role="navigation"
+        aria-label="pagination"
+      >
+        <a class="pagination-previous">Previous</a>
+        <a class="pagination-next">Next page</a>
+        <ul class="pagination-list">
+          <li>
+            <a
+              class="pagination-link is-current"
+              aria-label="Goto page 1"
+              href="/results"
+            >
+              1
+            </a>
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              aria-label="Goto page 2"
+              href="/results"
+            >
+              2
+            </a>
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              aria-label="Page 3"
+              aria-current="page"
+              href="/results"
+            >
+              3
+            </a>
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              aria-label="Goto page 4"
+              href="/results"
+            >
+              4
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <br></br>
+      <Weather region={this.props.match.params.location} />
+    </div>
+  );
+}
 }
 
 export default Renter;

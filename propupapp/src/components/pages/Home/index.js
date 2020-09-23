@@ -44,7 +44,7 @@ class Home extends Component {
     placeArray.push(this.state.place.place.split(","));
     
     console.log(placeArray[0][0])
-      this.props.history.push("/Renter/" + placeArray[0][0])
+      this.props.history.push("/Renter/" + placeArray[0][0] + "/" + placeArray[0][1])
 }
 
  

@@ -26,14 +26,14 @@ class Results extends Component {
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           let docName = localStorage.getItem(LoginString.ID);
-          console.log("docname = ", docName);
+          // console.log("docname = ", docName);
           db.collection("user")
             .where("id", "==", doc.data().ownerID)
             .get()
             .then((snap) => {
               snap.forEach((doc2) => {
-                console.log("doc.data().name = " + doc.data().name);
-                console.log("doc.data().city = " + doc.data().city);
+                // console.log("doc.data().name = " + doc.data().name);
+                // console.log("doc.data().city = " + doc.data().city);
                 this.setState((prevState) => ({
                   propArray: [
                     ...prevState.propArray,
