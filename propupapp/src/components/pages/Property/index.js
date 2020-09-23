@@ -49,14 +49,16 @@ class Property extends Component {
     let res = "";
 
     db.collection("property")
-      .doc(this.state.name)
-      .onSnapshot((snapshot) => {
-        console.log("minimum bid: " + snapshot.get("minBid"));
+      .where("name", "==", this.props.match.params.id)
+      .get()
+      .then((snapshot) => {
+        console.log("snapshot.data()", snapshot.data());
+        console.log("minimum bid: " + snapshot.minBid);
         // query db checking if current bid exists
-        let minBid = snapshot.get("minBid");
+        let minBid = snapshot.minBid;
         if (minBid) {
           //comparing new bid to current bid
-          if (this.state.newBid > snapshot.get("minBid")) {
+          if (this.state.newBid > snapshot.minBid) {
             //if more update currentBid to newBid
             this.setState({
               highBidder: localStorage.getItem(LoginString.ID),
@@ -70,8 +72,6 @@ class Property extends Component {
           } else {
             console.log("bid not higher than current bid");
           }
-
-         
         } else {
           console.log("bid not higher than min bid");
         }
@@ -120,8 +120,6 @@ class Property extends Component {
 
     return (
       <div className="column" style={{ marginTop: "100px" }}>
-        
-
         <MyGallery images={images} />
         <div className="media-content text-center">
           <p className="title is-4"> {this.state.name} </p>
@@ -134,7 +132,7 @@ class Property extends Component {
 
           <br></br>
           <p>{`The current bid is $${this.state.minBid} per night`}</p>
-         
+
           <BidModal propId={this.props.match.params.id} />
         </div>
       </div>

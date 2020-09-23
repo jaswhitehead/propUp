@@ -13,9 +13,9 @@ import Feedback from "../pages/Feedback";
 import Results from "../pages/Results";
 import Welcome from "../pages/Welcome";
 import Property from "../pages/Property";
-import OwnerDash from "../pages/OwnerDash";
+// import OwnerDash from "../pages/OwnerDash";
 import Edit from "../pages/Edit";
-import RenterId from "../pages/RenterId";
+// import RenterId from "../pages/RenterId";
 import DashNav from "../pages/DashNav";
 
 import Terms from "../pages/Terms";
@@ -28,8 +28,8 @@ class Router extends Component {
         <Route component={Signup} exact path="/Signup" />
         <Route component={Login} exact path="/Login" />
         <Route component={UploadProp} exact path="/NewProp" />
-        <Route component={Renter} path="/Renter/:location" />
-        <Route component={RenterId} exact path="/Renter" />
+        <Route component={Renter} path="/Renter/:location/:province" />
+        {/* <Route component={RenterId} exact path="/Renter" /> */}
         <Route component={DashNav} exact path="/Dashboard" />
         <Route component={Events} exact path="/Events" />
         <Route component={Who} exact path="/Who" />
@@ -40,7 +40,7 @@ class Router extends Component {
         <Route component={Welcome} exact path="/Welcome" />
         <Route component={Property} path="/property/:id" />
         <Route component={Edit} path="/edit/:id" />
-        <Route component={OwnerDash} path="/OwnerDash" />
+        {/* <Route component={OwnerDash} path="/OwnerDash" /> */}
         <Route component={Terms} path="/Terms" />
       </Switch>
     );

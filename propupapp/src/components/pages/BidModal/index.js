@@ -30,7 +30,6 @@ export default class BidModal extends Component {
 
   componentDidMount() {
     this.getOne();
-  
   }
 
   openModal() {
@@ -55,13 +54,14 @@ export default class BidModal extends Component {
 
   bidCheck(e) {
     e.preventDefault();
-    let bidref = db.collection("property").doc(this.state.name);
+    let bidref = db.collection("property").doc(this.props.propId);
 
     let res = "";
 
     db.collection("property")
-      .doc(this.state.name)
+      .doc(this.props.propId)
       .onSnapshot((snapshot) => {
+        console.log("snapshot.data()", snapshot);
         console.log("minimum bid: " + snapshot.get("minBid"));
         // query db checking if current bid exists
         let minBid = snapshot.get("minBid");
@@ -77,12 +77,10 @@ export default class BidModal extends Component {
               highBidder: this.state.highBidder,
             });
             console.log("updated bid from checking current bid");
-            this.openModal();
+            this.setState({show: true})
           } else {
             console.log("bid not higher than current bid");
           }
-
-         
         } else {
           console.log("bid not higher than min bid");
         }
@@ -117,7 +115,6 @@ export default class BidModal extends Component {
   render() {
     return (
       <section>
-       
         <input
           type="text"
           name="newBid"
@@ -153,7 +150,7 @@ export default class BidModal extends Component {
 
             <a
               className="centerStuff"
-              href="/Renter"
+              // href="/Renter"
               onClick={() => this.closeModal()}
             >
               Close

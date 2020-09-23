@@ -146,7 +146,10 @@ export default class ProfileModal extends Component {
                 onChange={this.onChoosePhoto}
               />
               <br />
-              <br />
+
+              <a className="navbar-item centerStuff" href="/Dashboard">
+                Go To Your Dashboard
+              </a>
 
               <a className="centerStuff" onClick={() => this.closeModal()}>
                 Close

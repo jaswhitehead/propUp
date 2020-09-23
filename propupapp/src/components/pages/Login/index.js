@@ -3,7 +3,6 @@ import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import LoginString from "./LoginStrings";
 import firebase from "../../../auth/";
-import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -89,19 +88,16 @@ class Login extends Component {
             });
         }
         if (localStorage.getItem(LoginString.Selector) === "renter") {
-          this.props.history.push("./Renter");
+          this.props.history.push("./Dashboard");
         }
         if (localStorage.getItem(LoginString.Selector) === "owner") {
-          this.props.history.push("./OwnerDash");
+          this.props.history.push("./Dashboard");
         }
       })
       .catch(function (error) {
         console.log(error);
-        this.setState({
-          error: "Error while signing in. Please try again.",
-        });
+        alert(error);
       });
-    window.location.reload(false);
   }
 
   render() {
