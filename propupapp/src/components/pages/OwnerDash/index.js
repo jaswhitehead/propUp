@@ -35,7 +35,7 @@ class OwnerDash extends Component {
                 province: doc.data().province,
                 pic: doc.data().pic,
                 zipC: doc.data().zipC,
-
+                ownerPic: localStorage.getItem(LoginString.PhotoURL),
                 docID: doc.id,
               },
             ],
@@ -66,8 +66,8 @@ class OwnerDash extends Component {
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"
+                <img
+                    src={p.ownerPic }
                     alt="Placeholder image"
                   />
                 </figure>
@@ -77,9 +77,10 @@ class OwnerDash extends Component {
               </div>
             </div>
             <div className="content">
-              <p>{p.minBid}</p>
-              <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
-              {/* <a href={`/property/${p.docID}`}>More Info</a> */}
+            <h6>Current Bid: </h6>
+              <p>${p.minBid}</p>
+              <h6>Description:</h6>
+              <p>{p.description.length > 144 ? p.description.substring(0, 75) + "..." : p.description}</p>
               <br></br>
               <a href={`/edit/${p.docID}`} className="button" id="bid">
                 Edit Prop

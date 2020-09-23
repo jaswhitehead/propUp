@@ -46,6 +46,7 @@ class Results extends Component {
                       pic: doc.data().pic,
                       zipC: doc.data().zipC,
                       owner: doc2.data().name,
+                      ownerPic: doc2.data().URL,
                       docID: doc.id,
                     },
                   ],
@@ -77,7 +78,7 @@ class Results extends Component {
               <div className="media-left">
                 <figure className="image is-48x48">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"
+                    src={p.ownerPic.length ? p.ownerPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"}
                     alt="Placeholder image"
                   />
                 </figure>
@@ -91,8 +92,10 @@ class Results extends Component {
             </div>
 
             <div className="content">
-              <p>{p.minBid}</p>
-              <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
+              <h6>Current Bid: </h6>
+              <p>${p.minBid}</p>
+              <h6>Description:</h6>
+              <p>{p.description.length > 144 ? p.description.substring(0, 75) + "..." : p.description}</p>
               <br></br>
               <a href={`/property/${p.docID}`} className="button" id="bid">
                 More Info

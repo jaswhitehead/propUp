@@ -52,6 +52,7 @@ class Renter extends Component {
                pic: doc.data().pic,
                zipC: doc.data().zipC,
                owner: snap.data().name,
+               ownerPic: snap.data().URL,
                docID: doc.id
               }
            ]
@@ -75,7 +76,10 @@ class Renter extends Component {
                   <div className="media">
                       <div className="media-left">
                           <figure className="image is-48x48">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU" alt="Placeholder image" />
+                          <img
+                    src={p.ownerPic.length ? p.ownerPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"}
+                    alt="Placeholder image"
+                  />
                           </figure>
                       </div>
                       <div className="media-content">
