@@ -6,6 +6,14 @@
   background: #19b4de;
 }
 
+#nav-toggle-state {
+  display: none;
+}
+
+#nav-toggle-state:checked ~ .navbar-menu {
+  display: block;
+}
+
 .toolbar_navigation {
   display: flex;
 }
