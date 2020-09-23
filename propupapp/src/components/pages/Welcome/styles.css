@@ -38,6 +38,24 @@
     margin-left: 45px;
 }
 
+@media screen and (max-width: 1600px) {
+    .message-body img {
+      margin-left: 10px;
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+    .message-body img {
+      margin-left: 10px;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .message-body img {
+      margin-left: 5px;
+    }
+  }
+
 .start {
     font-size: 24px;
 }
@@ -49,6 +67,24 @@
     color:white;
     border-radius: 25px;    
 }
+
+@media screen and (max-width: 1600px) {
+    .button.get-started {
+      margin-left: 500px;
+    }
+  }
+
+@media screen and (max-width: 1200px) {
+    .button.get-started {
+      margin-left: 400px;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .button.get-started {
+      margin-left: 200px;
+    }
+  }
 
 .button.get-started:hover {
     color: red;
