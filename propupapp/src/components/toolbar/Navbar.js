@@ -42,7 +42,6 @@ class navbar extends Component {
           <a className="navbar-item" href="/">
             <img src={logo} width="35" height="28" alt="" />
           </a>
-
             <label
                   role="button"
                   className="navbar-burger burger1"
@@ -53,8 +52,7 @@ class navbar extends Component {
                   <span aria-hidden="true" />
                   <span aria-hidden="true" />
                   <span aria-hidden="true" />
-              </label>
-
+            </label>
         </div>
           <input type="checkbox" id="nav-toggle-state" />
 
@@ -94,9 +92,12 @@ class navbar extends Component {
                 </a>
                 <a className="navbar-item" href="/Chat">
                   Chat
-                </a>
+                </a>                
                 <a className="navbar-item" href="/Who">
                   About Us
+                </a>
+                <a className="navbar-item" href="/Weather">
+                  Local Weather
                 </a>
                 <hr className="navbar-divider" />
                 <a className="navbar-item" href="/Feedback">
