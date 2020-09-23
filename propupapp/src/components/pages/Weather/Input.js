@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Input(props) {
     return (
-        <div className="row">
+        <div className="row" id="local">
             <div className="col-md-6">
                 <h1 className="title">Today's Weather</h1>
             </div>

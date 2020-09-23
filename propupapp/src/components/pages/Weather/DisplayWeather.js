@@ -1,4 +1,5 @@
 import React from 'react'
+import Pic from "./images/forecast.png";
 
 export default function DisplayWeather(props) {
     console.log(props.weatherData);
@@ -14,7 +15,7 @@ export default function DisplayWeather(props) {
                     <p>{region} , {country}</p>
                 </div>
 
-                <div className="col-md-9">
+                <div className="col-md-1" id="weathericon">
                     <img className="mainImg" src={img} alt="weather-img" />
                 </div>
             </div>
