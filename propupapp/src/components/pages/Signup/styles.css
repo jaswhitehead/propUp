@@ -2,15 +2,46 @@
     background: rgb(228, 225, 225);
     border-radius: 35px;
     margin-left: 580px;
-    width: 650px; 
+    width: 620px; 
     position: absolute;
     top: 200px;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 1500px) {
+  .notification.signup {
+    margin-left: 250px;
+    margin-top: 50px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .notification.signup {
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .notification.signup {
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .notification.signup {
+    margin-left: 50px;
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
     .notification.signup {
       margin-left: 0px;
-      width:340px;
+      width: 320px;
     }
   }
 
@@ -18,12 +49,26 @@
     width: 550px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .field2 {
       margin-left: 0px;
-      width:300px;
+      width: 400px;
     }
   }
+
+@media only screen and (max-width: 600px) {
+  .field2 {
+    margin-left: 0px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .field2 {
+    margin-left: 0px;
+    width: 280px;
+  }
+}
 
   #avatar {
     background-color:#B2D350;

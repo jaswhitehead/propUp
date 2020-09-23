@@ -104,7 +104,7 @@ export default class UploadPicModal extends Component {
     );
     return (
       <section>
-        <div className="column is-6">
+        <div className="column is-12">
           <div className="field">
             <div className="control">
               <label className="label">

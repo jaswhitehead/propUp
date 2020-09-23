@@ -137,7 +137,7 @@ class Signup extends Component {
               <label className="label">
                 <i className="fas fa-key"></i> Password:
               </label>
-              <div className="control has-icons-left has-icons-right">
+              <div className="control">
                 <input
                   className="input"
                   type="password"
