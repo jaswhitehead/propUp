@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
-
+import UploadPicModal from "../UploadPicModal";
 import LoginString from "../Login/LoginStrings";
 import { Link } from "react-router-dom";
 import firebase from "../../../auth/";
@@ -47,7 +47,9 @@ class Signup extends Component {
               password,
 
               selector,
-              URL: "",
+              URL: localStorage.getItem(LoginString.PhotoURL)
+                ? localStorage.getItem(LoginString.PhotoURL)
+                : "",
               description: "",
               messages: [{ notificationId: "", number: 0 }],
             })
@@ -174,47 +176,7 @@ class Signup extends Component {
                 </div>
                 <br></br>
               </div>
-              <div className="column is-6">
-                <div className="field">
-                  <div className="control">
-                    <label className="label">
-                      <i class="fas fa-camera-retro"></i> Add a Profile Picture:
-                    </label>
-                    {(this.fileArray || []).map((url) => (
-                      <img
-                        className="image"
-                        src={url}
-                        alt="Property Image"
-                        key={url}
-                      />
-                    ))}
-                    <button
-                      type="button"
-                      id="avatar"
-                      className="icOpenGallery"
-                      alt="input_file"
-                      onClick={() => {
-                        if (!this.state.name) {
-                          alert("Please enter your Name");
-                        } else {
-                          this.refInput.click();
-                        }
-                      }}
-                    >
-                      Upload Images
-                    </button>
-                    <input
-                      ref={(el) => {
-                        this.refInput = el;
-                      }}
-                      className="viewInputGallery"
-                      accept="image/*"
-                      type="file"
-                      onChange={this.onChoosePhoto}
-                    />
-                  </div>
-                </div>
-              </div>
+              <UploadPicModal ownerName={this.state.name} />
             </div>
 
             <div className="field2">
