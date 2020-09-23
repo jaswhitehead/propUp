@@ -23,7 +23,11 @@ class RenterDash extends Component {
       .get()
       .then((snap) => {
         snap.forEach((doc) => {
-         
+          db.collection("user")
+          .where("id", "==", doc.data().ownerID)
+          .get()
+          .then((snap) => {
+            snap.forEach((doc2) => {
           this.setState((prevState) => ({
             propArray: [
               ...prevState.propArray,
@@ -35,14 +39,16 @@ class RenterDash extends Component {
                 province: doc.data().province,
                 pic: doc.data().pic,
                 zipC: doc.data().zipC,
-
+                owner: doc2.data().name,
+                ownerPic: doc2.data().URL,
                 docID: doc.id,
               },
             ],
           }));
         });
       });
-
+    });
+  })
    
   }
   componentDidMount() {
@@ -63,21 +69,24 @@ class RenterDash extends Component {
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"
+                <img
+                    src={p.ownerPic.length ? p.ownerPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"}
                     alt="Placeholder image"
                   />
                 </figure>
               </div>
               <div className="media-content">
                 <p className="title is-4"> {p.name} </p>
-               
+                <p className="subtitle is-6">
+                  Listed By: <i>{p.owner}</i>
+                </p>
               </div>
             </div>
             <div className="content">
-              <p>{p.minBid}</p>
-              <p>{p.description.length > 144 ? p.description.substring(0, 100) + "..." : p.description}</p>
-              <a href={`/property/${p.docID}`}>More Info</a>
+            <h6>Current Bid: </h6>
+              <p>${p.minBid}</p>
+              <h6>Description:</h6>
+              <p>{p.description.length > 144 ? p.description.substring(0, 75) + "..." : p.description}</p>
               <br></br>
               <a href="/renter" className="button" id="bid">
                 Make a Bid

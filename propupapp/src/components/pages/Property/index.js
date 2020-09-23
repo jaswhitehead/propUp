@@ -4,6 +4,7 @@ import firebase from "../../../auth/";
 import LoginString from "../Login/LoginStrings";
 import MyGallery from "../ImageGallery";
 import BidModal from "../BidModal";
+import "./styles.css"
 
 const db = firebase.firestore();
 
@@ -22,6 +23,7 @@ class Property extends Component {
       zipC: "",
       owner: "",
       highBidder: "",
+      ownerPic: null,
     };
 
     this.updateInputValue = this.updateInputValue.bind(this);
@@ -97,6 +99,7 @@ class Property extends Component {
               pic: doc.data().pic,
               zipC: doc.data().zipC,
               owner: snap.data().name,
+              ownerPic: snap.data().URL,
               docID: doc.id,
             });
           });
@@ -122,12 +125,22 @@ class Property extends Component {
       <div className="column" style={{ marginTop: "100px" }}>
         <MyGallery images={images} />
         <div className="media-content text-center">
+        
           <p className="title is-4"> {this.state.name} </p>
+          {/* <figure className="image is-48x48 is-centered centerPls"> */}
+                  <img
+                    className="is-centered is-48x48"
+                    id="centerPls"
+                    src={this.state.ownerPic ? this.state.ownerPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU"}
+                    alt="Placeholder image"
+                  />
+         {/* </figure> */}
           <p className="subtitle is-6">
             Listed By: <i>{this.state.owner}</i>
           </p>
         </div>
         <div className="content text-center">
+          <h4>Description:</h4>
           <p>{this.state.description}</p>
 
           <br></br>
