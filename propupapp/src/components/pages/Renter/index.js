@@ -20,9 +20,9 @@ class Renter extends Component {
 
   componentDidMount() {
     this.getAllWhere();
-    if (!localStorage.getItem(LoginString.ID)) {
-      this.props.history.push("/");
-    }
+    // if (!localStorage.getItem(LoginString.ID)) {
+    //   this.props.history.push("/");
+    // }
   }
 
   updateInputValue(evt) {
